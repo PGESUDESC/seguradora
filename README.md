@@ -68,4 +68,37 @@ Tendo em atenção o descrito acima, proponha uma solução de software que perm
 ###Outras informações:
 * No sábado pela manhã e a tarde (14/11), a partir das 09:00 horas, está marcada a entrevista com o cliente (o próprio professor da disciplina).
 * Ainda no sábado, deve ser fornecido o nome da equipe, os membros e a função de cada um no projeto. Também será marcada a ordem das apresentações para os dias 28 de novembro e 05 de dezembro.
-* A presença na disciplina não é obrigatória, mas o cliente estará somente disponível fisicamente para elucidar dúvidas de requisitos nos dias 14 de novembro.
+* A presença na disciplina não é obrigatória, mas o cliente estará somente disponível fisicamente para elucidar dúvidas de requisitos nos dias 14 de novembro.  
+
+O Quadro abaixo apresenta o cronograma da disciplina  
+
+|Data| ATIVIDADES|
+|----|-----------|
+|14 novembro|Disponibilidade do cliente; e Entrevista com o cliente, formação da equipe|
+|15 novembro|Criação do repositório e convite para o professor|
+|21 novembro|Termo de abertura, plano de gerenciamento, backlog inicial, sprint backlog 1, prototipação, seguro.eap|
+|28 novembro| Casos de teste 1   e Apresentação Sprint 1|
+|04 dezembro|seguro_v2.eap, sprint backlog 2|
+|05 dezembro|Casos de teste 2 e Apresentação Sprint 2|
+
+
+####Composição da Avaliação:
+|Instrumentos|Critérios|Pontos|
+|------------|---------|------|
+|termo_abertura.pdf|Cumprimento do modelo, completude e coerência|0,5|
+|plano_gerenciamento_projetos.pdf|Cumprimento do modelo, completude e coerência|1,0|
+|prototipacao.pdf|Completude e coerência|1,0|
+|seguro.eap|- Casos de uso: todos os UCs foram considerados, preenchidos com os dados solicitados no enunciado, e estão coerentes com a entrevista?  e Diagrama de interação e classes: de acordo com as funcionalidades eleitas da sprint 1 
+|2,0|
+|backlog_inicial.pdf|Coerência das funcionalidades e estimativas, e explicação dos procedimentos para a aferição das estimativas.|1,0|
+|sprint_backlog_1.pdf|Coerência com o backlog inicial, com a lista de casos de uso e o tamanho da equipe|1,5|
+|casos_teste_1.pdf|Completude e coerência com as funcionalidades apresentadas da sprint 1|0,75|
+|Apresentação do Sprint 1|Software abrange as funcionalidades da sprint 1. Serão também avaliadas as justificativas para aquelas não cumpridas|1,0|
+|seguro_v2.eap| Diagrama de interação e classes: de acordo com as funcionalidades eleitas da sprint 1|2,0|
+|sprint_backlog_2.pdf|Coerência com o backlog inicial e sprint 1, com a lista de casos de uso e o tamanho da equipe|1,5|
+|casos_teste_2.pdf|Completude e coerência com as funcionalidades apresentadas da sprint 2|0,75|
+|Apresentação do Sprint 2|Software abrange as funcionalidades da sprint 2. Serão também avaliadas as justificativas para aquelas não cumpridas.|1,0|
+|**TOTAL**||14,0|
+
+
+
