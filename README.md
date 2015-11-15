@@ -100,5 +100,11 @@ O Quadro abaixo apresenta o cronograma da disciplina
 |Apresentação do Sprint 2|Software abrange as funcionalidades da sprint 2. Serão também avaliadas as justificativas para aquelas não cumpridas.|1,0|
 |**TOTAL**||14,0|
 
+* Atraso na entrega de algum desses documentos, será desconsiderado na pontuação, apesar de que ainda poderei realizar a avaliação sobre o mesmo.
+
+* A nota máxima desse trabalho será considerada segundo a pontuação da tabela acima. Porém, a nota individual pode se diferenciar dentro da equipe, de acordo com a percepção do professor no comprometimento, participação e execução das tarefas pelo aluno.
+
+* Apesar da soma ultrapassar a nota 10,0, será considerado o máximo a nota 10,0 na média. 
+
 
 
