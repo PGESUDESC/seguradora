@@ -1,4 +1,4 @@
-# seguradora
+# SEGURADORA
 Trabalho da disciplina de Trabalho Final do módulo II da PGES Udesc 2015
 
 ##Professor 
