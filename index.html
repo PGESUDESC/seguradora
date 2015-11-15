@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Seguradora by PGESUDESC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Seguradora</h1>
+      <h2 class="project-tagline">Trabalho da disciplina de Trabalho de conclusão do módulo II da PGES Udesc 2015</h2>
+      <a href="https://github.com/PGESUDESC/seguradora" class="btn">View on GitHub</a>
+      <a href="https://github.com/PGESUDESC/seguradora/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/PGESUDESC/seguradora/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="seguradora" class="anchor" href="#seguradora" aria-hidden="true"><span class="octicon octicon-link"></span></a>Seguradora</h1>
+
+<h2>
+<a id="disciplina" class="anchor" href="#disciplina" aria-hidden="true"><span class="octicon octicon-link"></span></a>Disciplina</h2>
+
+<p>Trabalho Final do Modulo II</p>
+
+<h2>
+<a id="professor" class="anchor" href="#professor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Professor</h2>
+
+<p>Nilson Modro</p>
+
+<h2>
+<a id="alunos" class="anchor" href="#alunos" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alunos</h2>
+
+<p>Alex Michelon
+Leandro Battisti
+Ricardo Voigt</p>
+
+<h2>
+<a id="definições" class="anchor" href="#defini%C3%A7%C3%B5es" aria-hidden="true"><span class="octicon octicon-link"></span></a>Definições</h2>
+
+<p>Cada empresa seguradora, direta ou indiretamente, vende aos seus clientes “segurança” (ou seja, “cobertura de risco”), sob a forma de seguros que podem ser de vários tipos, mais ou menos comuns. 
+Há seguros de automóveis, de casa (de exterior ou de interiores), de vida, de saúde, de viajem, industriais, etc. Inicialmente deve ser considerada pelo menos a categoria “seguro de automóvel”. O seguro de automóvel depende se é um veículo de passageiros, de transporte público ou de transporte de carga. Os seguros, qualquer que seja a sua categoria, possuem algumas características comuns que devem ser consideradas: 
+• Têm um código único definido pela seguradora;
+• Têm um titular cujo nome, local de residência, Identidade e CPF é obrigatório; 
+• Têm um preço anual a pagar, curiosamente designado prémio base anual, que poderá ser aumentado em função das opções adicionais escolhidas pelo titular ou até diminuído de um dado valor caso não se registe nenhuma ocorrência; 
+• Têm adicionalmente um agravamento de % por ocorrência registada;
+• Têm um segurado, ou seja, a descrição do objeto do seguro. </p>
+
+<p>Para cada categoria de seguro, por exemplo veículos, devemos possuir todas as opções possíveis sob a forma de aditamentos ou cláusulas. Cada uma destas cláusulas deverá possuir um texto, e um valor de % a adicionar ao prémio base. Ao realizar-se o seguro, o titular poderá aderir ou não a tais aditamentos. Por exemplo, num seguro de automóvel normal, o titular pode querer incluir “quebra de vidros”, “assistência em viagem”, etc. Para cada tipo de seguro as cláusulas variam, incluem um texto descritivo que o titular aceita ou não, e que corresponde a um aumento de % no prêmio. Exemplos para seguro de veículos:
+• Cláusula A: Vidros involuntariamente partidos =&gt; mais X%; 
+• Cláusula B: Cobertura de todos os riscos =&gt; mais X%;
+• Cláusula C: Mais de 10 anos em circulação=&gt; mais X%; </p>
+
+<p>Assim, temos o essencial da informação gerida por uma única seguradora.</p>
+
+<p>Tendo em atenção o descrito acima, proponha uma solução de software que permita:
+• A gestão de seguros de uma empresa seguradora desde o registo à entrada, passando pelos diferentes pontos de atendimento, até à entrega final ao cliente;
+• A produção dos relatórios para a gestão.</p>
+
+<h2>
+<a id="processo-de-desenvolvimento" class="anchor" href="#processo-de-desenvolvimento" aria-hidden="true"><span class="octicon octicon-link"></span></a>processo de desenvolvimento</h2>
+
+<h3>
+<a id="informações-gerais" class="anchor" href="#informa%C3%A7%C3%B5es-gerais" aria-hidden="true"><span class="octicon octicon-link"></span></a>Informações gerais:</h3>
+
+<p>• as equipes devem ter no mínimo três e no máximo quatro integrantes;
+• deve ser considerado que cada membro da equipe tem disponibilidade de 12 horas por semana (segunda a domingo) para o desenvolvimento desse software;
+• os softwares podem ser desenvolvidos em qualquer linguagem de programação (desde que orientada a objetos) e qualquer banco de dados relacional.</p>
+
+<h3>
+<a id="gerenciamento-de-configuração" class="anchor" href="#gerenciamento-de-configura%C3%A7%C3%A3o" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gerenciamento de Configuração:</h3>
+
+<p>• A equipe deve escolher um repositório público de versionamento de projetos, tais como, Google Code, SourceForge ou GitHub, e criar um projeto em um desses repositórios. Associar todos os membros da equipe, e enviar um convite ao professor da disciplina (<a href="mailto:nilsonmodro@gmail.com">nilsonmodro@gmail.com</a>) para fazer parte da equipe. Esse procedimento deve ser realizado até o dia 15/11. Todos os artefatos do projeto devem estar sincronizados com esse repositório;</p>
+
+<p>• Criar uma pasta seguradora, onde devem estar todo o código fonte, scripts, arquivos de configuração, e qualquer outro arquivo necessário para a execução e implantação do software que simula a gestão da seguradora;</p>
+
+<p>• Criar uma pasta docs, onde serão organizados os artefatos que não se relacionam ao software em si, mas a documentação, especificação e outros documentos descritos adiante. Todos os arquivos pdf, e do EA, solicitados daqui por diante, devem ser armazenados nessa pasta.</p>
+
+<h3>
+<a id="gerenciamento-do-projeto" class="anchor" href="#gerenciamento-do-projeto" aria-hidden="true"><span class="octicon octicon-link"></span></a>Gerenciamento do Projeto:</h3>
+
+<p>• Disponibilizar um arquivo termo_abertura.pdf e plano_gerenciamento_projetos.pdf (até 21/11). 
+• Existirão duas sprints: uma que termina no dia 28/11 e outra que termina no dia 05/12;
+• Disponibilizar um arquivo backlog_inicial.pdf (até 28/05), contendo a lista de casos de uso (ver o item 4. Engenharia de Requisitos e Prototipação) e prioridade segundo o cliente. Também deve constar a estimativa de esforço de cada funcionalidade, e ao final do documento descrever qual foi à técnica de estimativa utilizada e como ela se desenvolveu;</p>
+
+<p>• Disponibilizar um arquivo sprint_backlog_1.pdf (até 28/05) e sprint_backlog_2.pdf (até 04/06). Cada arquivo deve conter a lista de funcionalidades a serem implementadas com suas respectivas observações, por exemplo, uma nova versão do cenário do caso de uso, contendo parte dos passos do cenário completo. Para a sprint 2 devem ser considerados os resultados da sprint 1 e recálculo de estimativas de esforço (que devem constar no arquivo sprint_backlog_2.pdf);</p>
+
+<p>• Nos dias 28/11 e 05/11, pelo menos um membro da equipe deve apresentar ao cliente (professor da disciplina) o software produzido na sprint. O software deve ser apresentado no computador próprio da equipe. A apresentação pode durar até 60 minutos, e a primeira apresentação inicia às 09 horas.</p>
+
+<h3>
+<a id="engenharia-de-requisitos-e-prototipação" class="anchor" href="#engenharia-de-requisitos-e-prototipa%C3%A7%C3%A3o" aria-hidden="true"><span class="octicon octicon-link"></span></a>Engenharia de Requisitos e Prototipação:</h3>
+
+<p>• Disponibilizar um arquivo prototipacao.pdf (até 21/11) contendo, como média ou alta fidelidade, todas as telas do sistema de controle de pontos;</p>
+
+<p>• Disponibilizar um arquivo seguro.eap (até 21/11) na pasta docs, contendo todos os casos de uso com suas pré e pós-condições, e os cenários principais, alternativos e de exceção de todos os casos de uso.</p>
+
+<h3>
+<a id="5---testes-de-software" class="anchor" href="#5---testes-de-software" aria-hidden="true"><span class="octicon octicon-link"></span></a>5.   Testes de Software</h3>
+
+<p>• Disponibilizar um arquivo casos_teste_1.pdf (até 28/11), listando a implementação de testes unitários automatizados, com ou sem uso de frameworks, das funcionalidades da sprint 1;</p>
+
+<p>• Disponibilizar um arquivo casos_teste_2.pdf (até 05/12), listando a implementação de testes unitários automatizados, com ou sem uso de frameworks, das funcionalidades da sprint 2;</p>
+
+<h3>
+<a id="6---projeto-de-software" class="anchor" href="#6---projeto-de-software" aria-hidden="true"><span class="octicon octicon-link"></span></a>6.   Projeto de Software:</h3>
+
+<p>• Disponibilizar no arquivo seguro.eap (já citado no item 4. Engenharia de Requisitos e Prototipação) os diagramas de interação e classes suficiente para atender a sprint 1;</p>
+
+<p>• Disponibilizar no arquivo seguro_v2.eap (até 04/12) os diagramas de interação e classes suficiente para atender a sprint 2. Faça uma cópia do seguro.eap, e realize as modificações necessárias para a sprint 2.</p>
+
+<h3>
+<a id="outras-informações" class="anchor" href="#outras-informa%C3%A7%C3%B5es" aria-hidden="true"><span class="octicon octicon-link"></span></a>Outras informações:</h3>
+
+<p>• No sábado pela manhã e a tarde (14/11), a partir das 09:00 horas, está marcada a entrevista com o cliente (o próprio professor da disciplina).
+• Ainda no sábado, deve ser fornecido o nome da equipe, os membros e a função de cada um no projeto. Também será marcada a ordem das apresentações para os dias 28 de novembro e 05 de dezembro.
+• A presença na disciplina não é obrigatória, mas o cliente estará somente disponível fisicamente para elucidar dúvidas de requisitos nos dias 14 de novembro.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/PGESUDESC/seguradora">Seguradora</a> is maintained by <a href="https://github.com/PGESUDESC">PGESUDESC</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
