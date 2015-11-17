@@ -1,0 +1,43 @@
+requisitos
+
+--funcionais
+RF001 - O sistema deve permitir o cadastro de categorias de seguro.
+RF002 - O sistema deve permitir o cadastro de tipo de automóvel.
+RF003 - O sistema deve permitir o cadastro de cotação.
+RF004 - O sistema deve permitir o cadastro de segurado.
+RF005 - O sistema deve permitir gerar um contrato a partir de uma cotação.
+RF006 - O sistema deve gerar um prêmio base anual.
+RF007 - O sistema deve permitir o cadastro de condutores
+RF008 - O sistema deve permitir cadastrar faixas de bônus. ????????
+RF009 - O sistema deve permitir o cadastro de aditamento ou claúsula
+RF010 - O sistema deve permitir cadastro de modalidade do seguro
+RF011 - O sistema deve permitir visualização do histórico de cotações/contratação de segurado
+RF012 - O sistema deve permitir cadastro de ocorrências.
+RF013 - O sistema deve alertar o corretor sobre vencimento de seguro.
+RF014 - 
+
+--não-funcionais
+RNF001 - O sistema deverá ser efetuado para ambiente WEB
+
+--regras de negócio
+RN001 - O sistema permitirá cadastro de qualquer tipo de categoria para seguro (RF001)
+RN002 - os tipos de automóvel são: passageiros, transporte público ou transporte de cargas (RF002).
+RN003 - Para cadastro da cotação, serão necessários: um código único definido pela seguradora; um titular cujo nome, local de residência, Identidade e CPF é obrigatório (cadastro do segurado); têm um preço anual a pagar, curiosamente designado prémio base anual; que poderá ser aumentado em função das opções adicionais escolhidas pelo titular ou até diminuído de um dado valor caso não se registe nenhuma ocorrência; Têm adicionalmente um agravamento de % por ocorrência registada e Têm um segurado, ou seja, a descrição do objeto do seguro (RF003). 
+RN004 - Para cadastro de cotação, deve ser analisado perfil do segurado. (RF003).
+RN005 - O cadastro de segurado deverá conter: nome, local de residência, Identidade, CPF, data de nascimento, contato (fone, e-mail) (RF004).
+RN006 - O sistema deve gerar um código único para cada contrato de seguro e para cada cotação (RF005, RF003)
+RN007 - A geração do contrato ocorre no momento em que o segurado aprova uma cotação(RF005)
+RN008 - Uma cotação aprovada é atrelada a um registro de contrato (RF005, RF003)
+RN009 - O prêmio base anual é resultado do valor da cotação (RF006)
+RN010 - O prêmio base anual pode ser aumentado em função das opções adicionais escolhidas pelo titular do seguro ou até diminuído de um dado valor caso não se registe nenhuma ocorrência
+RN011 - A cotação deverá considerar % de agravamento para cada ocorrência registrada em relação ao prêmio base anual gerado pela cotação.
+RN012 - O valor do aditamento ou clasúsula é vinculado por tipo de veículo (RF002, RF009)
+RN013 - Um aditamento ou claúsula deve possuir:nome,  um texto (para impressão na proposta de cotação e contrato) e um valor de % a adicionar ao prémio base (RF009)
+RN014 - O aditamento é opcional ao gerar uma cotação, ou seja, não obrigatório (RF003)
+RN015 - A modalidade de seguro pode ser: total, contra terceiros, ????? (RF010)
+RN016 - O sistema deverá possuir o cadastro de todos os veículos, fabricantes e valores por ano do mês atual (tabela FIPE) (RF003)
+RN017 - O corretor poderá configurar o percentaul de comissão sobre o seguro (RF003)
+RN018 - O cáculo da franquia deverá ser efetuado com base no valor da tabela FIPE (3,5% a 5%)
+RN019 - Ocorrência é vinculada ao contrato
+RN020 - A cotação vale por padrão de 5 dias (RF003)
+RN021 - O alerta de de vencimento de seguros pe de 30 dias (RF013).
