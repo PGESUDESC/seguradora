@@ -16,18 +16,18 @@
         <text>Usu%E1rio%3A%20Nilson%20Modro</text>
       </controlProperties>
     </control>
-    <control controlID="3" controlTypeID="com.balsamiq.mockups::MenuBar" x="1277" y="81" w="669" h="24" measuredW="378" measuredH="29" zOrder="3" locked="false" isInGroup="-1">
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::MenuBar" x="1277" y="81" w="711" h="24" measuredW="307" measuredH="29" zOrder="3" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>square</borderStyle>
         <hrefs/>
         <selectedIndex>0</selectedIndex>
-        <text>Cadastro%2C%20Consulta%2C%20%20Hist%F3rico%2C%20Configura%E7%E3o%2C%20Sair</text>
+        <text>Cadastro%2C%20Consulta%2C%20%20Configura%E7%E3o%2C%20Sair</text>
       </controlProperties>
     </control>
-    <control controlID="4" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="1283" y="164" w="696" h="349" measuredW="200" measuredH="272" zOrder="4" locked="false" isInGroup="-1">
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="1283" y="164" w="696" h="349" measuredW="200" measuredH="302" zOrder="4" locked="false" isInGroup="-1">
       <controlProperties>
         <selectedIndex>4</selectedIndex>
-        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0AAp%F3lice%0ARenova%E7%E3o%0AOcorr%EAncia</text>
+        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0ACota%E7%E3o%0ARenova%E7%E3o%0AOcorr%EAncia%0AAp%F3lice</text>
       </controlProperties>
     </control>
     <control controlID="54" controlTypeID="com.balsamiq.mockups::TabBar" x="1357" y="135" w="622" h="378" measuredW="549" measuredH="100" zOrder="5" locked="false" isInGroup="-1">
@@ -67,18 +67,18 @@
         <text>Usu%E1rio%3A%20Nilson%20Modro</text>
       </controlProperties>
     </control>
-    <control controlID="211" controlTypeID="com.balsamiq.mockups::MenuBar" x="2009" y="81" w="669" h="24" measuredW="378" measuredH="29" zOrder="12" locked="false" isInGroup="-1">
+    <control controlID="211" controlTypeID="com.balsamiq.mockups::MenuBar" x="2009" y="81" w="669" h="24" measuredW="307" measuredH="29" zOrder="12" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>square</borderStyle>
         <hrefs/>
         <selectedIndex>0</selectedIndex>
-        <text>Cadastro%2C%20Consulta%2C%20%20Hist%F3rico%2C%20Configura%E7%E3o%2C%20Sair</text>
+        <text>Cadastro%2C%20Consulta%2C%20%20Configura%E7%E3o%2C%20Sair</text>
       </controlProperties>
     </control>
-    <control controlID="212" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="2015" y="164" w="696" h="349" measuredW="200" measuredH="272" zOrder="13" locked="false" isInGroup="-1">
+    <control controlID="212" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="2015" y="164" w="696" h="349" measuredW="200" measuredH="302" zOrder="13" locked="false" isInGroup="-1">
       <controlProperties>
         <selectedIndex>4</selectedIndex>
-        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0AAp%F3lice%0ARenova%E7%E3o%0AOcorr%EAncia</text>
+        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0ACota%E7%E3o%0ARenova%E7%E3o%0AOcorr%EAncia%0AAp%F3lice</text>
       </controlProperties>
     </control>
     <control controlID="213" controlTypeID="com.balsamiq.mockups::TabBar" x="2089" y="135" w="622" h="378" measuredW="549" measuredH="100" zOrder="14" locked="false" isInGroup="-1">
@@ -124,7 +124,7 @@
         <text>Tipo</text>
       </controlProperties>
     </control>
-    <control controlID="226" controlTypeID="com.balsamiq.mockups::ComboBox" x="2377" y="190" w="138" h="-1" measuredW="92" measuredH="24" zOrder="22" locked="false" isInGroup="-1">
+    <control controlID="226" controlTypeID="com.balsamiq.mockups::ComboBox" x="2419" y="190" w="138" h="-1" measuredW="92" measuredH="24" zOrder="22" locked="false" isInGroup="-1">
       <controlProperties>
         <state>disabled</state>
         <text>Autom%F3vel</text>
@@ -251,19 +251,19 @@
         <text>CEP%20pernoite</text>
       </controlProperties>
     </control>
-    <control controlID="248" controlTypeID="com.balsamiq.mockups::TextInput" x="2137" y="458" w="237" h="-1" measuredW="79" measuredH="26" zOrder="44" locked="false" isInGroup="-1">
+    <control controlID="248" controlTypeID="com.balsamiq.mockups::TextInput" x="2137" y="458" w="112" h="-1" measuredW="79" measuredH="26" zOrder="44" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>disabled</state>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="249" controlTypeID="com.balsamiq.mockups::Label" x="2384" y="438" w="229" h="-1" measuredW="107" measuredH="21" zOrder="45" locked="false" isInGroup="-1">
+    <control controlID="249" controlTypeID="com.balsamiq.mockups::Label" x="2252" y="442" w="229" h="-1" measuredW="107" measuredH="21" zOrder="45" locked="false" isInGroup="-1">
       <controlProperties>
         <text>N%FAmero%20RENAVAM</text>
       </controlProperties>
     </control>
-    <control controlID="250" controlTypeID="com.balsamiq.mockups::TextInput" x="2384" y="458" w="237" h="-1" measuredW="79" measuredH="26" zOrder="46" locked="false" isInGroup="-1">
+    <control controlID="250" controlTypeID="com.balsamiq.mockups::TextInput" x="2252" y="458" w="174" h="-1" measuredW="79" measuredH="26" zOrder="46" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>disabled</state>
@@ -313,13 +313,13 @@
         <borderStyle>square</borderStyle>
         <hrefs/>
         <selectedIndex>0</selectedIndex>
-        <text>Cadastro%2C%20Consulta%2C%20%20Hist%F3rico%2C%20Configura%E7%E3o%2C%20Sair</text>
+        <text>Cadastro%2C%20Consulta%2C%20Configura%E7%E3o%2C%20Sair</text>
       </controlProperties>
     </control>
-    <control controlID="259" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="2746" y="164" w="696" h="349" measuredW="200" measuredH="272" zOrder="55" locked="false" isInGroup="-1">
+    <control controlID="259" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="2746" y="164" w="696" h="349" measuredW="200" measuredH="302" zOrder="55" locked="false" isInGroup="-1">
       <controlProperties>
         <selectedIndex>4</selectedIndex>
-        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0AAp%F3lice%0ARenova%E7%E3o%0AOcorr%EAncia</text>
+        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0ACota%E7%E3o%0ARenova%E7%E3o%0AOcorr%EAncia%0AAp%F3lice</text>
       </controlProperties>
     </control>
     <control controlID="260" controlTypeID="com.balsamiq.mockups::TabBar" x="2820" y="135" w="622" h="378" measuredW="549" measuredH="100" zOrder="56" locked="false" isInGroup="-1">
@@ -400,18 +400,18 @@
         <text>Usu%E1rio%3A%20Nilson%20Modro</text>
       </controlProperties>
     </control>
-    <control controlID="315" controlTypeID="com.balsamiq.mockups::MenuBar" x="301" y="747" w="669" h="24" measuredW="378" measuredH="29" zOrder="71" locked="false" isInGroup="-1">
+    <control controlID="315" controlTypeID="com.balsamiq.mockups::MenuBar" x="301" y="747" w="669" h="24" measuredW="307" measuredH="29" zOrder="71" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>square</borderStyle>
         <hrefs/>
         <selectedIndex>0</selectedIndex>
-        <text>Cadastro%2C%20Consulta%2C%20%20Hist%F3rico%2C%20Configura%E7%E3o%2C%20Sair</text>
+        <text>Cadastro%2C%20Consulta%2C%20%20Configura%E7%E3o%2C%20Sair</text>
       </controlProperties>
     </control>
-    <control controlID="316" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="307" y="830" w="696" h="349" measuredW="200" measuredH="272" zOrder="72" locked="false" isInGroup="-1">
+    <control controlID="316" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="307" y="830" w="696" h="349" measuredW="200" measuredH="302" zOrder="72" locked="false" isInGroup="-1">
       <controlProperties>
         <selectedIndex>4</selectedIndex>
-        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0AAp%F3lice%0ARenova%E7%E3o%0AOcorr%EAncia</text>
+        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0ACota%E7%E3o%0ARenova%E7%E3o%0AOcorr%EAncia%0AAp%F3lice</text>
       </controlProperties>
     </control>
     <control controlID="317" controlTypeID="com.balsamiq.mockups::TabBar" x="381" y="801" w="622" h="437" measuredW="549" measuredH="100" zOrder="73" locked="false" isInGroup="-1">
@@ -440,7 +440,7 @@
         <text>C%F3digo</text>
       </controlProperties>
     </control>
-    <control controlID="345" controlTypeID="com.balsamiq.mockups::TextInput" x="399" y="862" w="154" h="-1" measuredW="79" measuredH="26" zOrder="78" locked="false" isInGroup="-1">
+    <control controlID="345" controlTypeID="com.balsamiq.mockups::TextInput" x="399" y="862" w="85" h="-1" measuredW="79" measuredH="26" zOrder="78" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>disabled</state>
@@ -504,18 +504,18 @@
         <text>Usu%E1rio%3A%20Nilson%20Modro</text>
       </controlProperties>
     </control>
-    <control controlID="375" controlTypeID="com.balsamiq.mockups::MenuBar" x="1037" y="747" w="669" h="24" measuredW="378" measuredH="29" zOrder="90" locked="false" isInGroup="-1">
+    <control controlID="375" controlTypeID="com.balsamiq.mockups::MenuBar" x="1037" y="747" w="669" h="24" measuredW="303" measuredH="29" zOrder="90" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>square</borderStyle>
         <hrefs/>
         <selectedIndex>0</selectedIndex>
-        <text>Cadastro%2C%20Consulta%2C%20%20Hist%F3rico%2C%20Configura%E7%E3o%2C%20Sair</text>
+        <text>Cadastro%2C%20Consulta%2C%20Configura%E7%E3o%2C%20Sair</text>
       </controlProperties>
     </control>
-    <control controlID="376" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="1043" y="830" w="696" h="349" measuredW="200" measuredH="272" zOrder="91" locked="false" isInGroup="-1">
+    <control controlID="376" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="1043" y="830" w="696" h="349" measuredW="200" measuredH="302" zOrder="91" locked="false" isInGroup="-1">
       <controlProperties>
         <selectedIndex>4</selectedIndex>
-        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0AAp%F3lice%0ARenova%E7%E3o%0AOcorr%EAncia</text>
+        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0ACota%E7%E3o%0ARenova%E7%E3o%0AOcorr%EAncia%0AAp%F3lice</text>
       </controlProperties>
     </control>
     <control controlID="377" controlTypeID="com.balsamiq.mockups::TabBar" x="1117" y="801" w="622" h="437" measuredW="549" measuredH="100" zOrder="92" locked="false" isInGroup="-1">
@@ -669,18 +669,18 @@
         <text>Usu%E1rio%3A%20Nilson%20Modro</text>
       </controlProperties>
     </control>
-    <control controlID="425" controlTypeID="com.balsamiq.mockups::MenuBar" x="546" y="81" w="669" h="24" measuredW="378" measuredH="29" zOrder="123" locked="false" isInGroup="-1">
+    <control controlID="425" controlTypeID="com.balsamiq.mockups::MenuBar" x="546" y="81" w="669" h="24" measuredW="307" measuredH="29" zOrder="123" locked="false" isInGroup="-1">
       <controlProperties>
         <borderStyle>square</borderStyle>
         <hrefs/>
         <selectedIndex>0</selectedIndex>
-        <text>Cadastro%2C%20Consulta%2C%20%20Hist%F3rico%2C%20Configura%E7%E3o%2C%20Sair</text>
+        <text>Cadastro%2C%20Consulta%2C%20%20Configura%E7%E3o%2C%20Sair</text>
       </controlProperties>
     </control>
-    <control controlID="426" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="552" y="164" w="696" h="349" measuredW="200" measuredH="272" zOrder="124" locked="false" isInGroup="-1">
+    <control controlID="426" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="552" y="164" w="696" h="349" measuredW="200" measuredH="302" zOrder="124" locked="false" isInGroup="-1">
       <controlProperties>
         <selectedIndex>4</selectedIndex>
-        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0AAp%F3lice%0ARenova%E7%E3o%0AOcorr%EAncia</text>
+        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0AProposta%0ARenova%E7%E3o%0AOcorr%EAncia%0AAp%F3lice</text>
       </controlProperties>
     </control>
     <control controlID="427" controlTypeID="com.balsamiq.mockups::TabBar" x="626" y="135" w="622" h="378" measuredW="549" measuredH="100" zOrder="125" locked="false" isInGroup="-1">
@@ -701,31 +701,31 @@
     </control>
     <control controlID="430" controlTypeID="com.balsamiq.mockups::FieldSet" x="635" y="174" w="604" h="74" measuredW="200" measuredH="170" zOrder="128" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>Ap%F3lice</text>
+        <text>Proposta</text>
       </controlProperties>
     </control>
-    <control controlID="432" controlTypeID="com.balsamiq.mockups::Label" x="644" y="188" w="45" h="-1" measuredW="43" measuredH="21" zOrder="129" locked="false" isInGroup="-1">
+    <control controlID="432" controlTypeID="com.balsamiq.mockups::Label" x="644" y="188" w="45" h="-1" measuredW="96" measuredH="21" zOrder="129" locked="false" isInGroup="-1">
       <controlProperties>
-        <text>C%F3digo</text>
+        <text>C%F3digo%20Cota%E7%E3o</text>
       </controlProperties>
     </control>
-    <control controlID="433" controlTypeID="com.balsamiq.mockups::TextInput" x="644" y="209" w="119" h="-1" measuredW="79" measuredH="26" zOrder="130" locked="false" isInGroup="-1">
+    <control controlID="433" controlTypeID="com.balsamiq.mockups::TextInput" x="644" y="209" w="57" h="-1" measuredW="79" measuredH="26" zOrder="130" locked="false" isInGroup="-1">
       <controlProperties>
         <color>16777215</color>
         <state>disabled</state>
         <text/>
       </controlProperties>
     </control>
-    <control controlID="434" controlTypeID="com.balsamiq.mockups::Label" x="774" y="189" w="45" h="-1" measuredW="26" measuredH="21" zOrder="131" locked="false" isInGroup="-1">
+    <control controlID="434" controlTypeID="com.balsamiq.mockups::Label" x="712" y="191" w="45" h="-1" measuredW="26" measuredH="21" zOrder="131" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Tipo</text>
       </controlProperties>
     </control>
-    <control controlID="435" controlTypeID="com.balsamiq.mockups::ComboBox" x="776" y="209" w="95" h="-1" measuredW="80" measuredH="46" zOrder="132" locked="false" isInGroup="-1">
+    <control controlID="435" controlTypeID="com.balsamiq.mockups::ComboBox" x="714" y="211" w="95" h="-1" measuredW="80" measuredH="46" zOrder="132" locked="false" isInGroup="-1">
       <controlProperties>
         <color>0</color>
         <state>up</state>
-        <text>Cota%E7%E3o%0AContrato</text>
+        <text>Cota%E7%E3o%0AAp%F3lice</text>
       </controlProperties>
     </control>
     <control controlID="478" controlTypeID="com.balsamiq.mockups::Label" x="886" y="189" w="104" h="-1" measuredW="68" measuredH="21" zOrder="133" locked="false" isInGroup="-1">
@@ -1034,6 +1034,86 @@
     <control controlID="535" controlTypeID="com.balsamiq.mockups::StickyNote" x="1813" y="1179" w="133" h="123" measuredW="109" measuredH="123" zOrder="188" locked="false" isInGroup="-1">
       <controlProperties>
         <text>Caso%20tudo%20estiver%20certo%2C%20gera%20a%20cota%E7%E3o%20em%20tela%20em%20formato%20de%20relat%F3rio</text>
+      </controlProperties>
+    </control>
+    <control controlID="536" controlTypeID="com.balsamiq.mockups::Button" x="1540" y="190" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="189" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buscar</text>
+      </controlProperties>
+    </control>
+    <control controlID="537" controlTypeID="com.balsamiq.mockups::Button" x="2304" y="188" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="190" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buscar</text>
+      </controlProperties>
+    </control>
+    <control controlID="538" controlTypeID="com.balsamiq.mockups::Label" x="2419" y="171" w="-1" h="-1" measuredW="26" measuredH="21" zOrder="191" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tipo</text>
+      </controlProperties>
+    </control>
+    <control controlID="539" controlTypeID="com.balsamiq.mockups::Button" x="484" y="862" w="-1" h="-1" measuredW="64" measuredH="27" zOrder="192" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buscar</text>
+      </controlProperties>
+    </control>
+    <control controlID="540" controlTypeID="com.balsamiq.mockups::Button" x="748" y="521" w="80" h="27" measuredW="63" measuredH="27" zOrder="193" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alterar</text>
+      </controlProperties>
+    </control>
+    <control controlID="542" controlTypeID="com.balsamiq.mockups::VSlider" x="796" y="249" w="-1" h="124" measuredW="11" measuredH="33" zOrder="194" locked="false" isInGroup="-1"/>
+    <control controlID="543" controlTypeID="com.balsamiq.mockups::StickyNote" x="644" y="358" w="216" h="120" measuredW="109" measuredH="123" zOrder="195" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%F3%20habilita%20a%20op%E7%E3o%20%22Ap%F3lice%22%20caso%20se%20clique%20em%20alterar%0A%20%0AAqui%20se%20cadastra%20%22cota%E7%E3o%22%0Ae%20se%20altera%20%22cota%E7%E3o%22%20e%20%22ap%F3lice%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="544" controlTypeID="com.balsamiq.mockups::VSlider" x="798" y="476" w="-1" h="45" measuredW="11" measuredH="33" zOrder="196" locked="false" isInGroup="-1"/>
+    <control controlID="545" controlTypeID="com.balsamiq.mockups::Label" x="794" y="188" w="88" h="-1" measuredW="88" measuredH="21" zOrder="197" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>N%FAmero%20aditivo</text>
+      </controlProperties>
+    </control>
+    <control controlID="546" controlTypeID="com.balsamiq.mockups::TextInput" x="817" y="210" w="57" h="-1" measuredW="79" measuredH="26" zOrder="198" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <state>up</state>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="547" controlTypeID="com.balsamiq.mockups::VSlider" x="865" y="236" w="-1" h="44" measuredW="11" measuredH="33" zOrder="199" locked="false" isInGroup="-1"/>
+    <control controlID="548" controlTypeID="com.balsamiq.mockups::StickyNote" x="864" y="261" w="203" h="120" measuredW="109" measuredH="123" zOrder="200" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>S%F3%20habilita%20caso%20clique-se%20em%20%22alterar%22%20e%20%22escolha-se%22%20%22ap%F3lice%22%0A%20%0Apor%20default%20vem%20desabilitado</text>
+      </controlProperties>
+    </control>
+    <control controlID="549" controlTypeID="com.balsamiq.mockups::VSlider" x="675" y="236" w="-1" h="44" measuredW="11" measuredH="33" zOrder="201" locked="false" isInGroup="-1"/>
+    <control controlID="550" controlTypeID="com.balsamiq.mockups::StickyNote" x="635" y="259" w="160" h="99" measuredW="109" measuredH="123" zOrder="202" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>por%20default%20vem%20desabilitado%2C%20habilita%20somente%20quando%20clica-se%20em%20%22alterar%22</text>
+      </controlProperties>
+    </control>
+    <control controlID="551" controlTypeID="com.balsamiq.mockups::Label" x="2434" y="442" w="83" h="-1" measuredW="62" measuredH="21" zOrder="203" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Valor%20FIPE</text>
+      </controlProperties>
+    </control>
+    <control controlID="552" controlTypeID="com.balsamiq.mockups::TextInput" x="2434" y="459" w="116" h="-1" measuredW="79" measuredH="26" zOrder="204" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <state>disabled</state>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="553" controlTypeID="com.balsamiq.mockups::Label" x="2559" y="442" w="83" h="-1" measuredW="74" measuredH="21" zOrder="205" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Valor%20cotado</text>
+      </controlProperties>
+    </control>
+    <control controlID="554" controlTypeID="com.balsamiq.mockups::TextInput" x="2559" y="459" w="125" h="-1" measuredW="79" measuredH="26" zOrder="206" locked="false" isInGroup="-1">
+      <controlProperties>
+        <color>16777215</color>
+        <state>disabled</state>
+        <text/>
       </controlProperties>
     </control>
   </controls>

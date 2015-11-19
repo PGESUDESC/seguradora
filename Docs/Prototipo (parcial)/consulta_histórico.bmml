@@ -1,0 +1,142 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1676" measuredH="602" mockupW="1606" mockupH="589">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="70" y="13" w="775" h="589" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="79" y="100" w="134" h="-1" measuredW="125" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Sistema%20Seguradora</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="671" y="100" w="127" h="-1" measuredW="127" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Usu%E1rio%3A%20Nilson%20Modro</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::MenuBar" x="70" y="76" w="776" h="24" measuredW="307" measuredH="29" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <hrefs/>
+        <selectedIndex>1</selectedIndex>
+        <text>Cadastro%2C%20Consulta%2C%20%20Configura%E7%E3o%2C%20Sair</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::TextArea" x="85" y="138" w="746" h="95" measuredW="200" measuredH="140" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::TextInput" x="464" y="151" w="294" h="-1" measuredW="79" measuredH="26" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::Button" x="759" y="151" w="64" h="27" measuredW="64" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Buscar</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::Button" x="443" y="540" w="73" h="27" measuredW="73" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Detalhar</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::DataGrid" x="85" y="227" w="746" h="298" measuredW="74" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>%2C%2C%2C%2C%2C</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::ComboBox" x="134" y="149" w="86" h="-1" measuredW="88" measuredH="124" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Segurado%0ACota%E7%E3o%0AAp%F3lice%0ASinistro%0AOcorr%EAncia%0AObjeto%0AAditamento</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::ComboBox" x="222" y="149" w="131" h="-1" measuredW="73" measuredH="46" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>C%F3digo%0ANome%20/%20Descri%E7%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::ComboBox" x="355" y="149" w="103" h="-1" measuredW="91" measuredH="46" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Inicia%20com%0Acont%EAm</text>
+      </controlProperties>
+    </control>
+    <control controlID="43" controlTypeID="com.balsamiq.mockups::Label" x="96" y="149" w="134" h="-1" measuredW="29" measuredH="21" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>false</bold>
+        <text>Filtro</text>
+      </controlProperties>
+    </control>
+    <control controlID="46" controlTypeID="com.balsamiq.mockups::Label" x="356" y="109" w="215" h="-1" measuredW="207" measuredH="28" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <size>20</size>
+        <text>Consulta%20de%20Hist%F3rico</text>
+      </controlProperties>
+    </control>
+    <control controlID="47" controlTypeID="com.balsamiq.mockups::Label" x="220" y="199" w="134" h="-1" measuredW="77" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>false</bold>
+        <text>Detalhar%20por%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="48" controlTypeID="com.balsamiq.mockups::CheckBox" x="304" y="198" w="78" h="22" measuredW="78" measuredH="22" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Segurado</text>
+      </controlProperties>
+    </control>
+    <control controlID="49" controlTypeID="com.balsamiq.mockups::CheckBox" x="403" y="198" w="70" h="22" measuredW="70" measuredH="22" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cota%E7%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="50" controlTypeID="com.balsamiq.mockups::CheckBox" x="489" y="198" w="64" h="22" measuredW="64" measuredH="22" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ap%F3lice</text>
+      </controlProperties>
+    </control>
+    <control controlID="51" controlTypeID="com.balsamiq.mockups::CheckBox" x="568" y="198" w="65" h="22" measuredW="65" measuredH="22" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sinistro</text>
+      </controlProperties>
+    </control>
+    <control controlID="52" controlTypeID="com.balsamiq.mockups::CheckBox" x="648" y="198" w="88" h="22" measuredW="88" measuredH="22" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ocorr%EAncia</text>
+      </controlProperties>
+    </control>
+    <control controlID="53" controlTypeID="com.balsamiq.mockups::Arrow" x="736" y="212" w="-1" h="-1" measuredW="150" measuredH="100" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="54" controlTypeID="com.balsamiq.mockups::StickyNote" x="886" y="13" w="790" h="499" measuredW="109" measuredH="123" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Caso%20alguma%20destas%20op%E7%F5es%20de%20%22Detalhar%20por%22%20seja%20marcada%2C%20a%20consulta%20traz%20informa%E7%F5es%20apenas%20da%20op%E7%E3o%20marcada%20em%20rela%E7%E3o%20ao%20%22Filtro%22%20utilizado%20como%20base.%20Caso%20n%E3o%20seja%20marcado%20nada%20da%20op%E7%E3o%20%22Detalhar%20por%22%2C%20a%20consulta%20retorna%20dados%20do%20%22Filtro%22%20utilizado.%0A%20%0ACaso%20n%E3o%20seja%20marcada%20nenhum%20flag%20da%20op%E7%E3o%20%22Detalhar%20por%22%2C%20segue%20informa%E7%F5es%20que%20a%20consulta%20deve%20listar%3A%0A%20%0A*%20Segurado%3A%20c%F3digo%2C%20nome%3B%0A*%20objeto%3A%20marca%2C%20modelo%2C%20pot%EAncia%2C%20ano%20fabrica%E7%E3o%2C%20ano%20modelo%2C%20valor%20FIPE%0A*%20Aditamento/cl%E1usula%3A%20c%F3digo%2C%20nome%2C%20restri%E7%F5es%20%28todas%20na%20mesma%20coluna%3A%20categoria%2C%20marca%2C%20modelo%2C%20ano%20de%20fabrica%E7%E3o%20%28at%E9%29%29%0A*%20Cota%E7%E3o%3A%20c%F3digo%2C%20modalidade%2C%20data%20inicio%2C%20data%20final%2C%20objeto%20%28marca%2C%20modelo%2C%20pot%EAncia%2C%20ano%20fabrica%E7%E3o%2C%20ano%20modelo%2C%20valor%20FIPE%29%2C%20segurado%20%28codigo%2C%20nome%29%2C%20forma%20de%20pagamento%2C%20quantidade%20de%20parcelas%2C%20valor%20por%20parcela.%0A*%20Ap%F3lice%3A%20c%F3digo%2C%20modalidade%2C%20data%20inicio%2C%20data%20final%2C%20objeto%20%28marca%2C%20modelo%2C%20pot%EAncia%2C%20ano%20fabrica%E7%E3o%2C%20ano%20modelo%2C%20valor%20FIPE%29%2C%20segurado%20%28codigo%2C%20nome%29%2C%20forma%20de%20pagamento%2C%20quantidade%20de%20parcelas%2C%20valor%20por%20parcela.%0A*%20Sinistro%3A%20c%F3digo%2C%20c%F3digo%20ap%F3lice%2C%20numero%20BO%2C%20avarias%2C%20descri%E7%E3o%0A*%20Ocorr%EAncia%3A%20c%F3digo%2C%20c%F3digo%20ap%F3lice%2C%20data%2C%20descri%E7%E3o%0A%20%0ASegue%20dados%20%28colunas%20no%20resultado%20da%20consulta%29%20que%20devem%20aparecer%20para%20cada%20tipo%20de%20op%E7%E3o%20%22Detalhar%20por%22%20marcada%3A%0A%20%0A*%20Segurado%3A%20c%F3digo%2C%20nome%3B%0A*%20Cota%E7%E3o%3A%20c%F3digo%2C%20modalidade%2C%20data%20inicio%2C%20data%20final%2C%20objeto%20%28marca%2C%20modelo%2C%20pot%EAncia%2C%20ano%20fabrica%E7%E3o%2C%20ano%20modelo%2C%20valor%20FIPE%29%2C%20segurado%20%28codigo%2C%20nome%29%2C%20forma%20de%20pagamento%2C%20quantidade%20de%20parcelas%2C%20valor%20por%20parcela.%0A*%20Ap%F3lice%3A%20c%F3digo%2C%20modalidade%2C%20data%20inicio%2C%20data%20final%2C%20objeto%20%28marca%2C%20modelo%2C%20pot%EAncia%2C%20ano%20fabrica%E7%E3o%2C%20ano%20modelo%2C%20valor%20FIPE%29%2C%20segurado%20%28codigo%2C%20nome%29%2C%20forma%20de%20pagamento%2C%20quantidade%20de%20parcelas%2C%20valor%20por%20parcela.%0A*%20Sinistro%3A%20c%F3digo%2C%20c%F3digo%20ap%F3lice%2C%20numero%20BO%2C%20avarias%2C%20descri%E7%E3o%0A*%20Ocorr%EAncia%3A%20c%F3digo%2C%20c%F3digo%20ap%F3lice%2C%20data%2C%20descri%E7%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="55" controlTypeID="com.balsamiq.mockups::Arrow" x="458" y="149" w="436" h="10" measuredW="150" measuredH="100" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="56" controlTypeID="com.balsamiq.mockups::Arrow" x="512" y="545" w="433" h="10" measuredW="150" measuredH="100" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <leftArrow>false</leftArrow>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="57" controlTypeID="com.balsamiq.mockups::StickyNote" x="956" y="517" w="336" h="65" measuredW="109" measuredH="123" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Imprime%20a%20consulta%20em%20tela</text>
+      </controlProperties>
+    </control>
+    <control controlID="58" controlTypeID="com.balsamiq.mockups::VerticalScrollBar" x="815" y="227" w="-1" h="298" measuredW="16" measuredH="100" zOrder="25" locked="false" isInGroup="-1"/>
+    <control controlID="59" controlTypeID="com.balsamiq.mockups::HorizontalScrollBar" x="88" y="507" w="727" h="-1" measuredW="100" measuredH="16" zOrder="26" locked="false" isInGroup="-1"/>
+  </controls>
+</mockup>

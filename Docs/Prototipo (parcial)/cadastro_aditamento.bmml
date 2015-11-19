@@ -21,7 +21,7 @@
         <borderStyle>square</borderStyle>
         <hrefs/>
         <selectedIndex>0</selectedIndex>
-        <text>Cadastro%2C%20Consulta%2C%20%20Hist%F3rico%2C%20Configura%E7%E3o%2C%20Sair</text>
+        <text>Cadastro%2C%20Consulta%2C%20Configura%E7%E3o%2C%20Sair</text>
       </controlProperties>
     </control>
     <control controlID="4" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="281" y="123" w="594" h="292" measuredW="200" measuredH="272" zOrder="4" locked="false" isInGroup="-1">
