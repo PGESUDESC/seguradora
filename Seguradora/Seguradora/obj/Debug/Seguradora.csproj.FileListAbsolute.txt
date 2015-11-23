@@ -75,6 +75,6 @@ C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Segurado
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\ru\System.Spatial.resources.dll
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\obj\Debug\Seguradora.csprojResolveAssemblyReference.cache
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\obj\Debug\Seguradora.dll
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\obj\Debug\Seguradora.pdb
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\obj\Debug\Seguradora.csprojResolveAssemblyReference.cache

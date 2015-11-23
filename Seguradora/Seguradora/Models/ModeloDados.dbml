@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Seguro" Class="ModeloDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=VOIGT;Initial Catalog=Seguro;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SeguroConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AnoModelo" Member="AnoModelos">
+    <Type Name="AnoModelo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Marca" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Modelo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoVeiculo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="AnoModelo_Veiculo" Member="Veiculos" ThisKey="ID" OtherKey="AnoModelo" Type="Veiculo" />
+      <Association Name="Marca_AnoModelo" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
+      <Association Name="Modelo_AnoModelo" Member="Modelo1" ThisKey="Modelo" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Marca" Member="Marcas">
+    <Type Name="Marca">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoVeiculo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Marca_AnoModelo" Member="AnoModelos" ThisKey="ID" OtherKey="Marca" Type="AnoModelo" />
+      <Association Name="Marca_Modelo" Member="Modelos" ThisKey="ID" OtherKey="Marca" Type="Modelo" />
+      <Association Name="Marca_Veiculo" Member="Veiculos" ThisKey="ID" OtherKey="Marca" Type="Veiculo" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Modelo" Member="Modelos">
+    <Type Name="Modelo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descricao" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Marca" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoVeiculo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Modelo_AnoModelo" Member="AnoModelos" ThisKey="ID" OtherKey="Modelo" Type="AnoModelo" />
+      <Association Name="Modelo_Veiculo" Member="Veiculos" ThisKey="ID" OtherKey="Modelo" Type="Veiculo" />
+      <Association Name="Marca_Modelo" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Veiculo" Member="Veiculos">
+    <Type Name="Veiculo">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Valor" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="Marca" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Modelo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AnoModelo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Combustivel" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoFipe" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MesReferencia" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoVeiculo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SiglaCombustivel" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Association Name="AnoModelo_Veiculo" Member="AnoModelo1" ThisKey="AnoModelo" OtherKey="ID" Type="AnoModelo" IsForeignKey="true" />
+      <Association Name="Marca_Veiculo" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
+      <Association Name="Modelo_Veiculo" Member="Modelo1" ThisKey="Modelo" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
