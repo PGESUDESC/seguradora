@@ -74,3 +74,5 @@ C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Segurado
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora.Tests\bin\Debug\zh-Hant\System.Spatial.resources.dll
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora.Tests\obj\Debug\Seguradora.Tests.dll
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora.Tests\obj\Debug\Seguradora.Tests.pdb
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora.Tests\bin\Debug\PagedList.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora.Tests\bin\Debug\PagedList.xml
