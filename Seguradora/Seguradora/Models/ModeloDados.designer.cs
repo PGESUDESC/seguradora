@@ -51,7 +51,7 @@ namespace Seguradora.Models
     #endregion
 		
 		public ModeloDadosDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["seguradoraConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["seguroConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
