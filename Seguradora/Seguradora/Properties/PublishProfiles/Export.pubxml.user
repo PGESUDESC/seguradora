@@ -121,7 +121,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2015 18:55:36</publishTime>
     </File>
     <File Include="bin/Seguradora.dll">
-      <publishTime>11/23/2015 21:55:07</publishTime>
+      <publishTime>11/24/2015 19:34:28</publishTime>
     </File>
     <File Include="bin/System.Spatial.dll">
       <publishTime>11/19/2015 18:55:36</publishTime>
@@ -154,7 +154,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2015 18:55:39</publishTime>
     </File>
     <File Include="bin/WebMatrix.Data.dll">
-      <publishTime>07/09/2013 10:05:10</publishTime>
+      <publishTime>09/07/2013 10:05:10</publishTime>
     </File>
     <File Include="bin/WebMatrix.WebData.dll">
       <publishTime>11/19/2015 18:55:34</publishTime>
@@ -394,7 +394,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2015 18:55:21</publishTime>
     </File>
     <File Include="Models/ModeloDados.dbml">
-      <publishTime>11/23/2015 21:40:36</publishTime>
+      <publishTime>11/24/2015 19:29:52</publishTime>
     </File>
     <File Include="packages.config">
       <publishTime>11/23/2015 21:05:24</publishTime>
@@ -502,7 +502,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/19/2015 18:55:21</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/23/2015 21:55:07</publishTime>
+      <publishTime>11/24/2015 19:34:28</publishTime>
     </File>
   </ItemGroup>
 </Project>
