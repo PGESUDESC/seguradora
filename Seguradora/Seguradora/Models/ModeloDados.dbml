@@ -22,7 +22,7 @@
       <Association Name="Marca_AnoModelo" Member="AnoModelos" ThisKey="ID" OtherKey="Marca" Type="AnoModelo" />
       <Association Name="Marca_Modelo" Member="Modelos" ThisKey="ID" OtherKey="Marca" Type="Modelo" />
       <Association Name="Marca_Veiculo" Member="Veiculos" ThisKey="ID" OtherKey="Marca" Type="Veiculo" />
-      <Association Name="Marca_ObjetoSegurado1" Member="ObjetoSegurado1s" ThisKey="ID" OtherKey="Marca" Type="ObjetoSegurado1" />
+      <Association Name="Marca_ObjetoSegurado" Member="ObjetoSegurados" ThisKey="ID" OtherKey="Marca" Type="ObjetoSegurado" />
     </Type>
   </Table>
   <Table Name="dbo.Modelo" Member="Modelos">
@@ -34,7 +34,7 @@
       <Column Name="TipoVeiculo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Modelo_AnoModelo" Member="AnoModelos" ThisKey="ID" OtherKey="Modelo" Type="AnoModelo" />
       <Association Name="Modelo_Veiculo" Member="Veiculos" ThisKey="ID" OtherKey="Modelo" Type="Veiculo" />
-      <Association Name="Modelo_ObjetoSegurado1" Member="ObjetoSegurado1s" ThisKey="ID" OtherKey="Modelo" Type="ObjetoSegurado1" />
+      <Association Name="Modelo_ObjetoSegurado" Member="ObjetoSegurados" ThisKey="ID" OtherKey="Modelo" Type="ObjetoSegurado" />
       <Association Name="Marca_Modelo" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
     </Type>
   </Table>
@@ -76,12 +76,12 @@
       <Column Name="SeguradoraAnterior" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="NumeroCNH" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="PrimeiraHabilitacao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="Segurado_ObjetoSegurado1" Member="ObjetoSegurado1s" ThisKey="Codigo" OtherKey="Segurado" Type="ObjetoSegurado1" />
-      <Association Name="Segurado_ObjetoSegurado11" Member="ObjetoSegurado1" ThisKey="Codigo" OtherKey="Codigo" Type="ObjetoSegurado1" Cardinality="One" />
+      <Association Name="Segurado_ObjetoSegurado" Member="ObjetoSegurados" ThisKey="Codigo" OtherKey="Segurado" Type="ObjetoSegurado" />
+      <Association Name="Segurado_ObjetoSegurado1" Member="ObjetoSegurado" ThisKey="Codigo" OtherKey="Codigo" Type="ObjetoSegurado" Cardinality="One" />
     </Type>
   </Table>
-  <Table Name="dbo.ObjetoSegurado" Member="ObjetoSegurado1s">
-    <Type Name="ObjetoSegurado1">
+  <Table Name="dbo.ObjetoSegurado" Member="ObjetoSegurados">
+    <Type Name="ObjetoSegurado">
       <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Segurado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="TipoAutomovel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
@@ -100,10 +100,10 @@
       <Column Name="Renavam" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="ValorFipe" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="ValorCotado" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Association Name="Marca_ObjetoSegurado1" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
-      <Association Name="Modelo_ObjetoSegurado1" Member="Modelo1" ThisKey="Modelo" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
-      <Association Name="Segurado_ObjetoSegurado1" Member="Segurado1" ThisKey="Segurado" OtherKey="Codigo" Type="Segurado" IsForeignKey="true" />
-      <Association Name="Segurado_ObjetoSegurado11" Member="Segurado2" ThisKey="Codigo" OtherKey="Codigo" Type="Segurado" IsForeignKey="true" />
+      <Association Name="Marca_ObjetoSegurado" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
+      <Association Name="Modelo_ObjetoSegurado" Member="Modelo1" ThisKey="Modelo" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
+      <Association Name="Segurado_ObjetoSegurado" Member="Segurado1" ThisKey="Segurado" OtherKey="Codigo" Type="Segurado" IsForeignKey="true" />
+      <Association Name="Segurado_ObjetoSegurado1" Member="Segurado2" ThisKey="Codigo" OtherKey="Codigo" Type="Segurado" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

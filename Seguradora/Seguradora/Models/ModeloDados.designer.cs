@@ -45,9 +45,9 @@ namespace Seguradora.Models
     partial void InsertSegurado(Segurado instance);
     partial void UpdateSegurado(Segurado instance);
     partial void DeleteSegurado(Segurado instance);
-    partial void InsertObjetoSegurado1(ObjetoSegurado1 instance);
-    partial void UpdateObjetoSegurado1(ObjetoSegurado1 instance);
-    partial void DeleteObjetoSegurado1(ObjetoSegurado1 instance);
+    partial void InsertObjetoSegurado(ObjetoSegurado instance);
+    partial void UpdateObjetoSegurado(ObjetoSegurado instance);
+    partial void DeleteObjetoSegurado(ObjetoSegurado instance);
     #endregion
 		
 		public ModeloDadosDataContext() : 
@@ -120,11 +120,11 @@ namespace Seguradora.Models
 			}
 		}
 		
-		public System.Data.Linq.Table<ObjetoSegurado1> ObjetoSegurado1s
+		public System.Data.Linq.Table<ObjetoSegurado> ObjetoSegurados
 		{
 			get
 			{
-				return this.GetTable<ObjetoSegurado1>();
+				return this.GetTable<ObjetoSegurado>();
 			}
 		}
 	}
@@ -441,7 +441,7 @@ namespace Seguradora.Models
 		
 		private EntitySet<Veiculo> _Veiculos;
 		
-		private EntitySet<ObjetoSegurado1> _ObjetoSegurado1s;
+		private EntitySet<ObjetoSegurado> _ObjetoSegurados;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -462,7 +462,7 @@ namespace Seguradora.Models
 			this._AnoModelos = new EntitySet<AnoModelo>(new Action<AnoModelo>(this.attach_AnoModelos), new Action<AnoModelo>(this.detach_AnoModelos));
 			this._Modelos = new EntitySet<Modelo>(new Action<Modelo>(this.attach_Modelos), new Action<Modelo>(this.detach_Modelos));
 			this._Veiculos = new EntitySet<Veiculo>(new Action<Veiculo>(this.attach_Veiculos), new Action<Veiculo>(this.detach_Veiculos));
-			this._ObjetoSegurado1s = new EntitySet<ObjetoSegurado1>(new Action<ObjetoSegurado1>(this.attach_ObjetoSegurado1s), new Action<ObjetoSegurado1>(this.detach_ObjetoSegurado1s));
+			this._ObjetoSegurados = new EntitySet<ObjetoSegurado>(new Action<ObjetoSegurado>(this.attach_ObjetoSegurados), new Action<ObjetoSegurado>(this.detach_ObjetoSegurados));
 			OnCreated();
 		}
 		
@@ -585,16 +585,16 @@ namespace Seguradora.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Marca_ObjetoSegurado1", Storage="_ObjetoSegurado1s", ThisKey="ID", OtherKey="Marca")]
-		public EntitySet<ObjetoSegurado1> ObjetoSegurado1s
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Marca_ObjetoSegurado", Storage="_ObjetoSegurados", ThisKey="ID", OtherKey="Marca")]
+		public EntitySet<ObjetoSegurado> ObjetoSegurados
 		{
 			get
 			{
-				return this._ObjetoSegurado1s;
+				return this._ObjetoSegurados;
 			}
 			set
 			{
-				this._ObjetoSegurado1s.Assign(value);
+				this._ObjetoSegurados.Assign(value);
 			}
 		}
 		
@@ -654,13 +654,13 @@ namespace Seguradora.Models
 			entity.Marca1 = null;
 		}
 		
-		private void attach_ObjetoSegurado1s(ObjetoSegurado1 entity)
+		private void attach_ObjetoSegurados(ObjetoSegurado entity)
 		{
 			this.SendPropertyChanging();
 			entity.Marca1 = this;
 		}
 		
-		private void detach_ObjetoSegurado1s(ObjetoSegurado1 entity)
+		private void detach_ObjetoSegurados(ObjetoSegurado entity)
 		{
 			this.SendPropertyChanging();
 			entity.Marca1 = null;
@@ -687,7 +687,7 @@ namespace Seguradora.Models
 		
 		private EntitySet<Veiculo> _Veiculos;
 		
-		private EntitySet<ObjetoSegurado1> _ObjetoSegurado1s;
+		private EntitySet<ObjetoSegurado> _ObjetoSegurados;
 		
 		private EntityRef<Marca> _Marca1;
 		
@@ -711,7 +711,7 @@ namespace Seguradora.Models
 		{
 			this._AnoModelos = new EntitySet<AnoModelo>(new Action<AnoModelo>(this.attach_AnoModelos), new Action<AnoModelo>(this.detach_AnoModelos));
 			this._Veiculos = new EntitySet<Veiculo>(new Action<Veiculo>(this.attach_Veiculos), new Action<Veiculo>(this.detach_Veiculos));
-			this._ObjetoSegurado1s = new EntitySet<ObjetoSegurado1>(new Action<ObjetoSegurado1>(this.attach_ObjetoSegurado1s), new Action<ObjetoSegurado1>(this.detach_ObjetoSegurado1s));
+			this._ObjetoSegurados = new EntitySet<ObjetoSegurado>(new Action<ObjetoSegurado>(this.attach_ObjetoSegurados), new Action<ObjetoSegurado>(this.detach_ObjetoSegurados));
 			this._Marca1 = default(EntityRef<Marca>);
 			OnCreated();
 		}
@@ -846,16 +846,16 @@ namespace Seguradora.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Modelo_ObjetoSegurado1", Storage="_ObjetoSegurado1s", ThisKey="ID", OtherKey="Modelo")]
-		public EntitySet<ObjetoSegurado1> ObjetoSegurado1s
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Modelo_ObjetoSegurado", Storage="_ObjetoSegurados", ThisKey="ID", OtherKey="Modelo")]
+		public EntitySet<ObjetoSegurado> ObjetoSegurados
 		{
 			get
 			{
-				return this._ObjetoSegurado1s;
+				return this._ObjetoSegurados;
 			}
 			set
 			{
-				this._ObjetoSegurado1s.Assign(value);
+				this._ObjetoSegurados.Assign(value);
 			}
 		}
 		
@@ -937,13 +937,13 @@ namespace Seguradora.Models
 			entity.Modelo1 = null;
 		}
 		
-		private void attach_ObjetoSegurado1s(ObjetoSegurado1 entity)
+		private void attach_ObjetoSegurados(ObjetoSegurado entity)
 		{
 			this.SendPropertyChanging();
 			entity.Modelo1 = this;
 		}
 		
-		private void detach_ObjetoSegurado1s(ObjetoSegurado1 entity)
+		private void detach_ObjetoSegurados(ObjetoSegurado entity)
 		{
 			this.SendPropertyChanging();
 			entity.Modelo1 = null;
@@ -1395,9 +1395,9 @@ namespace Seguradora.Models
 		
 		private System.DateTime _PrimeiraHabilitacao;
 		
-		private EntitySet<ObjetoSegurado1> _ObjetoSegurado1s;
+		private EntitySet<ObjetoSegurado> _ObjetoSegurados;
 		
-		private EntityRef<ObjetoSegurado1> _ObjetoSegurado1;
+		private EntityRef<ObjetoSegurado> _ObjetoSegurado;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -1445,8 +1445,8 @@ namespace Seguradora.Models
 		
 		public Segurado()
 		{
-			this._ObjetoSegurado1s = new EntitySet<ObjetoSegurado1>(new Action<ObjetoSegurado1>(this.attach_ObjetoSegurado1s), new Action<ObjetoSegurado1>(this.detach_ObjetoSegurado1s));
-			this._ObjetoSegurado1 = default(EntityRef<ObjetoSegurado1>);
+			this._ObjetoSegurados = new EntitySet<ObjetoSegurado>(new Action<ObjetoSegurado>(this.attach_ObjetoSegurados), new Action<ObjetoSegurado>(this.detach_ObjetoSegurados));
+			this._ObjetoSegurado = default(EntityRef<ObjetoSegurado>);
 			OnCreated();
 		}
 		
@@ -1830,44 +1830,44 @@ namespace Seguradora.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Segurado_ObjetoSegurado1", Storage="_ObjetoSegurado1s", ThisKey="Codigo", OtherKey="Segurado")]
-		public EntitySet<ObjetoSegurado1> ObjetoSegurado1s
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Segurado_ObjetoSegurado", Storage="_ObjetoSegurados", ThisKey="Codigo", OtherKey="Segurado")]
+		public EntitySet<ObjetoSegurado> ObjetoSegurados
 		{
 			get
 			{
-				return this._ObjetoSegurado1s;
+				return this._ObjetoSegurados;
 			}
 			set
 			{
-				this._ObjetoSegurado1s.Assign(value);
+				this._ObjetoSegurados.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Segurado_ObjetoSegurado11", Storage="_ObjetoSegurado1", ThisKey="Codigo", OtherKey="Codigo", IsUnique=true, IsForeignKey=false)]
-		public ObjetoSegurado1 ObjetoSegurado1
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Segurado_ObjetoSegurado1", Storage="_ObjetoSegurado", ThisKey="Codigo", OtherKey="Codigo", IsUnique=true, IsForeignKey=false)]
+		public ObjetoSegurado ObjetoSegurado
 		{
 			get
 			{
-				return this._ObjetoSegurado1.Entity;
+				return this._ObjetoSegurado.Entity;
 			}
 			set
 			{
-				ObjetoSegurado1 previousValue = this._ObjetoSegurado1.Entity;
+				ObjetoSegurado previousValue = this._ObjetoSegurado.Entity;
 				if (((previousValue != value) 
-							|| (this._ObjetoSegurado1.HasLoadedOrAssignedValue == false)))
+							|| (this._ObjetoSegurado.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._ObjetoSegurado1.Entity = null;
+						this._ObjetoSegurado.Entity = null;
 						previousValue.Segurado2 = null;
 					}
-					this._ObjetoSegurado1.Entity = value;
+					this._ObjetoSegurado.Entity = value;
 					if ((value != null))
 					{
 						value.Segurado2 = this;
 					}
-					this.SendPropertyChanged("ObjetoSegurado1");
+					this.SendPropertyChanged("ObjetoSegurado");
 				}
 			}
 		}
@@ -1892,13 +1892,13 @@ namespace Seguradora.Models
 			}
 		}
 		
-		private void attach_ObjetoSegurado1s(ObjetoSegurado1 entity)
+		private void attach_ObjetoSegurados(ObjetoSegurado entity)
 		{
 			this.SendPropertyChanging();
 			entity.Segurado1 = this;
 		}
 		
-		private void detach_ObjetoSegurado1s(ObjetoSegurado1 entity)
+		private void detach_ObjetoSegurados(ObjetoSegurado entity)
 		{
 			this.SendPropertyChanging();
 			entity.Segurado1 = null;
@@ -1906,7 +1906,7 @@ namespace Seguradora.Models
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.ObjetoSegurado")]
-	public partial class ObjetoSegurado1 : INotifyPropertyChanging, INotifyPropertyChanged
+	public partial class ObjetoSegurado : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -1997,7 +1997,7 @@ namespace Seguradora.Models
     partial void OnValorCotadoChanged();
     #endregion
 		
-		public ObjetoSegurado1()
+		public ObjetoSegurado()
 		{
 			this._Marca1 = default(EntityRef<Marca>);
 			this._Modelo1 = default(EntityRef<Modelo>);
@@ -2382,7 +2382,7 @@ namespace Seguradora.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Marca_ObjetoSegurado1", Storage="_Marca1", ThisKey="Marca", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Marca_ObjetoSegurado", Storage="_Marca1", ThisKey="Marca", OtherKey="ID", IsForeignKey=true)]
 		public Marca Marca1
 		{
 			get
@@ -2399,12 +2399,12 @@ namespace Seguradora.Models
 					if ((previousValue != null))
 					{
 						this._Marca1.Entity = null;
-						previousValue.ObjetoSegurado1s.Remove(this);
+						previousValue.ObjetoSegurados.Remove(this);
 					}
 					this._Marca1.Entity = value;
 					if ((value != null))
 					{
-						value.ObjetoSegurado1s.Add(this);
+						value.ObjetoSegurados.Add(this);
 						this._Marca = value.ID;
 					}
 					else
@@ -2416,7 +2416,7 @@ namespace Seguradora.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Modelo_ObjetoSegurado1", Storage="_Modelo1", ThisKey="Modelo", OtherKey="ID", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Modelo_ObjetoSegurado", Storage="_Modelo1", ThisKey="Modelo", OtherKey="ID", IsForeignKey=true)]
 		public Modelo Modelo1
 		{
 			get
@@ -2433,12 +2433,12 @@ namespace Seguradora.Models
 					if ((previousValue != null))
 					{
 						this._Modelo1.Entity = null;
-						previousValue.ObjetoSegurado1s.Remove(this);
+						previousValue.ObjetoSegurados.Remove(this);
 					}
 					this._Modelo1.Entity = value;
 					if ((value != null))
 					{
-						value.ObjetoSegurado1s.Add(this);
+						value.ObjetoSegurados.Add(this);
 						this._Modelo = value.ID;
 					}
 					else
@@ -2450,7 +2450,7 @@ namespace Seguradora.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Segurado_ObjetoSegurado1", Storage="_Segurado1", ThisKey="Segurado", OtherKey="Codigo", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Segurado_ObjetoSegurado", Storage="_Segurado1", ThisKey="Segurado", OtherKey="Codigo", IsForeignKey=true)]
 		public Segurado Segurado1
 		{
 			get
@@ -2467,12 +2467,12 @@ namespace Seguradora.Models
 					if ((previousValue != null))
 					{
 						this._Segurado1.Entity = null;
-						previousValue.ObjetoSegurado1s.Remove(this);
+						previousValue.ObjetoSegurados.Remove(this);
 					}
 					this._Segurado1.Entity = value;
 					if ((value != null))
 					{
-						value.ObjetoSegurado1s.Add(this);
+						value.ObjetoSegurados.Add(this);
 						this._Segurado = value.Codigo;
 					}
 					else
@@ -2484,7 +2484,7 @@ namespace Seguradora.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Segurado_ObjetoSegurado11", Storage="_Segurado2", ThisKey="Codigo", OtherKey="Codigo", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Segurado_ObjetoSegurado1", Storage="_Segurado2", ThisKey="Codigo", OtherKey="Codigo", IsForeignKey=true)]
 		public Segurado Segurado2
 		{
 			get
@@ -2501,12 +2501,12 @@ namespace Seguradora.Models
 					if ((previousValue != null))
 					{
 						this._Segurado2.Entity = null;
-						previousValue.ObjetoSegurado1 = null;
+						previousValue.ObjetoSegurado = null;
 					}
 					this._Segurado2.Entity = value;
 					if ((value != null))
 					{
-						value.ObjetoSegurado1 = this;
+						value.ObjetoSegurado = this;
 						this._Codigo = value.Codigo;
 					}
 					else
