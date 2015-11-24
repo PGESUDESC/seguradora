@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Seguro" Class="ModeloDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=VOIGT;Initial Catalog=Seguro;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="SeguroConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="seguradora" Class="ModeloDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost\sqlexpress2012;Initial Catalog=seguradora;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="seguradoraConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.AnoModelo" Member="AnoModelos">
     <Type Name="AnoModelo">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -22,7 +22,7 @@
       <Association Name="Marca_AnoModelo" Member="AnoModelos" ThisKey="ID" OtherKey="Marca" Type="AnoModelo" />
       <Association Name="Marca_Modelo" Member="Modelos" ThisKey="ID" OtherKey="Marca" Type="Modelo" />
       <Association Name="Marca_Veiculo" Member="Veiculos" ThisKey="ID" OtherKey="Marca" Type="Veiculo" />
-      <Association Name="Marca_ObjetoSegurado" Member="ObjetoSegurados" ThisKey="ID" OtherKey="Marca" Type="ObjetoSegurado" />
+      <Association Name="Marca_ObjetoSegurado1" Member="ObjetoSegurado1s" ThisKey="ID" OtherKey="Marca" Type="ObjetoSegurado1" />
     </Type>
   </Table>
   <Table Name="dbo.Modelo" Member="Modelos">
@@ -34,7 +34,7 @@
       <Column Name="TipoVeiculo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="Modelo_AnoModelo" Member="AnoModelos" ThisKey="ID" OtherKey="Modelo" Type="AnoModelo" />
       <Association Name="Modelo_Veiculo" Member="Veiculos" ThisKey="ID" OtherKey="Modelo" Type="Veiculo" />
-      <Association Name="Modelo_ObjetoSegurado" Member="ObjetoSegurados" ThisKey="ID" OtherKey="Modelo" Type="ObjetoSegurado" />
+      <Association Name="Modelo_ObjetoSegurado1" Member="ObjetoSegurado1s" ThisKey="ID" OtherKey="Modelo" Type="ObjetoSegurado1" />
       <Association Name="Marca_Modelo" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
     </Type>
   </Table>
@@ -50,7 +50,6 @@
       <Column Name="MesReferencia" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="TipoVeiculo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="SiglaCombustivel" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
-      <Association Name="Veiculo_ObjetoSegurado" Member="ObjetoSegurados" ThisKey="CodigoFipe" OtherKey="CodigoFipe" Type="ObjetoSegurado" />
       <Association Name="AnoModelo_Veiculo" Member="AnoModelo1" ThisKey="AnoModelo" OtherKey="ID" Type="AnoModelo" IsForeignKey="true" />
       <Association Name="Marca_Veiculo" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
       <Association Name="Modelo_Veiculo" Member="Modelo1" ThisKey="Modelo" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
@@ -77,33 +76,34 @@
       <Column Name="SeguradoraAnterior" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="NumeroCNH" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="PrimeiraHabilitacao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Association Name="Segurado_ObjetoSegurado" Member="ObjetoSegurados" ThisKey="Codigo" OtherKey="Segurado" Type="ObjetoSegurado" />
+      <Association Name="Segurado_ObjetoSegurado1" Member="ObjetoSegurado1s" ThisKey="Codigo" OtherKey="Segurado" Type="ObjetoSegurado1" />
+      <Association Name="Segurado_ObjetoSegurado11" Member="ObjetoSegurado1" ThisKey="Codigo" OtherKey="Codigo" Type="ObjetoSegurado1" Cardinality="One" />
     </Type>
   </Table>
-  <Table Name="" Member="ObjetoSegurados">
-    <Type Name="ObjetoSegurado">
-      <Column Name="codigo" Member="Codigo" Type="System.Int32" DbType="int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="segurado" Member="Segurado" AutoSync="Never" Type="System.Int32" DbType="Int NOT NULL" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="tiopautomovel" Member="TipoAutomovel" Type="System.String" DbType="Varchar(20)" CanBeNull="false" />
-      <Column Name="codigofipe" Member="CodigoFipe" Type="System.String" DbType="Varchar(100)" CanBeNull="false" />
-      <Column Name="categoria" Member="Categoria" Type="System.String" DbType="varchar(50)" CanBeNull="false" />
-      <Column Name="marca" Member="Marca" Storage="_ID" AutoSync="Never" Type="System.Int32" DbType="Int" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="modelo" Member="Modelo" Type="System.Int32" DbType="int" CanBeNull="false" />
-      <Column Name="potencia" Member="Potencia" Type="System.Int32" DbType="int" CanBeNull="false" />
-      <Column Name="anofabricacao" Member="AnoDeFabricacao" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
-      <Column Name="anomodelo" Member="AnoModelo" Type="System.DateTime" DbType="datetime" CanBeNull="false" />
-      <Column Name="chassi" Member="Chassi" Type="System.String" DbType="varchar(100)" CanBeNull="false" />
-      <Column Name="placa" Member="Placa" Type="System.String" DbType="Varchar(20)" CanBeNull="false" />
-      <Column Name="qtdportas" Member="QtdPortas" Type="System.Int32" DbType="int" CanBeNull="false" />
-      <Column Name="nropassageiros" Member="NroPassageiros" Type="System.Int32" DbType="int" CanBeNull="false" />
-      <Column Name="ceppernoite" Member="CEPPernoite" Type="System.String" DbType="Varchar(10)" CanBeNull="false" />
-      <Column Name="renavam" Member="Renavam" Type="System.String" DbType="varchar(20)" CanBeNull="false" />
-      <Column Name="valorfipe" Member="ValorFipe" Type="System.Decimal" DbType="decimal(10,2)" CanBeNull="false" />
-      <Column Name="valorcotado" Member="ValorCotado" Type="System.Decimal" DbType="decimal(10,2)" CanBeNull="false" />
-      <Association Name="Segurado_ObjetoSegurado" Member="Segurado1" ThisKey="Segurado" OtherKey="Codigo" Type="Segurado" IsForeignKey="true" />
-      <Association Name="Veiculo_ObjetoSegurado" Member="Veiculo" ThisKey="CodigoFipe" OtherKey="CodigoFipe" Type="Veiculo" IsForeignKey="true" />
-      <Association Name="Marca_ObjetoSegurado" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
-      <Association Name="Modelo_ObjetoSegurado" Member="Modelo1" ThisKey="Modelo" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
+  <Table Name="dbo.ObjetoSegurado" Member="ObjetoSegurado1s">
+    <Type Name="ObjetoSegurado1">
+      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Segurado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoAutomovel" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CodigoFipe" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Categoria" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Marca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modelo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Potencia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AnoDeFabricacao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AnoModelo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Chassi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Placa" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="QtdPortas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NroPassageiros" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CepPernoite" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Renavam" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ValorFipe" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ValorCotado" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Association Name="Marca_ObjetoSegurado1" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
+      <Association Name="Modelo_ObjetoSegurado1" Member="Modelo1" ThisKey="Modelo" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
+      <Association Name="Segurado_ObjetoSegurado1" Member="Segurado1" ThisKey="Segurado" OtherKey="Codigo" Type="Segurado" IsForeignKey="true" />
+      <Association Name="Segurado_ObjetoSegurado11" Member="Segurado2" ThisKey="Codigo" OtherKey="Codigo" Type="Segurado" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
