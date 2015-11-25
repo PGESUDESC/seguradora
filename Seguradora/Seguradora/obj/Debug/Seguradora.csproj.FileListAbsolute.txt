@@ -81,3 +81,4 @@ C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Segurado
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\PagedList.Mvc.dll
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\PagedList.xml
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\PagedList.Mvc.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\obj\Debug\Seguradora.csprojResolveAssemblyReference.cache
