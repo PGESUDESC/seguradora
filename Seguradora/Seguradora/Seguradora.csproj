@@ -253,6 +253,8 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
       <DependentUpon>DataModels.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\Locaweb.pubxml" />
+    <None Include="Properties\PublishProfiles\SmaterASP.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
