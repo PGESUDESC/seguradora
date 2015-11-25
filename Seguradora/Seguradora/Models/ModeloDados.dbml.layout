@@ -27,14 +27,14 @@
         <classShapeMoniker Id="ba41f55a-feb2-4a1f-8f4a-a10a1e63aea0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.4687475 : 5.14589680989583); (4.4687475 : 5.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.4687475 : 5.14589680989583); (4.4687475 : 5.625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ModeloDadosDataContext/Modelo/Modelo_AnoModelo" />
       <nodes>
         <classShapeMoniker Id="a64dc6f6-4c4d-45aa-9d2c-cd9dd6501a64" />
         <classShapeMoniker Id="ba41f55a-feb2-4a1f-8f4a-a10a1e63aea0" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(4.5 : 2.70359537760417); (4.5 : 3.375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(4.5 : 2.70359537760417); (4.5 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ModeloDadosDataContext/Marca/Marca_Modelo" />
       <nodes>
         <classShapeMoniker Id="7a2c76ed-50e5-4567-8ef2-814af0618d0d" />
@@ -54,14 +54,14 @@
         <classShapeMoniker Id="99fa2b22-2b7e-4ec4-82c5-6a9e6d825926" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 2.38243753673378); (7.125 : 2.38243753673378)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 2.38243753673377); (7.125 : 2.38243753673377)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ModeloDadosDataContext/Marca/Marca_Veiculo" />
       <nodes>
         <classShapeMoniker Id="7a2c76ed-50e5-4567-8ef2-814af0618d0d" />
         <classShapeMoniker Id="99fa2b22-2b7e-4ec4-82c5-6a9e6d825926" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 4.11620198567708); (7.125 : 4.11620198567708)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 4.11620198567708); (5.79166666666667 : 4.11620198567708 : JumpStart); (5.95833333333333 : 4.11620198567708 : JumpEnd); (7.125 : 4.11620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ModeloDadosDataContext/Modelo/Modelo_Veiculo" />
       <nodes>
         <classShapeMoniker Id="a64dc6f6-4c4d-45aa-9d2c-cd9dd6501a64" />
@@ -87,7 +87,7 @@
         <classShapeMoniker Id="ec4e81f3-16be-4096-a4c1-38852fafee3a" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5.5 : 5.032900390625); (9.3906225 : 5.032900390625); (9.3906225 : 8.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(5.5 : 5.032900390625); (5.79166666666667 : 5.032900390625 : JumpStart); (5.95833333333333 : 5.032900390625 : JumpEnd); (8.04166666666667 : 5.032900390625 : JumpStart); (8.20833333333333 : 5.032900390625 : JumpEnd); (9.3906225 : 5.032900390625); (9.3906225 : 8.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/ModeloDadosDataContext/Modelo/Modelo_ObjetoSegurado" />
       <nodes>
         <classShapeMoniker Id="a64dc6f6-4c4d-45aa-9d2c-cd9dd6501a64" />
@@ -106,6 +106,26 @@
       <nodes>
         <classShapeMoniker Id="c7760e0f-f8bb-47dc-b928-913feaa74717" />
         <classShapeMoniker Id="ec4e81f3-16be-4096-a4c1-38852fafee3a" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="864cc258-e605-4b9d-8308-cc3e5a1d24d1" absoluteBounds="0.75, 3, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/ModeloDadosDataContext/Aditamento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fff400ab-339f-4ff5-a605-effaca91f477" absoluteBounds="0.76500000000000012, 3.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.5 : 1.91429768880208); (1.75 : 1.91429768880208); (1.75 : 3)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ModeloDadosDataContext/Marca/Marca_Aditamento" />
+      <nodes>
+        <classShapeMoniker Id="7a2c76ed-50e5-4567-8ef2-814af0618d0d" />
+        <classShapeMoniker Id="864cc258-e605-4b9d-8308-cc3e5a1d24d1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.5 : 4.26044840494792); (2.75 : 4.26044840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ModeloDadosDataContext/Modelo/Modelo_Aditamento" />
+      <nodes>
+        <classShapeMoniker Id="a64dc6f6-4c4d-45aa-9d2c-cd9dd6501a64" />
+        <classShapeMoniker Id="864cc258-e605-4b9d-8308-cc3e5a1d24d1" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
