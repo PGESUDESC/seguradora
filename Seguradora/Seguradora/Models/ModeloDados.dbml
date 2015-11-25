@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="seguro" Class="ModeloDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost\sqlexpress2014;Initial Catalog=seguro;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="seguroConnectionLeandro" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="seguradora" Class="ModeloDadosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=localhost\sqlexpress2014;Initial Catalog=seguro;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="seguroConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.AnoModelo" Member="AnoModelos">
     <Type Name="AnoModelo">
       <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -23,7 +23,6 @@
       <Association Name="Marca_Modelo" Member="Modelos" ThisKey="ID" OtherKey="Marca" Type="Modelo" />
       <Association Name="Marca_Veiculo" Member="Veiculos" ThisKey="ID" OtherKey="Marca" Type="Veiculo" />
       <Association Name="Marca_ObjetoSegurado" Member="ObjetoSegurados" ThisKey="ID" OtherKey="Marca" Type="ObjetoSegurado" />
-      <Association Name="Marca_Aditamento" Member="Aditamentos" ThisKey="ID" OtherKey="Marca" Type="Aditamento" />
     </Type>
   </Table>
   <Table Name="dbo.Modelo" Member="Modelos">
@@ -36,7 +35,6 @@
       <Association Name="Modelo_AnoModelo" Member="AnoModelos" ThisKey="ID" OtherKey="Modelo" Type="AnoModelo" />
       <Association Name="Modelo_Veiculo" Member="Veiculos" ThisKey="ID" OtherKey="Modelo" Type="Veiculo" />
       <Association Name="Modelo_ObjetoSegurado" Member="ObjetoSegurados" ThisKey="ID" OtherKey="Modelo" Type="ObjetoSegurado" />
-      <Association Name="Modelo_Aditamento" Member="Aditamentos" ThisKey="ID" OtherKey="Modelo" Type="Aditamento" />
       <Association Name="Marca_Modelo" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
     </Type>
   </Table>
@@ -106,19 +104,6 @@
       <Association Name="Modelo_ObjetoSegurado" Member="Modelo1" ThisKey="Modelo" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
       <Association Name="Segurado_ObjetoSegurado" Member="Segurado1" ThisKey="Segurado" OtherKey="Codigo" Type="Segurado" IsForeignKey="true" />
       <Association Name="Segurado_ObjetoSegurado1" Member="Segurado2" ThisKey="Codigo" OtherKey="Codigo" Type="Segurado" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Aditamento" Member="Aditamentos">
-    <Type Name="Aditamento">
-      <Column Name="Codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nome" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Descriao" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
-      <Column Name="Categoria" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Marca" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Modelo" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="AnoFabricacao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Association Name="Marca_Aditamento" Member="Marca1" ThisKey="Marca" OtherKey="ID" Type="Marca" IsForeignKey="true" />
-      <Association Name="Modelo_Aditamento" Member="Modelo1" ThisKey="Modelo" OtherKey="ID" Type="Modelo" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

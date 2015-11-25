@@ -22,7 +22,7 @@ namespace Seguradora.Models
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="seguro")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="seguradora")]
 	public partial class ModeloDadosDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -48,13 +48,10 @@ namespace Seguradora.Models
     partial void InsertObjetoSegurado(ObjetoSegurado instance);
     partial void UpdateObjetoSegurado(ObjetoSegurado instance);
     partial void DeleteObjetoSegurado(ObjetoSegurado instance);
-    partial void InsertAditamento(Aditamento instance);
-    partial void UpdateAditamento(Aditamento instance);
-    partial void DeleteAditamento(Aditamento instance);
     #endregion
 		
 		public ModeloDadosDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["seguroConnectionLeandro"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["seguroConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
@@ -128,14 +125,6 @@ namespace Seguradora.Models
 			get
 			{
 				return this.GetTable<ObjetoSegurado>();
-			}
-		}
-		
-		public System.Data.Linq.Table<Aditamento> Aditamentos
-		{
-			get
-			{
-				return this.GetTable<Aditamento>();
 			}
 		}
 	}
@@ -454,8 +443,6 @@ namespace Seguradora.Models
 		
 		private EntitySet<ObjetoSegurado> _ObjetoSegurados;
 		
-		private EntitySet<Aditamento> _Aditamentos;
-		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -476,7 +463,6 @@ namespace Seguradora.Models
 			this._Modelos = new EntitySet<Modelo>(new Action<Modelo>(this.attach_Modelos), new Action<Modelo>(this.detach_Modelos));
 			this._Veiculos = new EntitySet<Veiculo>(new Action<Veiculo>(this.attach_Veiculos), new Action<Veiculo>(this.detach_Veiculos));
 			this._ObjetoSegurados = new EntitySet<ObjetoSegurado>(new Action<ObjetoSegurado>(this.attach_ObjetoSegurados), new Action<ObjetoSegurado>(this.detach_ObjetoSegurados));
-			this._Aditamentos = new EntitySet<Aditamento>(new Action<Aditamento>(this.attach_Aditamentos), new Action<Aditamento>(this.detach_Aditamentos));
 			OnCreated();
 		}
 		
@@ -612,19 +598,6 @@ namespace Seguradora.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Marca_Aditamento", Storage="_Aditamentos", ThisKey="ID", OtherKey="Marca")]
-		public EntitySet<Aditamento> Aditamentos
-		{
-			get
-			{
-				return this._Aditamentos;
-			}
-			set
-			{
-				this._Aditamentos.Assign(value);
-			}
-		}
-		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -692,18 +665,6 @@ namespace Seguradora.Models
 			this.SendPropertyChanging();
 			entity.Marca1 = null;
 		}
-		
-		private void attach_Aditamentos(Aditamento entity)
-		{
-			this.SendPropertyChanging();
-			entity.Marca1 = this;
-		}
-		
-		private void detach_Aditamentos(Aditamento entity)
-		{
-			this.SendPropertyChanging();
-			entity.Marca1 = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Modelo")]
@@ -728,8 +689,6 @@ namespace Seguradora.Models
 		
 		private EntitySet<ObjetoSegurado> _ObjetoSegurados;
 		
-		private EntitySet<Aditamento> _Aditamentos;
-		
 		private EntityRef<Marca> _Marca1;
 		
     #region Extensibility Method Definitions
@@ -753,7 +712,6 @@ namespace Seguradora.Models
 			this._AnoModelos = new EntitySet<AnoModelo>(new Action<AnoModelo>(this.attach_AnoModelos), new Action<AnoModelo>(this.detach_AnoModelos));
 			this._Veiculos = new EntitySet<Veiculo>(new Action<Veiculo>(this.attach_Veiculos), new Action<Veiculo>(this.detach_Veiculos));
 			this._ObjetoSegurados = new EntitySet<ObjetoSegurado>(new Action<ObjetoSegurado>(this.attach_ObjetoSegurados), new Action<ObjetoSegurado>(this.detach_ObjetoSegurados));
-			this._Aditamentos = new EntitySet<Aditamento>(new Action<Aditamento>(this.attach_Aditamentos), new Action<Aditamento>(this.detach_Aditamentos));
 			this._Marca1 = default(EntityRef<Marca>);
 			OnCreated();
 		}
@@ -901,19 +859,6 @@ namespace Seguradora.Models
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Modelo_Aditamento", Storage="_Aditamentos", ThisKey="ID", OtherKey="Modelo")]
-		public EntitySet<Aditamento> Aditamentos
-		{
-			get
-			{
-				return this._Aditamentos;
-			}
-			set
-			{
-				this._Aditamentos.Assign(value);
-			}
-		}
-		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Marca_Modelo", Storage="_Marca1", ThisKey="Marca", OtherKey="ID", IsForeignKey=true)]
 		public Marca Marca1
 		{
@@ -999,18 +944,6 @@ namespace Seguradora.Models
 		}
 		
 		private void detach_ObjetoSegurados(ObjetoSegurado entity)
-		{
-			this.SendPropertyChanging();
-			entity.Modelo1 = null;
-		}
-		
-		private void attach_Aditamentos(Aditamento entity)
-		{
-			this.SendPropertyChanging();
-			entity.Modelo1 = this;
-		}
-		
-		private void detach_Aditamentos(Aditamento entity)
 		{
 			this.SendPropertyChanging();
 			entity.Modelo1 = null;
@@ -2581,294 +2514,6 @@ namespace Seguradora.Models
 						this._Codigo = default(int);
 					}
 					this.SendPropertyChanged("Segurado2");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Aditamento")]
-	public partial class Aditamento : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _Codigo;
-		
-		private string _Nome;
-		
-		private string _Descriao;
-		
-		private System.Nullable<int> _Categoria;
-		
-		private System.Nullable<int> _Marca;
-		
-		private System.Nullable<int> _Modelo;
-		
-		private System.Nullable<System.DateTime> _AnoFabricacao;
-		
-		private EntityRef<Marca> _Marca1;
-		
-		private EntityRef<Modelo> _Modelo1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnCodigoChanging(int value);
-    partial void OnCodigoChanged();
-    partial void OnNomeChanging(string value);
-    partial void OnNomeChanged();
-    partial void OnDescriaoChanging(string value);
-    partial void OnDescriaoChanged();
-    partial void OnCategoriaChanging(System.Nullable<int> value);
-    partial void OnCategoriaChanged();
-    partial void OnMarcaChanging(System.Nullable<int> value);
-    partial void OnMarcaChanged();
-    partial void OnModeloChanging(System.Nullable<int> value);
-    partial void OnModeloChanged();
-    partial void OnAnoFabricacaoChanging(System.Nullable<System.DateTime> value);
-    partial void OnAnoFabricacaoChanged();
-    #endregion
-		
-		public Aditamento()
-		{
-			this._Marca1 = default(EntityRef<Marca>);
-			this._Modelo1 = default(EntityRef<Modelo>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Codigo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int Codigo
-		{
-			get
-			{
-				return this._Codigo;
-			}
-			set
-			{
-				if ((this._Codigo != value))
-				{
-					this.OnCodigoChanging(value);
-					this.SendPropertyChanging();
-					this._Codigo = value;
-					this.SendPropertyChanged("Codigo");
-					this.OnCodigoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Nome", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Nome
-		{
-			get
-			{
-				return this._Nome;
-			}
-			set
-			{
-				if ((this._Nome != value))
-				{
-					this.OnNomeChanging(value);
-					this.SendPropertyChanging();
-					this._Nome = value;
-					this.SendPropertyChanged("Nome");
-					this.OnNomeChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descriao", DbType="Text NOT NULL", CanBeNull=false, UpdateCheck=UpdateCheck.Never)]
-		public string Descriao
-		{
-			get
-			{
-				return this._Descriao;
-			}
-			set
-			{
-				if ((this._Descriao != value))
-				{
-					this.OnDescriaoChanging(value);
-					this.SendPropertyChanging();
-					this._Descriao = value;
-					this.SendPropertyChanged("Descriao");
-					this.OnDescriaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Categoria", DbType="Int")]
-		public System.Nullable<int> Categoria
-		{
-			get
-			{
-				return this._Categoria;
-			}
-			set
-			{
-				if ((this._Categoria != value))
-				{
-					this.OnCategoriaChanging(value);
-					this.SendPropertyChanging();
-					this._Categoria = value;
-					this.SendPropertyChanged("Categoria");
-					this.OnCategoriaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Marca", DbType="Int")]
-		public System.Nullable<int> Marca
-		{
-			get
-			{
-				return this._Marca;
-			}
-			set
-			{
-				if ((this._Marca != value))
-				{
-					if (this._Marca1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnMarcaChanging(value);
-					this.SendPropertyChanging();
-					this._Marca = value;
-					this.SendPropertyChanged("Marca");
-					this.OnMarcaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Modelo", DbType="Int")]
-		public System.Nullable<int> Modelo
-		{
-			get
-			{
-				return this._Modelo;
-			}
-			set
-			{
-				if ((this._Modelo != value))
-				{
-					if (this._Modelo1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnModeloChanging(value);
-					this.SendPropertyChanging();
-					this._Modelo = value;
-					this.SendPropertyChanged("Modelo");
-					this.OnModeloChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_AnoFabricacao", DbType="DateTime")]
-		public System.Nullable<System.DateTime> AnoFabricacao
-		{
-			get
-			{
-				return this._AnoFabricacao;
-			}
-			set
-			{
-				if ((this._AnoFabricacao != value))
-				{
-					this.OnAnoFabricacaoChanging(value);
-					this.SendPropertyChanging();
-					this._AnoFabricacao = value;
-					this.SendPropertyChanged("AnoFabricacao");
-					this.OnAnoFabricacaoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Marca_Aditamento", Storage="_Marca1", ThisKey="Marca", OtherKey="ID", IsForeignKey=true)]
-		public Marca Marca1
-		{
-			get
-			{
-				return this._Marca1.Entity;
-			}
-			set
-			{
-				Marca previousValue = this._Marca1.Entity;
-				if (((previousValue != value) 
-							|| (this._Marca1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Marca1.Entity = null;
-						previousValue.Aditamentos.Remove(this);
-					}
-					this._Marca1.Entity = value;
-					if ((value != null))
-					{
-						value.Aditamentos.Add(this);
-						this._Marca = value.ID;
-					}
-					else
-					{
-						this._Marca = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Marca1");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Modelo_Aditamento", Storage="_Modelo1", ThisKey="Modelo", OtherKey="ID", IsForeignKey=true)]
-		public Modelo Modelo1
-		{
-			get
-			{
-				return this._Modelo1.Entity;
-			}
-			set
-			{
-				Modelo previousValue = this._Modelo1.Entity;
-				if (((previousValue != value) 
-							|| (this._Modelo1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Modelo1.Entity = null;
-						previousValue.Aditamentos.Remove(this);
-					}
-					this._Modelo1.Entity = value;
-					if ((value != null))
-					{
-						value.Aditamentos.Add(this);
-						this._Modelo = value.ID;
-					}
-					else
-					{
-						this._Modelo = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("Modelo1");
 				}
 			}
 		}
