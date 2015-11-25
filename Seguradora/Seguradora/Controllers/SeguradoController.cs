@@ -10,116 +10,112 @@ using Seguradora;
 
 namespace Seguradora.Controllers
 {
-    public class AditamentoesController : Controller
+    public class SeguradoController : Controller
     {
         private seguradoraEntities db = new seguradoraEntities();
 
-        // GET: Aditamentoes
+        // GET: Segurado
         public ActionResult Index()
         {
-            var aditamento = db.Aditamento.Include(a => a.Marca1).Include(a => a.Modelo1);
-            return View(aditamento.ToList());
+            var segurado = db.Segurado.Include(s => s.ObjetoSegurado1);
+            return View(segurado.ToList());
         }
 
-        // GET: Aditamentoes/Details/5
+        // GET: Segurado/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Aditamento aditamento = db.Aditamento.Find(id);
-            if (aditamento == null)
+            Segurado segurado = db.Segurado.Find(id);
+            if (segurado == null)
             {
                 return HttpNotFound();
             }
-            return View(aditamento);
+            return View(segurado);
         }
 
-        // GET: Aditamentoes/Create
+        // GET: Segurado/Create
         public ActionResult Create()
         {
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo");
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo");
+            ViewBag.Codigo = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel");
             return View();
         }
 
-        // POST: Aditamentoes/Create
+        // POST: Segurado/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Codigo,Nome,Descriao,Categoria,Marca,Modelo,AnoFabricacao")] Aditamento aditamento)
+        public ActionResult Create([Bind(Include = "Codigo,Nome,Documento,DataNascimento,Sexo,EstadoCivil,FoneResidencial,FoneCelular,Email,Rua,Numero,Bairro,CEP,Cidade,Estado,BonusAtual,SeguradoraAnterior,NumeroCNH,PrimeiraHabilitacao")] Segurado segurado)
         {
             if (ModelState.IsValid)
             {
-                db.Aditamento.Add(aditamento);
+                db.Segurado.Add(segurado);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo", aditamento.Marca);
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo", aditamento.Modelo);
-            return View(aditamento);
+            ViewBag.Codigo = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel", segurado.Codigo);
+            return View(segurado);
         }
 
-        // GET: Aditamentoes/Edit/5
+        // GET: Segurado/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Aditamento aditamento = db.Aditamento.Find(id);
-            if (aditamento == null)
+            Segurado segurado = db.Segurado.Find(id);
+            if (segurado == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo", aditamento.Marca);
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo", aditamento.Modelo);
-            return View(aditamento);
+            ViewBag.Codigo = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel", segurado.Codigo);
+            return View(segurado);
         }
 
-        // POST: Aditamentoes/Edit/5
+        // POST: Segurado/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Codigo,Nome,Descriao,Categoria,Marca,Modelo,AnoFabricacao")] Aditamento aditamento)
+        public ActionResult Edit([Bind(Include = "Codigo,Nome,Documento,DataNascimento,Sexo,EstadoCivil,FoneResidencial,FoneCelular,Email,Rua,Numero,Bairro,CEP,Cidade,Estado,BonusAtual,SeguradoraAnterior,NumeroCNH,PrimeiraHabilitacao")] Segurado segurado)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(aditamento).State = EntityState.Modified;
+                db.Entry(segurado).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo", aditamento.Marca);
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo", aditamento.Modelo);
-            return View(aditamento);
+            ViewBag.Codigo = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel", segurado.Codigo);
+            return View(segurado);
         }
 
-        // GET: Aditamentoes/Delete/5
+        // GET: Segurado/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Aditamento aditamento = db.Aditamento.Find(id);
-            if (aditamento == null)
+            Segurado segurado = db.Segurado.Find(id);
+            if (segurado == null)
             {
                 return HttpNotFound();
             }
-            return View(aditamento);
+            return View(segurado);
         }
 
-        // POST: Aditamentoes/Delete/5
+        // POST: Segurado/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Aditamento aditamento = db.Aditamento.Find(id);
-            db.Aditamento.Remove(aditamento);
+            Segurado segurado = db.Segurado.Find(id);
+            db.Segurado.Remove(segurado);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -10,18 +10,18 @@ using Seguradora;
 
 namespace Seguradora.Controllers
 {
-    public class ObjetoSeguradoesController : Controller
+    public class ObjetoSeguradoController : Controller
     {
         private seguradoraEntities db = new seguradoraEntities();
 
-        // GET: ObjetoSeguradoes
+        // GET: ObjetoSegurado
         public ActionResult Index()
         {
             var objetoSegurado = db.ObjetoSegurado.Include(o => o.Marca1).Include(o => o.Modelo1).Include(o => o.Segurado1).Include(o => o.Segurado2);
             return View(objetoSegurado.ToList());
         }
 
-        // GET: ObjetoSeguradoes/Details/5
+        // GET: ObjetoSegurado/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,7 +36,7 @@ namespace Seguradora.Controllers
             return View(objetoSegurado);
         }
 
-        // GET: ObjetoSeguradoes/Create
+        // GET: ObjetoSegurado/Create
         public ActionResult Create()
         {
             ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo");
@@ -46,7 +46,7 @@ namespace Seguradora.Controllers
             return View();
         }
 
-        // POST: ObjetoSeguradoes/Create
+        // POST: ObjetoSegurado/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -67,7 +67,7 @@ namespace Seguradora.Controllers
             return View(objetoSegurado);
         }
 
-        // GET: ObjetoSeguradoes/Edit/5
+        // GET: ObjetoSegurado/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -86,7 +86,7 @@ namespace Seguradora.Controllers
             return View(objetoSegurado);
         }
 
-        // POST: ObjetoSeguradoes/Edit/5
+        // POST: ObjetoSegurado/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -106,7 +106,7 @@ namespace Seguradora.Controllers
             return View(objetoSegurado);
         }
 
-        // GET: ObjetoSeguradoes/Delete/5
+        // GET: ObjetoSegurado/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -121,7 +121,7 @@ namespace Seguradora.Controllers
             return View(objetoSegurado);
         }
 
-        // POST: ObjetoSeguradoes/Delete/5
+        // POST: ObjetoSegurado/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

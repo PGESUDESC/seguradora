@@ -17,6 +17,7 @@ namespace Seguradora
         public Segurado()
         {
             this.ObjetoSegurado = new HashSet<ObjetoSegurado>();
+            this.Apolice = new HashSet<Apolice>();
         }
     
         public int Codigo { get; set; }
@@ -41,5 +42,6 @@ namespace Seguradora
     
         public virtual ICollection<ObjetoSegurado> ObjetoSegurado { get; set; }
         public virtual ObjetoSegurado ObjetoSegurado1 { get; set; }
+        public virtual ICollection<Apolice> Apolice { get; set; }
     }
 }

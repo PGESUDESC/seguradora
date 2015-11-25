@@ -107,3 +107,4 @@ C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Twitter
 C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\projetos\seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.dll
 C:\projetos\seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.pdb
+C:\projetos\seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.csprojResolveAssemblyReference.cache

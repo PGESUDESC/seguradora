@@ -69,6 +69,7 @@
     <NavigationProperty Name="Modelo1" Relationship="Self.FK_ObjetoSegurado1_Modelo" FromRole="ObjetoSegurado" ToRole="Modelo" />
     <NavigationProperty Name="Segurado1" Relationship="Self.FK_ObjetoSegurado1_Segurado" FromRole="ObjetoSegurado" ToRole="Segurado" />
     <NavigationProperty Name="Segurado2" Relationship="Self.FK_ObjetoSegurado1_Segurado1" FromRole="ObjetoSegurado" ToRole="Segurado" />
+    <NavigationProperty Name="Apolice" Relationship="seguradoraModel.FK_Apolice_ObjetoSegurado" FromRole="ObjetoSegurado" ToRole="Apolice" />
   </EntityType>
   <EntityType Name="Segurado">
     <Key>
@@ -95,6 +96,7 @@
     <Property Name="PrimeiraHabilitacao" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Segurado" FromRole="Segurado" ToRole="ObjetoSegurado" />
     <NavigationProperty Name="ObjetoSegurado1" Relationship="Self.FK_ObjetoSegurado1_Segurado1" FromRole="Segurado" ToRole="ObjetoSegurado" />
+    <NavigationProperty Name="Apolice" Relationship="seguradoraModel.FK_Apolice_Segurado" FromRole="Segurado" ToRole="Apolice" />
   </EntityType>
   <EntityType Name="Veiculo">
     <Key>
@@ -290,6 +292,25 @@
       <End Role="Modelo" EntitySet="Modelo" />
       <End Role="Aditamento" EntitySet="Aditamento" />
     </AssociationSet>
+    <EntitySet Name="Apolice" EntityType="seguradoraModel.Apolice" />
+    <EntitySet Name="Cotacao" EntityType="seguradoraModel.Cotacao" />
+    <AssociationSet Name="FK_Apolice_Cotacao" Association="seguradoraModel.FK_Apolice_Cotacao">
+      <End Role="Cotacao" EntitySet="Cotacao" />
+      <End Role="Apolice" EntitySet="Apolice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apolice_ObjetoSegurado" Association="seguradoraModel.FK_Apolice_ObjetoSegurado">
+      <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
+      <End Role="Apolice" EntitySet="Apolice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Apolice_Segurado" Association="seguradoraModel.FK_Apolice_Segurado">
+      <End Role="Segurado" EntitySet="Segurado" />
+      <End Role="Apolice" EntitySet="Apolice" />
+    </AssociationSet>
+    <EntitySet Name="Sinistro" EntityType="seguradoraModel.Sinistro" />
+    <AssociationSet Name="FK_Sinistro_Apolice" Association="seguradoraModel.FK_Sinistro_Apolice">
+      <End Role="Apolice" EntitySet="Apolice" />
+      <End Role="Sinistro" EntitySet="Sinistro" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Aditamento">
     <Key>
@@ -326,6 +347,93 @@
       </Principal>
       <Dependent Role="Aditamento">
         <PropertyRef Name="Modelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Apolice">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Cotacao" Type="Int32" Nullable="false" />
+    <Property Name="NroAditivo" Type="Int32" />
+    <Property Name="Segurado" Type="Int32" />
+    <Property Name="ObjetoSegurado" Type="Int32" />
+    <Property Name="DataVigencia" Type="DateTime" Precision="3" />
+    <Property Name="DataPrimeiraParcela" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Cotacao1" Relationship="seguradoraModel.FK_Apolice_Cotacao" FromRole="Apolice" ToRole="Cotacao" />
+    <NavigationProperty Name="ObjetoSegurado1" Relationship="seguradoraModel.FK_Apolice_ObjetoSegurado" FromRole="Apolice" ToRole="ObjetoSegurado" />
+    <NavigationProperty Name="Segurado1" Relationship="seguradoraModel.FK_Apolice_Segurado" FromRole="Apolice" ToRole="Segurado" />
+    <NavigationProperty Name="Sinistro" Relationship="seguradoraModel.FK_Sinistro_Apolice" FromRole="Apolice" ToRole="Sinistro" />
+  </EntityType>
+  <EntityType Name="Cotacao">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="Tipo" Type="Int32" Nullable="false" />
+    <Property Name="NumeroAditivo" Type="Int32" />
+    <Property Name="Modalidade" Type="Int32" />
+    <Property Name="DataInicial" Type="DateTime" Precision="3" />
+    <Property Name="DataFinal" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Apolice" Relationship="seguradoraModel.FK_Apolice_Cotacao" FromRole="Cotacao" ToRole="Apolice" />
+  </EntityType>
+  <Association Name="FK_Apolice_Cotacao">
+    <End Type="seguradoraModel.Cotacao" Role="Cotacao" Multiplicity="1" />
+    <End Type="seguradoraModel.Apolice" Role="Apolice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cotacao">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Apolice">
+        <PropertyRef Name="Cotacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apolice_ObjetoSegurado">
+    <End Type="seguradoraModel.ObjetoSegurado" Role="ObjetoSegurado" Multiplicity="0..1" />
+    <End Type="seguradoraModel.Apolice" Role="Apolice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ObjetoSegurado">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Apolice">
+        <PropertyRef Name="ObjetoSegurado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Apolice_Segurado">
+    <End Type="seguradoraModel.Segurado" Role="Segurado" Multiplicity="0..1" />
+    <End Type="seguradoraModel.Apolice" Role="Apolice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segurado">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Apolice">
+        <PropertyRef Name="Segurado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sinistro">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" />
+    <Property Name="NroContrato" Type="Int32" Nullable="false" />
+    <Property Name="NroBO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Avarias" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoOcorrido" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Apolice" Relationship="seguradoraModel.FK_Sinistro_Apolice" FromRole="Sinistro" ToRole="Apolice" />
+  </EntityType>
+  <Association Name="FK_Sinistro_Apolice">
+    <End Type="seguradoraModel.Apolice" Role="Apolice" Multiplicity="1" />
+    <End Type="seguradoraModel.Sinistro" Role="Sinistro" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Apolice">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Sinistro">
+        <PropertyRef Name="NroContrato" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
