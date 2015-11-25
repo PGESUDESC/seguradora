@@ -19,6 +19,7 @@ namespace Seguradora
             this.AnoModelo = new HashSet<AnoModelo>();
             this.ObjetoSegurado = new HashSet<ObjetoSegurado>();
             this.Veiculo = new HashSet<Veiculo>();
+            this.Aditamento = new HashSet<Aditamento>();
         }
     
         public int ID { get; set; }
@@ -31,5 +32,6 @@ namespace Seguradora
         public virtual Marca Marca1 { get; set; }
         public virtual ICollection<ObjetoSegurado> ObjetoSegurado { get; set; }
         public virtual ICollection<Veiculo> Veiculo { get; set; }
+        public virtual ICollection<Aditamento> Aditamento { get; set; }
     }
 }

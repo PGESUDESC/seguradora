@@ -26,6 +26,7 @@
     <NavigationProperty Name="Modelo" Relationship="Self.FK_Modelo_Marca" FromRole="Marca" ToRole="Modelo" />
     <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Marca" FromRole="Marca" ToRole="ObjetoSegurado" />
     <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_Marca" FromRole="Marca" ToRole="Veiculo" />
+    <NavigationProperty Name="Aditamento" Relationship="seguradoraModel.FK_Aditamento_Marca" FromRole="Marca" ToRole="Aditamento" />
   </EntityType>
   <EntityType Name="Modelo">
     <Key>
@@ -40,6 +41,7 @@
     <NavigationProperty Name="Marca1" Relationship="Self.FK_Modelo_Marca" FromRole="Modelo" ToRole="Marca" />
     <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Modelo" FromRole="Modelo" ToRole="ObjetoSegurado" />
     <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_Modelo" FromRole="Modelo" ToRole="Veiculo" />
+    <NavigationProperty Name="Aditamento" Relationship="seguradoraModel.FK_Aditamento_Modelo" FromRole="Modelo" ToRole="Aditamento" />
   </EntityType>
   <EntityType Name="ObjetoSegurado">
     <Key>
@@ -279,5 +281,52 @@
       <End Role="Segurado" EntitySet="Segurado" />
       <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
     </AssociationSet>
+    <EntitySet Name="Aditamento" EntityType="seguradoraModel.Aditamento" />
+    <AssociationSet Name="FK_Aditamento_Marca" Association="seguradoraModel.FK_Aditamento_Marca">
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Aditamento" EntitySet="Aditamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aditamento_Modelo" Association="seguradoraModel.FK_Aditamento_Modelo">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="Aditamento" EntitySet="Aditamento" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Aditamento">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Descriao" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Categoria" Type="Int32" />
+    <Property Name="Marca" Type="Int32" />
+    <Property Name="Modelo" Type="Int32" />
+    <Property Name="AnoFabricacao" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Marca1" Relationship="seguradoraModel.FK_Aditamento_Marca" FromRole="Aditamento" ToRole="Marca" />
+    <NavigationProperty Name="Modelo1" Relationship="seguradoraModel.FK_Aditamento_Modelo" FromRole="Aditamento" ToRole="Modelo" />
+  </EntityType>
+  <Association Name="FK_Aditamento_Marca">
+    <End Type="seguradoraModel.Marca" Role="Marca" Multiplicity="0..1" />
+    <End Type="seguradoraModel.Aditamento" Role="Aditamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Aditamento">
+        <PropertyRef Name="Marca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aditamento_Modelo">
+    <End Type="seguradoraModel.Modelo" Role="Modelo" Multiplicity="0..1" />
+    <End Type="seguradoraModel.Aditamento" Role="Aditamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Aditamento">
+        <PropertyRef Name="Modelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

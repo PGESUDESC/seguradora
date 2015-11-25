@@ -31,5 +31,6 @@ namespace Seguradora
         public virtual DbSet<ObjetoSegurado> ObjetoSegurado { get; set; }
         public virtual DbSet<Segurado> Segurado { get; set; }
         public virtual DbSet<Veiculo> Veiculo { get; set; }
+        public virtual DbSet<Aditamento> Aditamento { get; set; }
     }
 }

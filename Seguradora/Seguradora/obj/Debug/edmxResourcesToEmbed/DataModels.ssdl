@@ -1,5 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="seguradoraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Aditamento">
+    <Key>
+      <PropertyRef Name="Codigo" />
+    </Key>
+    <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descriao" Type="text" Nullable="false" />
+    <Property Name="Categoria" Type="int" />
+    <Property Name="Marca" Type="int" />
+    <Property Name="Modelo" Type="int" />
+    <Property Name="AnoFabricacao" Type="datetime" />
+  </EntityType>
   <EntityType Name="AnoModelo">
     <Key>
       <PropertyRef Name="ID" />
@@ -92,6 +104,30 @@
     <Property Name="TipoVeiculo" Type="int" Nullable="false" />
     <Property Name="SiglaCombustivel" Type="varchar" MaxLength="2" Nullable="false" />
   </EntityType>
+  <Association Name="FK_Aditamento_Marca">
+    <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
+    <End Role="Aditamento" Type="Self.Aditamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Aditamento">
+        <PropertyRef Name="Marca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aditamento_Modelo">
+    <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+    <End Role="Aditamento" Type="Self.Aditamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Aditamento">
+        <PropertyRef Name="Modelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_AnoModelo_Marca">
     <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
     <End Role="AnoModelo" Type="Self.AnoModelo" Multiplicity="*" />
@@ -213,12 +249,21 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="seguradoraModelStoreContainer">
+    <EntitySet Name="Aditamento" EntityType="Self.Aditamento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AnoModelo" EntityType="Self.AnoModelo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Modelo" EntityType="Self.Modelo" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ObjetoSegurado" EntityType="Self.ObjetoSegurado" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Segurado" EntityType="Self.Segurado" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Veiculo" EntityType="Self.Veiculo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Aditamento_Marca" Association="Self.FK_Aditamento_Marca">
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Aditamento" EntitySet="Aditamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aditamento_Modelo" Association="Self.FK_Aditamento_Modelo">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="Aditamento" EntitySet="Aditamento" />
+    </AssociationSet>
     <AssociationSet Name="FK_AnoModelo_Marca" Association="Self.FK_AnoModelo_Marca">
       <End Role="Marca" EntitySet="Marca" />
       <End Role="AnoModelo" EntitySet="AnoModelo" />

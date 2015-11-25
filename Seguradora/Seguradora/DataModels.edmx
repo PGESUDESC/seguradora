@@ -4,7 +4,19 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="seguradoraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="seguradoraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Aditamento">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descriao" Type="text" Nullable="false" />
+          <Property Name="Categoria" Type="int" />
+          <Property Name="Marca" Type="int" />
+          <Property Name="Modelo" Type="int" />
+          <Property Name="AnoFabricacao" Type="datetime" />
+        </EntityType>
         <EntityType Name="AnoModelo">
           <Key>
             <PropertyRef Name="ID" />
@@ -97,6 +109,30 @@
           <Property Name="TipoVeiculo" Type="int" Nullable="false" />
           <Property Name="SiglaCombustivel" Type="varchar" MaxLength="2" Nullable="false" />
         </EntityType>
+        <Association Name="FK_Aditamento_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
+          <End Role="Aditamento" Type="Self.Aditamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Aditamento">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Aditamento_Modelo">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+          <End Role="Aditamento" Type="Self.Aditamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Aditamento">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_AnoModelo_Marca">
           <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
           <End Role="AnoModelo" Type="Self.AnoModelo" Multiplicity="*" />
@@ -218,12 +254,21 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="seguradoraModelStoreContainer">
+          <EntitySet Name="Aditamento" EntityType="Self.Aditamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AnoModelo" EntityType="Self.AnoModelo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Modelo" EntityType="Self.Modelo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ObjetoSegurado" EntityType="Self.ObjetoSegurado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Segurado" EntityType="Self.Segurado" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Veiculo" EntityType="Self.Veiculo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Aditamento_Marca" Association="Self.FK_Aditamento_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Aditamento" EntitySet="Aditamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aditamento_Modelo" Association="Self.FK_Aditamento_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Aditamento" EntitySet="Aditamento" />
+          </AssociationSet>
           <AssociationSet Name="FK_AnoModelo_Marca" Association="Self.FK_AnoModelo_Marca">
             <End Role="Marca" EntitySet="Marca" />
             <End Role="AnoModelo" EntitySet="AnoModelo" />
@@ -265,8 +310,7 @@
             <End Role="Veiculo" EntitySet="Veiculo" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="seguradoraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -296,6 +340,7 @@
           <NavigationProperty Name="Modelo" Relationship="Self.FK_Modelo_Marca" FromRole="Marca" ToRole="Modelo" />
           <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Marca" FromRole="Marca" ToRole="ObjetoSegurado" />
           <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_Marca" FromRole="Marca" ToRole="Veiculo" />
+          <NavigationProperty Name="Aditamento" Relationship="seguradoraModel.FK_Aditamento_Marca" FromRole="Marca" ToRole="Aditamento" />
         </EntityType>
         <EntityType Name="Modelo">
           <Key>
@@ -310,6 +355,7 @@
           <NavigationProperty Name="Marca1" Relationship="Self.FK_Modelo_Marca" FromRole="Modelo" ToRole="Marca" />
           <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Modelo" FromRole="Modelo" ToRole="ObjetoSegurado" />
           <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_Modelo" FromRole="Modelo" ToRole="Veiculo" />
+          <NavigationProperty Name="Aditamento" Relationship="seguradoraModel.FK_Aditamento_Modelo" FromRole="Modelo" ToRole="Aditamento" />
         </EntityType>
         <EntityType Name="ObjetoSegurado">
           <Key>
@@ -549,7 +595,54 @@
             <End Role="Segurado" EntitySet="Segurado" />
             <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
           </AssociationSet>
+          <EntitySet Name="Aditamento" EntityType="seguradoraModel.Aditamento" />
+          <AssociationSet Name="FK_Aditamento_Marca" Association="seguradoraModel.FK_Aditamento_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Aditamento" EntitySet="Aditamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aditamento_Modelo" Association="seguradoraModel.FK_Aditamento_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Aditamento" EntitySet="Aditamento" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Aditamento">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Descriao" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Categoria" Type="Int32" />
+          <Property Name="Marca" Type="Int32" />
+          <Property Name="Modelo" Type="Int32" />
+          <Property Name="AnoFabricacao" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Marca1" Relationship="seguradoraModel.FK_Aditamento_Marca" FromRole="Aditamento" ToRole="Marca" />
+          <NavigationProperty Name="Modelo1" Relationship="seguradoraModel.FK_Aditamento_Modelo" FromRole="Aditamento" ToRole="Modelo" />
+        </EntityType>
+        <Association Name="FK_Aditamento_Marca">
+          <End Type="seguradoraModel.Marca" Role="Marca" Multiplicity="0..1" />
+          <End Type="seguradoraModel.Aditamento" Role="Aditamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Aditamento">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Aditamento_Modelo">
+          <End Type="seguradoraModel.Modelo" Role="Modelo" Multiplicity="0..1" />
+          <End Type="seguradoraModel.Aditamento" Role="Aditamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Aditamento">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -651,6 +744,19 @@
                 <ScalarProperty Name="MesReferencia" ColumnName="MesReferencia" />
                 <ScalarProperty Name="TipoVeiculo" ColumnName="TipoVeiculo" />
                 <ScalarProperty Name="SiglaCombustivel" ColumnName="SiglaCombustivel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aditamento">
+            <EntityTypeMapping TypeName="seguradoraModel.Aditamento">
+              <MappingFragment StoreEntitySet="Aditamento">
+                <ScalarProperty Name="AnoFabricacao" ColumnName="AnoFabricacao" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Descriao" ColumnName="Descriao" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

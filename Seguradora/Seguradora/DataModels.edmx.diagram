@@ -21,6 +21,9 @@
         <AssociationConnector Association="seguradoraModel.FK_Veiculo_Modelo" ManuallyRouted="false" />
         <AssociationConnector Association="seguradoraModel.FK_ObjetoSegurado1_Segurado" ManuallyRouted="false" />
         <AssociationConnector Association="seguradoraModel.FK_ObjetoSegurado1_Segurado1" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="seguradoraModel.Aditamento" Width="1.5" PointX="5.25" PointY="11" />
+        <AssociationConnector Association="seguradoraModel.FK_Aditamento_Marca" />
+        <AssociationConnector Association="seguradoraModel.FK_Aditamento_Modelo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
