@@ -1,0 +1,680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="seguradoraModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AnoModelo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Marca" Type="int" Nullable="false" />
+          <Property Name="Modelo" Type="int" Nullable="false" />
+          <Property Name="TipoVeiculo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="TipoVeiculo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Modelo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codigo" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Marca" Type="int" Nullable="false" />
+          <Property Name="TipoVeiculo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ObjetoSegurado">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Segurado" Type="int" Nullable="false" />
+          <Property Name="TipoAutomovel" Type="varchar" MaxLength="20" />
+          <Property Name="CodigoFipe" Type="varchar" MaxLength="20" />
+          <Property Name="Categoria" Type="varchar" MaxLength="20" />
+          <Property Name="Marca" Type="int" />
+          <Property Name="Modelo" Type="int" />
+          <Property Name="Potencia" Type="int" />
+          <Property Name="AnoDeFabricacao" Type="datetime" />
+          <Property Name="AnoModelo" Type="datetime" />
+          <Property Name="Chassi" Type="varchar" MaxLength="30" />
+          <Property Name="Placa" Type="varchar" MaxLength="10" />
+          <Property Name="QtdPortas" Type="int" />
+          <Property Name="NroPassageiros" Type="int" />
+          <Property Name="CepPernoite" Type="varchar" MaxLength="20" />
+          <Property Name="Renavam" Type="varchar" MaxLength="30" />
+          <Property Name="ValorFipe" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="ValorCotado" Type="decimal" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Segurado">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Documento" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DataNascimento" Type="datetime" Nullable="false" />
+          <Property Name="Sexo" Type="int" Nullable="false" />
+          <Property Name="EstadoCivil" Type="int" Nullable="false" />
+          <Property Name="FoneResidencial" Type="varchar" MaxLength="100" />
+          <Property Name="FoneCelular" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Rua" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Numero" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Bairro" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CEP" Type="varchar" MaxLength="9" Nullable="false" />
+          <Property Name="Cidade" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Estado" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="BonusAtual" Type="varchar" MaxLength="100" />
+          <Property Name="SeguradoraAnterior" Type="varchar" MaxLength="100" />
+          <Property Name="NumeroCNH" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="PrimeiraHabilitacao" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Veiculo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Valor" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Marca" Type="int" Nullable="false" />
+          <Property Name="Modelo" Type="int" Nullable="false" />
+          <Property Name="AnoModelo" Type="int" Nullable="false" />
+          <Property Name="Combustivel" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CodigoFipe" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MesReferencia" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TipoVeiculo" Type="int" Nullable="false" />
+          <Property Name="SiglaCombustivel" Type="varchar" MaxLength="2" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_AnoModelo_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+          <End Role="AnoModelo" Type="Self.AnoModelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AnoModelo">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AnoModelo_Modelo">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="1" />
+          <End Role="AnoModelo" Type="Self.AnoModelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AnoModelo">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Modelo_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Modelo">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObjetoSegurado1_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
+          <End Role="ObjetoSegurado" Type="Self.ObjetoSegurado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ObjetoSegurado">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObjetoSegurado1_Modelo">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+          <End Role="ObjetoSegurado" Type="Self.ObjetoSegurado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ObjetoSegurado">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObjetoSegurado1_Segurado">
+          <End Role="Segurado" Type="Self.Segurado" Multiplicity="1" />
+          <End Role="ObjetoSegurado" Type="Self.ObjetoSegurado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Segurado">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="ObjetoSegurado">
+              <PropertyRef Name="Segurado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObjetoSegurado1_Segurado1">
+          <End Role="Segurado" Type="Self.Segurado" Multiplicity="1" />
+          <End Role="ObjetoSegurado" Type="Self.ObjetoSegurado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Segurado">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="ObjetoSegurado">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Veiculo_AnoModelo">
+          <End Role="AnoModelo" Type="Self.AnoModelo" Multiplicity="1" />
+          <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnoModelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Veiculo">
+              <PropertyRef Name="AnoModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Veiculo_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+          <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Veiculo">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Veiculo_Modelo">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="1" />
+          <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Veiculo">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="seguradoraModelStoreContainer">
+          <EntitySet Name="AnoModelo" EntityType="Self.AnoModelo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marca" EntityType="Self.Marca" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Modelo" EntityType="Self.Modelo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ObjetoSegurado" EntityType="Self.ObjetoSegurado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Segurado" EntityType="Self.Segurado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Veiculo" EntityType="Self.Veiculo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_AnoModelo_Marca" Association="Self.FK_AnoModelo_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="AnoModelo" EntitySet="AnoModelo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnoModelo_Modelo" Association="Self.FK_AnoModelo_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="AnoModelo" EntitySet="AnoModelo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Modelo_Marca" Association="Self.FK_Modelo_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Modelo" EntitySet="Modelo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObjetoSegurado1_Marca" Association="Self.FK_ObjetoSegurado1_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObjetoSegurado1_Modelo" Association="Self.FK_ObjetoSegurado1_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObjetoSegurado1_Segurado" Association="Self.FK_ObjetoSegurado1_Segurado">
+            <End Role="Segurado" EntitySet="Segurado" />
+            <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObjetoSegurado1_Segurado1" Association="Self.FK_ObjetoSegurado1_Segurado1">
+            <End Role="Segurado" EntitySet="Segurado" />
+            <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Veiculo_AnoModelo" Association="Self.FK_Veiculo_AnoModelo">
+            <End Role="AnoModelo" EntitySet="AnoModelo" />
+            <End Role="Veiculo" EntitySet="Veiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Veiculo_Marca" Association="Self.FK_Veiculo_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Veiculo" EntitySet="Veiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Veiculo_Modelo" Association="Self.FK_Veiculo_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Veiculo" EntitySet="Veiculo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="seguradoraModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AnoModelo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descricao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Marca" Type="Int32" Nullable="false" />
+          <Property Name="Modelo" Type="Int32" Nullable="false" />
+          <Property Name="TipoVeiculo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Marca1" Relationship="Self.FK_AnoModelo_Marca" FromRole="AnoModelo" ToRole="Marca" />
+          <NavigationProperty Name="Modelo1" Relationship="Self.FK_AnoModelo_Modelo" FromRole="AnoModelo" ToRole="Modelo" />
+          <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_AnoModelo" FromRole="AnoModelo" ToRole="Veiculo" />
+        </EntityType>
+        <EntityType Name="Marca">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descricao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoVeiculo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AnoModelo" Relationship="Self.FK_AnoModelo_Marca" FromRole="Marca" ToRole="AnoModelo" />
+          <NavigationProperty Name="Modelo" Relationship="Self.FK_Modelo_Marca" FromRole="Marca" ToRole="Modelo" />
+          <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Marca" FromRole="Marca" ToRole="ObjetoSegurado" />
+          <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_Marca" FromRole="Marca" ToRole="Veiculo" />
+        </EntityType>
+        <EntityType Name="Modelo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descricao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Marca" Type="Int32" Nullable="false" />
+          <Property Name="TipoVeiculo" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="AnoModelo" Relationship="Self.FK_AnoModelo_Modelo" FromRole="Modelo" ToRole="AnoModelo" />
+          <NavigationProperty Name="Marca1" Relationship="Self.FK_Modelo_Marca" FromRole="Modelo" ToRole="Marca" />
+          <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Modelo" FromRole="Modelo" ToRole="ObjetoSegurado" />
+          <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_Modelo" FromRole="Modelo" ToRole="Veiculo" />
+        </EntityType>
+        <EntityType Name="ObjetoSegurado">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Segurado" Type="Int32" Nullable="false" />
+          <Property Name="TipoAutomovel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoFipe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Marca" Type="Int32" />
+          <Property Name="Modelo" Type="Int32" />
+          <Property Name="Potencia" Type="Int32" />
+          <Property Name="AnoDeFabricacao" Type="DateTime" Precision="3" />
+          <Property Name="AnoModelo" Type="DateTime" Precision="3" />
+          <Property Name="Chassi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Placa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="QtdPortas" Type="Int32" />
+          <Property Name="NroPassageiros" Type="Int32" />
+          <Property Name="CepPernoite" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Renavam" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ValorFipe" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="ValorCotado" Type="Decimal" Precision="18" Scale="0" />
+          <NavigationProperty Name="Marca1" Relationship="Self.FK_ObjetoSegurado1_Marca" FromRole="ObjetoSegurado" ToRole="Marca" />
+          <NavigationProperty Name="Modelo1" Relationship="Self.FK_ObjetoSegurado1_Modelo" FromRole="ObjetoSegurado" ToRole="Modelo" />
+          <NavigationProperty Name="Segurado1" Relationship="Self.FK_ObjetoSegurado1_Segurado" FromRole="ObjetoSegurado" ToRole="Segurado" />
+          <NavigationProperty Name="Segurado2" Relationship="Self.FK_ObjetoSegurado1_Segurado1" FromRole="ObjetoSegurado" ToRole="Segurado" />
+        </EntityType>
+        <EntityType Name="Segurado">
+          <Key>
+            <PropertyRef Name="Codigo" />
+          </Key>
+          <Property Name="Codigo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Documento" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sexo" Type="Int32" Nullable="false" />
+          <Property Name="EstadoCivil" Type="Int32" Nullable="false" />
+          <Property Name="FoneResidencial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FoneCelular" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Rua" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Numero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Bairro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CEP" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Cidade" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Estado" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BonusAtual" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SeguradoraAnterior" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroCNH" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimeiraHabilitacao" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Segurado" FromRole="Segurado" ToRole="ObjetoSegurado" />
+          <NavigationProperty Name="ObjetoSegurado1" Relationship="Self.FK_ObjetoSegurado1_Segurado1" FromRole="Segurado" ToRole="ObjetoSegurado" />
+        </EntityType>
+        <EntityType Name="Veiculo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Valor" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="Marca" Type="Int32" Nullable="false" />
+          <Property Name="Modelo" Type="Int32" Nullable="false" />
+          <Property Name="AnoModelo" Type="Int32" Nullable="false" />
+          <Property Name="Combustivel" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodigoFipe" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MesReferencia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoVeiculo" Type="Int32" Nullable="false" />
+          <Property Name="SiglaCombustivel" Type="String" MaxLength="2" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="AnoModelo1" Relationship="Self.FK_Veiculo_AnoModelo" FromRole="Veiculo" ToRole="AnoModelo" />
+          <NavigationProperty Name="Marca1" Relationship="Self.FK_Veiculo_Marca" FromRole="Veiculo" ToRole="Marca" />
+          <NavigationProperty Name="Modelo1" Relationship="Self.FK_Veiculo_Modelo" FromRole="Veiculo" ToRole="Modelo" />
+        </EntityType>
+        <Association Name="FK_AnoModelo_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+          <End Role="AnoModelo" Type="Self.AnoModelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AnoModelo">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_AnoModelo_Modelo">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="1" />
+          <End Role="AnoModelo" Type="Self.AnoModelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="AnoModelo">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Veiculo_AnoModelo">
+          <End Role="AnoModelo" Type="Self.AnoModelo" Multiplicity="1" />
+          <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnoModelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Veiculo">
+              <PropertyRef Name="AnoModelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Modelo_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Modelo">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObjetoSegurado1_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
+          <End Role="ObjetoSegurado" Type="Self.ObjetoSegurado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ObjetoSegurado">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Veiculo_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
+          <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Veiculo">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObjetoSegurado1_Modelo">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+          <End Role="ObjetoSegurado" Type="Self.ObjetoSegurado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ObjetoSegurado">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Veiculo_Modelo">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="1" />
+          <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Veiculo">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObjetoSegurado1_Segurado">
+          <End Role="Segurado" Type="Self.Segurado" Multiplicity="1" />
+          <End Role="ObjetoSegurado" Type="Self.ObjetoSegurado" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Segurado">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="ObjetoSegurado">
+              <PropertyRef Name="Segurado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ObjetoSegurado1_Segurado1">
+          <End Role="Segurado" Type="Self.Segurado" Multiplicity="1" />
+          <End Role="ObjetoSegurado" Type="Self.ObjetoSegurado" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Segurado">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="ObjetoSegurado">
+              <PropertyRef Name="Codigo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="seguradoraEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AnoModelo" EntityType="Self.AnoModelo" />
+          <EntitySet Name="Marca" EntityType="Self.Marca" />
+          <EntitySet Name="Modelo" EntityType="Self.Modelo" />
+          <EntitySet Name="ObjetoSegurado" EntityType="Self.ObjetoSegurado" />
+          <EntitySet Name="Segurado" EntityType="Self.Segurado" />
+          <EntitySet Name="Veiculo" EntityType="Self.Veiculo" />
+          <AssociationSet Name="FK_AnoModelo_Marca" Association="Self.FK_AnoModelo_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="AnoModelo" EntitySet="AnoModelo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AnoModelo_Modelo" Association="Self.FK_AnoModelo_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="AnoModelo" EntitySet="AnoModelo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Veiculo_AnoModelo" Association="Self.FK_Veiculo_AnoModelo">
+            <End Role="AnoModelo" EntitySet="AnoModelo" />
+            <End Role="Veiculo" EntitySet="Veiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Modelo_Marca" Association="Self.FK_Modelo_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Modelo" EntitySet="Modelo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObjetoSegurado1_Marca" Association="Self.FK_ObjetoSegurado1_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Veiculo_Marca" Association="Self.FK_Veiculo_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Veiculo" EntitySet="Veiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObjetoSegurado1_Modelo" Association="Self.FK_ObjetoSegurado1_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Veiculo_Modelo" Association="Self.FK_Veiculo_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Veiculo" EntitySet="Veiculo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObjetoSegurado1_Segurado" Association="Self.FK_ObjetoSegurado1_Segurado">
+            <End Role="Segurado" EntitySet="Segurado" />
+            <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ObjetoSegurado1_Segurado1" Association="Self.FK_ObjetoSegurado1_Segurado1">
+            <End Role="Segurado" EntitySet="Segurado" />
+            <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="seguradoraModelStoreContainer" CdmEntityContainer="seguradoraEntities">
+          <EntitySetMapping Name="AnoModelo">
+            <EntityTypeMapping TypeName="seguradoraModel.AnoModelo">
+              <MappingFragment StoreEntitySet="AnoModelo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="TipoVeiculo" ColumnName="TipoVeiculo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marca">
+            <EntityTypeMapping TypeName="seguradoraModel.Marca">
+              <MappingFragment StoreEntitySet="Marca">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="TipoVeiculo" ColumnName="TipoVeiculo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modelo">
+            <EntityTypeMapping TypeName="seguradoraModel.Modelo">
+              <MappingFragment StoreEntitySet="Modelo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="TipoVeiculo" ColumnName="TipoVeiculo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ObjetoSegurado">
+            <EntityTypeMapping TypeName="seguradoraModel.ObjetoSegurado">
+              <MappingFragment StoreEntitySet="ObjetoSegurado">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Segurado" ColumnName="Segurado" />
+                <ScalarProperty Name="TipoAutomovel" ColumnName="TipoAutomovel" />
+                <ScalarProperty Name="CodigoFipe" ColumnName="CodigoFipe" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Potencia" ColumnName="Potencia" />
+                <ScalarProperty Name="AnoDeFabricacao" ColumnName="AnoDeFabricacao" />
+                <ScalarProperty Name="AnoModelo" ColumnName="AnoModelo" />
+                <ScalarProperty Name="Chassi" ColumnName="Chassi" />
+                <ScalarProperty Name="Placa" ColumnName="Placa" />
+                <ScalarProperty Name="QtdPortas" ColumnName="QtdPortas" />
+                <ScalarProperty Name="NroPassageiros" ColumnName="NroPassageiros" />
+                <ScalarProperty Name="CepPernoite" ColumnName="CepPernoite" />
+                <ScalarProperty Name="Renavam" ColumnName="Renavam" />
+                <ScalarProperty Name="ValorFipe" ColumnName="ValorFipe" />
+                <ScalarProperty Name="ValorCotado" ColumnName="ValorCotado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Segurado">
+            <EntityTypeMapping TypeName="seguradoraModel.Segurado">
+              <MappingFragment StoreEntitySet="Segurado">
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Documento" ColumnName="Documento" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+                <ScalarProperty Name="EstadoCivil" ColumnName="EstadoCivil" />
+                <ScalarProperty Name="FoneResidencial" ColumnName="FoneResidencial" />
+                <ScalarProperty Name="FoneCelular" ColumnName="FoneCelular" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Rua" ColumnName="Rua" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="CEP" ColumnName="CEP" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="BonusAtual" ColumnName="BonusAtual" />
+                <ScalarProperty Name="SeguradoraAnterior" ColumnName="SeguradoraAnterior" />
+                <ScalarProperty Name="NumeroCNH" ColumnName="NumeroCNH" />
+                <ScalarProperty Name="PrimeiraHabilitacao" ColumnName="PrimeiraHabilitacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Veiculo">
+            <EntityTypeMapping TypeName="seguradoraModel.Veiculo">
+              <MappingFragment StoreEntitySet="Veiculo">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="AnoModelo" ColumnName="AnoModelo" />
+                <ScalarProperty Name="Combustivel" ColumnName="Combustivel" />
+                <ScalarProperty Name="CodigoFipe" ColumnName="CodigoFipe" />
+                <ScalarProperty Name="MesReferencia" ColumnName="MesReferencia" />
+                <ScalarProperty Name="TipoVeiculo" ColumnName="TipoVeiculo" />
+                <ScalarProperty Name="SiglaCombustivel" ColumnName="SiglaCombustivel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

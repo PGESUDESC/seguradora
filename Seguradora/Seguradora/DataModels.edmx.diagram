@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1ed40b075671402a8e23486c962cef68" Name="Diagram1">
+        <EntityTypeShape EntityType="seguradoraModel.AnoModelo" Width="1.5" PointX="5.25" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="seguradoraModel.Marca" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="seguradoraModel.Modelo" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="seguradoraModel.ObjetoSegurado" Width="1.5" PointX="8.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="seguradoraModel.Segurado" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="seguradoraModel.Veiculo" Width="1.5" PointX="10.5" PointY="6.5" IsExpanded="true" />
+        <AssociationConnector Association="seguradoraModel.FK_AnoModelo_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="seguradoraModel.FK_AnoModelo_Modelo" ManuallyRouted="false" />
+        <AssociationConnector Association="seguradoraModel.FK_Veiculo_AnoModelo" ManuallyRouted="false" />
+        <AssociationConnector Association="seguradoraModel.FK_Modelo_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="seguradoraModel.FK_ObjetoSegurado1_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="seguradoraModel.FK_Veiculo_Marca" ManuallyRouted="false" />
+        <AssociationConnector Association="seguradoraModel.FK_ObjetoSegurado1_Modelo" ManuallyRouted="false" />
+        <AssociationConnector Association="seguradoraModel.FK_Veiculo_Modelo" ManuallyRouted="false" />
+        <AssociationConnector Association="seguradoraModel.FK_ObjetoSegurado1_Segurado" ManuallyRouted="false" />
+        <AssociationConnector Association="seguradoraModel.FK_ObjetoSegurado1_Segurado1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
