@@ -1,107 +1,80 @@
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Seguradora.dll.config
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Seguradora.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Seguradora.pdb
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Antlr3.Runtime.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.AspNet.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.Core.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.OAuth.Consumer.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.OAuth.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.OpenId.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\EntityFramework.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Data.Edm.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Data.OData.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Web.WebPages.OAuth.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Newtonsoft.Json.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Spatial.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.Helpers.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.Http.OData.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.Mvc.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.Optimization.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.Razor.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.WebPages.Deployment.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.WebPages.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.WebPages.Razor.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\WebGrease.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\WebMatrix.Data.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\WebMatrix.WebData.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\EntityFramework.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Newtonsoft.Json.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.Helpers.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.Mvc.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.Razor.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.WebPages.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.WebPages.Deployment.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.WebPages.Razor.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\WebMatrix.Data.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Web.WebPages.OAuth.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\WebMatrix.WebData.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.AspNet.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.Core.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.OAuth.Consumer.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.OAuth.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.OpenId.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.Http.OData.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Data.Edm.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Data.OData.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Spatial.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\de\Microsoft.Data.Edm.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\es\Microsoft.Data.Edm.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\fr\Microsoft.Data.Edm.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\it\Microsoft.Data.Edm.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\ja\Microsoft.Data.Edm.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\ko\Microsoft.Data.Edm.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\ru\Microsoft.Data.Edm.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\de\Microsoft.Data.OData.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\es\Microsoft.Data.OData.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\fr\Microsoft.Data.OData.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\it\Microsoft.Data.OData.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\ja\Microsoft.Data.OData.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\ko\Microsoft.Data.OData.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\ru\Microsoft.Data.OData.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\zh-Hans\Microsoft.Data.OData.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\zh-Hant\Microsoft.Data.OData.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\de\System.Spatial.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\es\System.Spatial.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\fr\System.Spatial.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\it\System.Spatial.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\ja\System.Spatial.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\ko\System.Spatial.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\ru\System.Spatial.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\zh-Hans\System.Spatial.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\obj\Debug\Seguradora.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\obj\Debug\Seguradora.pdb
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\PagedList.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\PagedList.Mvc.dll
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\PagedList.xml
-C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\PagedList.Mvc.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Seguradora.dll.config
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Seguradora.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Seguradora.pdb
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Antlr3.Runtime.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\EntityFramework.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\EntityFramework.SqlServer.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Core.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Cookies.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Facebook.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Google.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.OAuth.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Twitter.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Web.Infrastructure.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Newtonsoft.Json.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Owin.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.Helpers.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.Mvc.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.Optimization.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.Razor.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.Deployment.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.Razor.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\WebGrease.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.Helpers.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.Mvc.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.Optimization.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.Razor.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.Deployment.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.Razor.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Antlr3.Runtime.pdb
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Newtonsoft.Json.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\EntityFramework.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\EntityFramework.SqlServer.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Core.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Facebook.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Cookies.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.OAuth.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Google.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Twitter.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.csprojResolveAssemblyReference.cache
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.dll
+C:\projetos\seguradora\Seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.pdb
 C:\projetos\seguradora\Seguradora\Seguradora\bin\Seguradora.dll.config
 C:\projetos\seguradora\Seguradora\Seguradora\bin\Seguradora.dll
 C:\projetos\seguradora\Seguradora\Seguradora\bin\Seguradora.pdb
 C:\projetos\seguradora\Seguradora\Seguradora\bin\Antlr3.Runtime.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.AspNet.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.Core.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.OAuth.Consumer.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.OAuth.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.OpenId.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
 C:\projetos\seguradora\Seguradora\Seguradora\bin\EntityFramework.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Data.Edm.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Data.OData.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\EntityFramework.SqlServer.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Core.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Cookies.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Facebook.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Google.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.OAuth.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Twitter.dll
 C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Web.Infrastructure.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Web.WebPages.OAuth.dll
 C:\projetos\seguradora\Seguradora\Seguradora\bin\Newtonsoft.Json.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\PagedList.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\PagedList.Mvc.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Spatial.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Owin.dll
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Helpers.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Http.OData.dll
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Mvc.dll
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Optimization.dll
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Razor.dll
@@ -109,77 +82,28 @@ C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.Deployment.
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.dll
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.Razor.dll
 C:\projetos\seguradora\Seguradora\Seguradora\bin\WebGrease.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\WebMatrix.Data.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\WebMatrix.WebData.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Newtonsoft.Json.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\PagedList.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\PagedList.Mvc.xml
 C:\projetos\seguradora\Seguradora\Seguradora\bin\EntityFramework.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\EntityFramework.SqlServer.xml
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Helpers.xml
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Mvc.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Optimization.xml
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Razor.xml
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.xml
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.Deployment.xml
 C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.WebPages.Razor.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\WebMatrix.Data.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Web.WebPages.OAuth.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\WebMatrix.WebData.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.AspNet.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.Core.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.OAuth.Consumer.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.OAuth.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.OpenId.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Http.OData.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Data.Edm.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Data.OData.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Spatial.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\de\Microsoft.Data.Edm.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\es\Microsoft.Data.Edm.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\fr\Microsoft.Data.Edm.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\it\Microsoft.Data.Edm.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\ja\Microsoft.Data.Edm.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\ko\Microsoft.Data.Edm.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\ru\Microsoft.Data.Edm.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\de\Microsoft.Data.OData.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\es\Microsoft.Data.OData.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\fr\Microsoft.Data.OData.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\it\Microsoft.Data.OData.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\ja\Microsoft.Data.OData.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\ko\Microsoft.Data.OData.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\ru\Microsoft.Data.OData.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\zh-Hans\Microsoft.Data.OData.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\zh-Hant\Microsoft.Data.OData.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\de\System.Spatial.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\es\System.Spatial.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\fr\System.Spatial.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\it\System.Spatial.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\ja\System.Spatial.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\ko\System.Spatial.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\ru\System.Spatial.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\zh-Hans\System.Spatial.resources.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\zh-Hant\System.Spatial.resources.dll
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Antlr3.Runtime.pdb
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Newtonsoft.Json.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Core.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Facebook.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Cookies.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.OAuth.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Google.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Twitter.xml
+C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\projetos\seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.dll
 C:\projetos\seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.pdb
-C:\projetos\seguradora\Seguradora\Seguradora\bin\EntityFramework.SqlServer.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\EntityFramework.SqlServer.xml
-C:\projetos\seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.csprojResolveAssemblyReference.cache
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Net.Http.Extensions.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Net.Http.Formatting.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Net.Http.Primitives.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Http.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Http.WebHost.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Org.Mentalis.Security.Cryptography.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Mono.Math.dll
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Antlr3.Runtime.pdb
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Net.Http.Extensions.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Net.Http.Formatting.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Net.Http.Primitives.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Http.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Http.WebHost.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\System.Web.Optimization.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Org.Mentalis.Security.Cryptography.xml
-C:\projetos\seguradora\Seguradora\Seguradora\bin\Mono.Math.xml
-C:\projetos\seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.csproj.App.config

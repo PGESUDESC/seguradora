@@ -1,6 +1,4 @@
-﻿@using PagedList.Mvc;
-@using PagedList;
-@model PagedList.PagedList<Seguradora.Models.Segurado>
+﻿@model IEnumerable<Seguradora.Segurado>
 
 @{
     ViewBag.Title = "Index";
@@ -12,70 +10,70 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
+<table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Documento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadoCivil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoneResidencial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FoneCelular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rua)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bairro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CEP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BonusAtual)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SeguradoraAnterior)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroCNH)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimeiraHabilitacao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ObjetoSegurado1.TipoAutomovel)
+        </th>
         <th></th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Documento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().DataNascimento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Sexo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().EstadoCivil)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().FoneResidencial)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().FoneCelular)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Rua)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Numero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().CEP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().Estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().BonusAtual)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().SeguradoraAnterior)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().NumeroCNH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstOrDefault().PrimeiraHabilitacao)
-        </th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.Codigo })
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
         </td>
@@ -129,6 +127,14 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.PrimeiraHabilitacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObjetoSegurado1.TipoAutomovel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Codigo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Codigo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Codigo })
         </td>
     </tr>
 }
