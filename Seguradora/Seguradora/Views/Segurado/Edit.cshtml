@@ -37,7 +37,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.DataNascimento, new { htmlAttributes = new { @class = "form-control datetimepicker" } })
                 @Html.ValidationMessageFor(model => model.DataNascimento, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -157,7 +157,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PrimeiraHabilitacao, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.PrimeiraHabilitacao, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.PrimeiraHabilitacao, new { htmlAttributes = new { @class = "form-control datetimepicker" } })
                 @Html.ValidationMessageFor(model => model.PrimeiraHabilitacao, "", new { @class = "text-danger" })
             </div>
         </div>
