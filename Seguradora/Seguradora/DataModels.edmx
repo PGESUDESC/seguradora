@@ -458,18 +458,41 @@
           <NavigationProperty Name="Aditamento" Relationship="seguradoraModel.FK_Aditamento_Modelo" FromRole="Modelo" ToRole="Aditamento" />
         </EntityType>
         <EntityType Name="ObjetoSegurado">
+          <Documentation>
+            <LongDescription>Cadastro dos objetos que podem ser segurados</LongDescription>
+          </Documentation>
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="Int32" Nullable="false" />
-          <Property Name="Segurado" Type="Int32" Nullable="false" />
-          <Property Name="TipoAutomovel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="CodigoFipe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" >
+            <Documentation>
+              <LongDescription>Código</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="Segurado" Type="Int32" Nullable="false" >
+            <Documentation>
+              <LongDescription>Segurado</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="TipoAutomovel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" >
+            <Documentation>
+              <LongDescription>Tipo do Automóvel</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="CodigoFipe" Type="String" MaxLength="20" FixedLength="false" Unicode="false" >
+            <Documentation>
+              <LongDescription>Código da tabela FIPE</LongDescription>
+            </Documentation>
+          </Property>
           <Property Name="Categoria" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Marca" Type="Int32" />
           <Property Name="Modelo" Type="Int32" />
           <Property Name="Potencia" Type="Int32" />
-          <Property Name="AnoDeFabricacao" Type="DateTime" Precision="3" />
+          <Property Name="AnoDeFabricacao" Type="DateTime" Precision="3" >
+            <Documentation>
+              <LongDescription>Ano de fabricação</LongDescription>
+            </Documentation>
+          </Property>
           <Property Name="AnoModelo" Type="DateTime" Precision="3" />
           <Property Name="Chassi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Placa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
@@ -829,14 +852,37 @@
           </ReferentialConstraint>
         </Association>
         <EntityType Name="Sinistro">
+          <Documentation>
+            <LongDescription>Tabela para cadastro de sinistro</LongDescription>
+          </Documentation>
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="Int32" Nullable="false" />
-          <Property Name="NroContrato" Type="Int32" Nullable="false" />
-          <Property Name="NroBO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Avarias" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="DescricaoOcorrido" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" >
+            <Documentation>
+              <LongDescription>Código do sinistro</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="NroContrato" Type="Int32" Nullable="false" >
+            <Documentation>
+              <LongDescription>Número do contrato</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="NroBO" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" >
+            <Documentation>
+              <LongDescription>Número do BO</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="Avarias" Type="String" MaxLength="500" FixedLength="false" Unicode="false" >
+            <Documentation>
+              <LongDescription>Avarias</LongDescription>
+            </Documentation>
+          </Property>
+          <Property Name="DescricaoOcorrido" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" >
+            <Documentation>
+              <LongDescription>Descrição do ocorrido</LongDescription>
+            </Documentation>
+          </Property>
           <NavigationProperty Name="Apolice" Relationship="seguradoraModel.FK_Sinistro_Apolice" FromRole="Sinistro" ToRole="Apolice" />
         </EntityType>
         <Association Name="FK_Sinistro_Apolice">

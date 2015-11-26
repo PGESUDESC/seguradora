@@ -179,8 +179,10 @@
     <Compile Include="Controllers\MarcasController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
     <Compile Include="Controllers\ObjetoSeguradoController.cs" />
+    <Compile Include="Controllers\ObjetoSeguradoesController.cs" />
     <Compile Include="Controllers\SeguradoController.cs" />
     <Compile Include="Controllers\SinistroController.cs" />
+    <Compile Include="Controllers\SinistroesController.cs" />
     <Compile Include="Controllers\VeiculoController.cs" />
     <Compile Include="Cotacao.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -420,6 +422,16 @@
     <Content Include="Views\Modelo\Details.cshtml" />
     <Content Include="Views\Modelo\Edit.cshtml" />
     <Content Include="Views\Modelo\Index.cshtml" />
+    <Content Include="Views\Sinistroes\Create.cshtml" />
+    <Content Include="Views\Sinistroes\Delete.cshtml" />
+    <Content Include="Views\Sinistroes\Details.cshtml" />
+    <Content Include="Views\Sinistroes\Edit.cshtml" />
+    <Content Include="Views\Sinistroes\Index.cshtml" />
+    <Content Include="Views\ObjetoSeguradoes\Create.cshtml" />
+    <Content Include="Views\ObjetoSeguradoes\Delete.cshtml" />
+    <Content Include="Views\ObjetoSeguradoes\Details.cshtml" />
+    <Content Include="Views\ObjetoSeguradoes\Edit.cshtml" />
+    <Content Include="Views\ObjetoSeguradoes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
