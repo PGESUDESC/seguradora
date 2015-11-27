@@ -1,89 +1,132 @@
-﻿using Seguradora.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using PagedList;
+using Seguradora;
 
 namespace Seguradora.Controllers
 {
     public class SeguradoController : Controller
     {
-        private SeguradoService qService = new SeguradoService();
-        //
-        // GET: /Segurado/
+        private seguradoraEntities db = new seguradoraEntities();
 
-        public ActionResult Index(int? page)
+        // GET: Segurado
+        public ActionResult Index()
         {
-            IQueryable<Segurado> itens = qService.GetAll().OrderBy(p => p.Nome).AsQueryable();
-
-            var paginated = itens.ToPagedList(page ?? 1, 10);
-
-            return View(paginated);
+            var segurado = db.Segurado.Include(s => s.ObjetoSegurado1);
+            return View(segurado.ToList());
         }
 
-        [HttpPost]
-        public ActionResult Index(int? page, FormCollection collection)
+        // GET: Segurado/Details/5
+        public ActionResult Details(int? id)
         {
-            string filtro = collection["filtro"];
-            IQueryable<Segurado> itens = qService.GetAll().OrderBy(p => p.Nome).AsQueryable();
-            if (!String.IsNullOrEmpty(filtro))
-                itens = itens.Where(p => (p.Nome != null && p.Nome.ToLower().Contains(filtro.ToLower()))
-                                    || p.Documento != null && p.Documento.ToLower().Contains(filtro.ToLower()));
-            var paginated = itens.ToPagedList(page ?? 1, 10);
-
-            return View(paginated);
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Segurado segurado = db.Segurado.Find(id);
+            if (segurado == null)
+            {
+                return HttpNotFound();
+            }
+            return View(segurado);
         }
 
+        // GET: Segurado/Create
         public ActionResult Create()
         {
+            ViewBag.Codigo = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel");
             return View();
         }
 
+        // POST: Segurado/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create(Segurado newSegurado)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Codigo,Nome,Documento,DataNascimento,Sexo,EstadoCivil,FoneResidencial,FoneCelular,Email,Rua,Numero,Bairro,CEP,Cidade,Estado,BonusAtual,SeguradoraAnterior,NumeroCNH,PrimeiraHabilitacao")] Segurado segurado)
         {
-
             if (ModelState.IsValid)
             {
-                qService.Create(newSegurado);
+                db.Segurado.Add(segurado);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            else
-            {
-                return View(newSegurado);
-            }
+
+            ViewBag.Codigo = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel", segurado.Codigo);
+            return View(segurado);
         }
 
-
-        public ActionResult Edit(int id)
+        // GET: Segurado/Edit/5
+        public ActionResult Edit(int? id)
         {
-            Segurado item;
-            try
+            if (id == null)
             {
-                item = qService.Get(id);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            catch
+            Segurado segurado = db.Segurado.Find(id);
+            if (segurado == null)
             {
-                item = new Segurado();
+                return HttpNotFound();
             }
-            return View(item);
+            ViewBag.Codigo = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel", segurado.Codigo);
+            return View(segurado);
         }
 
+        // POST: Segurado/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Edit(Segurado newSegurado)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Codigo,Nome,Documento,DataNascimento,Sexo,EstadoCivil,FoneResidencial,FoneCelular,Email,Rua,Numero,Bairro,CEP,Cidade,Estado,BonusAtual,SeguradoraAnterior,NumeroCNH,PrimeiraHabilitacao")] Segurado segurado)
         {
-
             if (ModelState.IsValid)
             {
-                qService.Save(newSegurado);
+                db.Entry(segurado).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            else
+            ViewBag.Codigo = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel", segurado.Codigo);
+            return View(segurado);
+        }
+
+        // GET: Segurado/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
             {
-                return View(newSegurado);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            Segurado segurado = db.Segurado.Find(id);
+            if (segurado == null)
+            {
+                return HttpNotFound();
+            }
+            return View(segurado);
+        }
+
+        // POST: Segurado/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Segurado segurado = db.Segurado.Find(id);
+            db.Segurado.Remove(segurado);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

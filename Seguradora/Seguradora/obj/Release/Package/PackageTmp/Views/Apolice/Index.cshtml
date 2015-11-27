@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Seguradora.Apolice>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NroAditivo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataVigencia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataPrimeiraParcela)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cotacao1.Codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ObjetoSegurado1.TipoAutomovel)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Segurado1.Nome)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NroAditivo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataVigencia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataPrimeiraParcela)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cotacao1.Codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ObjetoSegurado1.TipoAutomovel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Segurado1.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>
