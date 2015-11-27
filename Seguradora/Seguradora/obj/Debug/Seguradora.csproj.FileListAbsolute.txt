@@ -194,4 +194,32 @@ C:\projetos\seguradora\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Microso
 C:\projetos\seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.dll
 C:\projetos\seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.pdb
 C:\projetos\seguradora\Seguradora\Seguradora\obj\Debug\Seguradora.csprojResolveAssemblyReference.cache
->>>>>>> 1a5f50c9175448ca7c02f23462d7bb07e060ddf8
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\EntityFramework.SqlServer.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Owin.dll
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\EntityFramework.SqlServer.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\System.Web.Optimization.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Antlr3.Runtime.pdb
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
