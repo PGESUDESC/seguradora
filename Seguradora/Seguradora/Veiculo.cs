@@ -11,10 +11,13 @@ namespace Seguradora
 {
     using System;
     using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
     
     public partial class Veiculo
     {
         public int ID { get; set; }
+
+        [DataType(DataType.Currency)]
         public decimal Valor { get; set; }
         public int Marca { get; set; }
         public int Modelo { get; set; }

@@ -11,6 +11,7 @@ namespace Seguradora
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Cotacao
     {
@@ -23,7 +24,11 @@ namespace Seguradora
         public int Tipo { get; set; }
         public Nullable<int> NumeroAditivo { get; set; }
         public Nullable<int> Modalidade { get; set; }
+        
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DataInicial { get; set; }
+
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DataFinal { get; set; }
     
         public virtual ICollection<Apolice> Apolice { get; set; }
