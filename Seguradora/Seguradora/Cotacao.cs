@@ -25,10 +25,8 @@ namespace Seguradora
         public Nullable<int> NumeroAditivo { get; set; }
         public Nullable<int> Modalidade { get; set; }
         
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DataInicial { get; set; }
 
-        [DataType(DataType.Date)]
         public Nullable<System.DateTime> DataFinal { get; set; }
     
         public virtual ICollection<Apolice> Apolice { get; set; }
