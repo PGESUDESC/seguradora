@@ -34,7 +34,7 @@
                             <li>@Html.ActionLink("Segurados", "Index", "Segurado")</li>
                             <li>@Html.ActionLink("Objetos Segurados", "Index", "ObjetoSegurado")</li>
                             <li>@Html.ActionLink("Aditamentos", "Index", "Aditamentos")</li>
-                            
+                            <li>@Html.ActionLink("Cotação", "Index", "Cotacao")</li>
                             <li>@Html.ActionLink("Apolice", "Index", "Apolice")</li>
                             <li>@Html.ActionLink("Sinistro", "Index", "Sinistro")</li>
                             <li>@Html.ActionLink("AnoModelo", "Index", "AnoModelo")</li>
@@ -51,10 +51,11 @@
         </div>
     </div>
     <div class="container body-content">
+        <br><br><br>
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - UDESC PGES 2015</p>
         </footer>
     </div>
 
@@ -75,5 +76,6 @@
             autoclose: true
         });
     </script>
+
 </body>
 </html>
