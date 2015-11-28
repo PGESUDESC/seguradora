@@ -174,6 +174,7 @@
     <Compile Include="Controllers\AnoModeloController.cs" />
     <Compile Include="Controllers\ApoliceController.cs" />
     <Compile Include="Controllers\CotacaoController.cs" />
+    <Compile Include="Controllers\FIPEController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MarcasController.cs" />
@@ -199,6 +200,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\MyUrlHelper.cs" />
+    <Compile Include="JSONFIpe\Ano.cs" />
+    <Compile Include="JSONFIpe\Marca.cs" />
+    <Compile Include="JSONFIpe\Modelo.cs" />
+    <Compile Include="JSONFIpe\ModeloAno.cs" />
+    <Compile Include="JSONFIpe\Veiculo.cs" />
     <Compile Include="Marca.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -206,8 +212,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AnoModeloService.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\MarcaService.cs" />
+    <Compile Include="Models\ModeloService.cs" />
+    <Compile Include="Models\VeiculoService.cs" />
     <Compile Include="ObjetoSegurado.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -419,6 +429,7 @@
     <Content Include="Views\Modelo\Details.cshtml" />
     <Content Include="Views\Modelo\Edit.cshtml" />
     <Content Include="Views\Modelo\Index.cshtml" />
+    <Content Include="Views\FIPE\Importacao.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
