@@ -11,6 +11,7 @@ namespace Seguradora
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Aditamento
     {
@@ -20,6 +21,8 @@ namespace Seguradora
         public Nullable<int> Categoria { get; set; }
         public Nullable<int> Marca { get; set; }
         public Nullable<int> Modelo { get; set; }
+
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> AnoFabricacao { get; set; }
     
         public virtual Marca Marca1 { get; set; }

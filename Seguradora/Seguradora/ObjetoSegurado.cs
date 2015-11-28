@@ -11,6 +11,7 @@ namespace Seguradora
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ObjetoSegurado
     {
@@ -27,7 +28,10 @@ namespace Seguradora
         public Nullable<int> Marca { get; set; }
         public Nullable<int> Modelo { get; set; }
         public Nullable<int> Potencia { get; set; }
+
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> AnoDeFabricacao { get; set; }
+        [DataType(DataType.Date)]
         public Nullable<System.DateTime> AnoModelo { get; set; }
         public string Chassi { get; set; }
         public string Placa { get; set; }
@@ -35,7 +39,10 @@ namespace Seguradora
         public Nullable<int> NroPassageiros { get; set; }
         public string CepPernoite { get; set; }
         public string Renavam { get; set; }
+
+        [DataType(DataType.Currency)]
         public Nullable<decimal> ValorFipe { get; set; }
+        [DataType(DataType.Currency)]
         public Nullable<decimal> ValorCotado { get; set; }
     
         public virtual Marca Marca1 { get; set; }
