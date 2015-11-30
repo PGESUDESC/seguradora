@@ -38,6 +38,7 @@ namespace Seguradora.Controllers
         // GET: Cotacao/Create
         public ActionResult Create()
         {
+            PopulaSeguradosDropDownList();
             return View();
         }
 
@@ -70,6 +71,7 @@ namespace Seguradora.Controllers
             {
                 return HttpNotFound();
             }
+            PopulaSeguradosDropDownList();
             return View(cotacao);
         }
 
@@ -123,5 +125,14 @@ namespace Seguradora.Controllers
             }
             base.Dispose(disposing);
         }
+
+        private void PopulaSeguradosDropDownList(object selectedItem = null)
+        {
+            
+            var query = db.Segurado.ToList().Select(c => new { c.Codigo, c.Nome });
+            ViewBag.Segurados = new SelectList(query.AsEnumerable(), "Codigo", "Nome", selectedItem);
+        }
+
+
     }
 }

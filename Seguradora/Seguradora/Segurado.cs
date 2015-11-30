@@ -11,7 +11,6 @@ namespace Seguradora
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
     public partial class Segurado
     {
@@ -19,6 +18,7 @@ namespace Seguradora
         {
             this.ObjetoSegurado = new HashSet<ObjetoSegurado>();
             this.Apolice = new HashSet<Apolice>();
+            this.Cotacao = new HashSet<Cotacao>();
         }
     
         public int Codigo { get; set; }
@@ -27,31 +27,23 @@ namespace Seguradora
         public System.DateTime DataNascimento { get; set; }
         public int Sexo { get; set; }
         public int EstadoCivil { get; set; }
-
-        [DataType(DataType.PhoneNumber)]
         public string FoneResidencial { get; set; }
-
-        [DataType(DataType.PhoneNumber)]
         public string FoneCelular { get; set; }
-
-        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
         public string Rua { get; set; }
         public string Numero { get; set; }
         public string Bairro { get; set; }
-
         public string CEP { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public string BonusAtual { get; set; }
         public string SeguradoraAnterior { get; set; }
         public string NumeroCNH { get; set; }
-
-        [DataType(DataType.Date)]
         public System.DateTime PrimeiraHabilitacao { get; set; }
     
         public virtual ICollection<ObjetoSegurado> ObjetoSegurado { get; set; }
         public virtual ObjetoSegurado ObjetoSegurado1 { get; set; }
         public virtual ICollection<Apolice> Apolice { get; set; }
+        public virtual ICollection<Cotacao> Cotacao { get; set; }
     }
 }

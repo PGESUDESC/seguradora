@@ -5,18 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Cotação</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Adicionar", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Tipo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumeroAditivo)
+            @Html.DisplayName("Número")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Modalidade)
@@ -30,25 +27,25 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model)
+{
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tipo)
-        </td>
         <td>
             @Html.DisplayFor(modelItem => item.NumeroAditivo)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Modalidade)
+            @((Seguradora.Comum.ModalidadeEnum)item.Modalidade)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DataInicial)
+            @{var dataInicial = item.DataInicial.HasValue ? item.DataInicial.Value.ToString("dd/MM/yyyy") : "";}
+            @dataInicial
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DataFinal)
+            @{var dataFinal = item.DataFinal.HasValue ? item.DataFinal.Value.ToString("dd/MM/yyyy") : "";}
+            @dataFinal
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Codigo }) |
+            @Html.ActionLink("Editar", "Edit", new { id=item.Codigo }) |
             @Html.ActionLink("Details", "Details", new { id=item.Codigo }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Codigo })
         </td>

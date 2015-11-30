@@ -11,13 +11,15 @@ namespace Seguradora
 {
     using System;
     using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
     
     public partial class Veiculo
     {
+        public Veiculo()
+        {
+            this.Cotacao = new HashSet<Cotacao>();
+        }
+    
         public int ID { get; set; }
-
-        [DataType(DataType.Currency)]
         public decimal Valor { get; set; }
         public int Marca { get; set; }
         public int Modelo { get; set; }
@@ -31,5 +33,6 @@ using System.ComponentModel.DataAnnotations;
         public virtual AnoModelo AnoModelo1 { get; set; }
         public virtual Marca Marca1 { get; set; }
         public virtual Modelo Modelo1 { get; set; }
+        public virtual ICollection<Cotacao> Cotacao { get; set; }
     }
 }

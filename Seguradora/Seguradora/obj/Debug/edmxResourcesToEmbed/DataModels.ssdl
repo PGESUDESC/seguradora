@@ -40,11 +40,14 @@
       <PropertyRef Name="Codigo" />
     </Key>
     <Property Name="Codigo" Type="int" Nullable="false" />
-    <Property Name="Tipo" Type="int" Nullable="false" />
     <Property Name="NumeroAditivo" Type="int" />
     <Property Name="Modalidade" Type="int" />
     <Property Name="DataInicial" Type="datetime" />
     <Property Name="DataFinal" Type="datetime" />
+    <Property Name="Segurado" Type="int" />
+    <Property Name="Marca" Type="int" />
+    <Property Name="Modelo" Type="int" />
+    <Property Name="Veiculo" Type="int" />
   </EntityType>
   <EntityType Name="Marca">
     <Key>
@@ -221,6 +224,54 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Cotacao_Marca">
+    <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
+    <End Role="Cotacao" Type="Self.Cotacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Marca">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cotacao">
+        <PropertyRef Name="Marca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cotacao_Modelo">
+    <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+    <End Role="Cotacao" Type="Self.Cotacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Modelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cotacao">
+        <PropertyRef Name="Modelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cotacao_Segurado">
+    <End Role="Segurado" Type="Self.Segurado" Multiplicity="0..1" />
+    <End Role="Cotacao" Type="Self.Cotacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Segurado">
+        <PropertyRef Name="Codigo" />
+      </Principal>
+      <Dependent Role="Cotacao">
+        <PropertyRef Name="Segurado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cotacao_Veiculo">
+    <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="0..1" />
+    <End Role="Cotacao" Type="Self.Cotacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Veiculo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cotacao">
+        <PropertyRef Name="Veiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Modelo_Marca">
     <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
     <End Role="Modelo" Type="Self.Modelo" Multiplicity="*" />
@@ -367,6 +418,22 @@
     <AssociationSet Name="FK_Apolice_Segurado" Association="Self.FK_Apolice_Segurado">
       <End Role="Segurado" EntitySet="Segurado" />
       <End Role="Apolice" EntitySet="Apolice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cotacao_Marca" Association="Self.FK_Cotacao_Marca">
+      <End Role="Marca" EntitySet="Marca" />
+      <End Role="Cotacao" EntitySet="Cotacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cotacao_Modelo" Association="Self.FK_Cotacao_Modelo">
+      <End Role="Modelo" EntitySet="Modelo" />
+      <End Role="Cotacao" EntitySet="Cotacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cotacao_Segurado" Association="Self.FK_Cotacao_Segurado">
+      <End Role="Segurado" EntitySet="Segurado" />
+      <End Role="Cotacao" EntitySet="Cotacao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cotacao_Veiculo" Association="Self.FK_Cotacao_Veiculo">
+      <End Role="Veiculo" EntitySet="Veiculo" />
+      <End Role="Cotacao" EntitySet="Cotacao" />
     </AssociationSet>
     <AssociationSet Name="FK_Modelo_Marca" Association="Self.FK_Modelo_Marca">
       <End Role="Marca" EntitySet="Marca" />

@@ -45,11 +45,14 @@
             <PropertyRef Name="Codigo" />
           </Key>
           <Property Name="Codigo" Type="int" Nullable="false" />
-          <Property Name="Tipo" Type="int" Nullable="false" />
           <Property Name="NumeroAditivo" Type="int" />
           <Property Name="Modalidade" Type="int" />
           <Property Name="DataInicial" Type="datetime" />
           <Property Name="DataFinal" Type="datetime" />
+          <Property Name="Segurado" Type="int" />
+          <Property Name="Marca" Type="int" />
+          <Property Name="Modelo" Type="int" />
+          <Property Name="Veiculo" Type="int" />
         </EntityType>
         <EntityType Name="Marca">
           <Key>
@@ -226,6 +229,54 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Cotacao_Marca">
+          <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
+          <End Role="Cotacao" Type="Self.Cotacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cotacao">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cotacao_Modelo">
+          <End Role="Modelo" Type="Self.Modelo" Multiplicity="0..1" />
+          <End Role="Cotacao" Type="Self.Cotacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cotacao">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cotacao_Segurado">
+          <End Role="Segurado" Type="Self.Segurado" Multiplicity="0..1" />
+          <End Role="Cotacao" Type="Self.Cotacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Segurado">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Cotacao">
+              <PropertyRef Name="Segurado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cotacao_Veiculo">
+          <End Role="Veiculo" Type="Self.Veiculo" Multiplicity="0..1" />
+          <End Role="Cotacao" Type="Self.Cotacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Veiculo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cotacao">
+              <PropertyRef Name="Veiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Modelo_Marca">
           <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
           <End Role="Modelo" Type="Self.Modelo" Multiplicity="*" />
@@ -373,6 +424,22 @@
             <End Role="Segurado" EntitySet="Segurado" />
             <End Role="Apolice" EntitySet="Apolice" />
           </AssociationSet>
+          <AssociationSet Name="FK_Cotacao_Marca" Association="Self.FK_Cotacao_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Cotacao" EntitySet="Cotacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cotacao_Modelo" Association="Self.FK_Cotacao_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Cotacao" EntitySet="Cotacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cotacao_Segurado" Association="Self.FK_Cotacao_Segurado">
+            <End Role="Segurado" EntitySet="Segurado" />
+            <End Role="Cotacao" EntitySet="Cotacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cotacao_Veiculo" Association="Self.FK_Cotacao_Veiculo">
+            <End Role="Veiculo" EntitySet="Veiculo" />
+            <End Role="Cotacao" EntitySet="Cotacao" />
+          </AssociationSet>
           <AssociationSet Name="FK_Modelo_Marca" Association="Self.FK_Modelo_Marca">
             <End Role="Marca" EntitySet="Marca" />
             <End Role="Modelo" EntitySet="Modelo" />
@@ -441,6 +508,7 @@
           <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Marca" FromRole="Marca" ToRole="ObjetoSegurado" />
           <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_Marca" FromRole="Marca" ToRole="Veiculo" />
           <NavigationProperty Name="Aditamento" Relationship="seguradoraModel.FK_Aditamento_Marca" FromRole="Marca" ToRole="Aditamento" />
+          <NavigationProperty Name="Cotacao" Relationship="seguradoraModel.FK_Cotacao_Marca" FromRole="Marca" ToRole="Cotacao" />
         </EntityType>
         <EntityType Name="Modelo">
           <Key>
@@ -456,6 +524,7 @@
           <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Modelo" FromRole="Modelo" ToRole="ObjetoSegurado" />
           <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_Modelo" FromRole="Modelo" ToRole="Veiculo" />
           <NavigationProperty Name="Aditamento" Relationship="seguradoraModel.FK_Aditamento_Modelo" FromRole="Modelo" ToRole="Aditamento" />
+          <NavigationProperty Name="Cotacao" Relationship="seguradoraModel.FK_Cotacao_Modelo" FromRole="Modelo" ToRole="Cotacao" />
         </EntityType>
         <EntityType Name="ObjetoSegurado">
           <Documentation>
@@ -534,6 +603,7 @@
           <NavigationProperty Name="ObjetoSegurado" Relationship="Self.FK_ObjetoSegurado1_Segurado" FromRole="Segurado" ToRole="ObjetoSegurado" />
           <NavigationProperty Name="ObjetoSegurado1" Relationship="Self.FK_ObjetoSegurado1_Segurado1" FromRole="Segurado" ToRole="ObjetoSegurado" />
           <NavigationProperty Name="Apolice" Relationship="seguradoraModel.FK_Apolice_Segurado" FromRole="Segurado" ToRole="Apolice" />
+          <NavigationProperty Name="Cotacao" Relationship="seguradoraModel.FK_Cotacao_Segurado" FromRole="Segurado" ToRole="Cotacao" />
         </EntityType>
         <EntityType Name="Veiculo">
           <Key>
@@ -552,6 +622,7 @@
           <NavigationProperty Name="AnoModelo1" Relationship="Self.FK_Veiculo_AnoModelo" FromRole="Veiculo" ToRole="AnoModelo" />
           <NavigationProperty Name="Marca1" Relationship="Self.FK_Veiculo_Marca" FromRole="Veiculo" ToRole="Marca" />
           <NavigationProperty Name="Modelo1" Relationship="Self.FK_Veiculo_Modelo" FromRole="Veiculo" ToRole="Modelo" />
+          <NavigationProperty Name="Cotacao" Relationship="seguradoraModel.FK_Cotacao_Veiculo" FromRole="Veiculo" ToRole="Cotacao" />
         </EntityType>
         <Association Name="FK_AnoModelo_Marca">
           <End Role="Marca" Type="Self.Marca" Multiplicity="1" />
@@ -732,8 +803,8 @@
           <EntitySet Name="Apolice" EntityType="seguradoraModel.Apolice" />
           <EntitySet Name="Cotacao" EntityType="seguradoraModel.Cotacao" />
           <AssociationSet Name="FK_Apolice_Cotacao" Association="seguradoraModel.FK_Apolice_Cotacao">
-            <End Role="Cotacao" EntitySet="Cotacao" />
-            <End Role="Apolice" EntitySet="Apolice" />
+            <End EntitySet="Cotacao" Role="Cotacao" />
+            <End EntitySet="Apolice" Role="Apolice" />
           </AssociationSet>
           <AssociationSet Name="FK_Apolice_ObjetoSegurado" Association="seguradoraModel.FK_Apolice_ObjetoSegurado">
             <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
@@ -747,6 +818,22 @@
           <AssociationSet Name="FK_Sinistro_Apolice" Association="seguradoraModel.FK_Sinistro_Apolice">
             <End Role="Apolice" EntitySet="Apolice" />
             <End Role="Sinistro" EntitySet="Sinistro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cotacao_Segurado" Association="seguradoraModel.FK_Cotacao_Segurado">
+            <End Role="Segurado" EntitySet="Segurado" />
+            <End Role="Cotacao" EntitySet="Cotacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cotacao_Marca" Association="seguradoraModel.FK_Cotacao_Marca">
+            <End Role="Marca" EntitySet="Marca" />
+            <End Role="Cotacao" EntitySet="Cotacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cotacao_Modelo" Association="seguradoraModel.FK_Cotacao_Modelo">
+            <End Role="Modelo" EntitySet="Modelo" />
+            <End Role="Cotacao" EntitySet="Cotacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cotacao_Veiculo" Association="seguradoraModel.FK_Cotacao_Veiculo">
+            <End Role="Veiculo" EntitySet="Veiculo" />
+            <End Role="Cotacao" EntitySet="Cotacao" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Aditamento">
@@ -807,17 +894,24 @@
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="Int32" Nullable="false" />
-          <Property Name="Tipo" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Nullable="false" Type="Int32" />
           <Property Name="NumeroAditivo" Type="Int32" />
           <Property Name="Modalidade" Type="Int32" />
-          <Property Name="DataInicial" Type="DateTime" Precision="3" />
-          <Property Name="DataFinal" Type="DateTime" Precision="3" />
+          <Property Name="DataInicial" Precision="3" Type="DateTime" />
+          <Property Name="DataFinal" Precision="3" Type="DateTime" />
           <NavigationProperty Name="Apolice" Relationship="seguradoraModel.FK_Apolice_Cotacao" FromRole="Cotacao" ToRole="Apolice" />
+          <Property Name="Segurado" Type="Int32" />
+          <NavigationProperty Name="Segurado1" Relationship="seguradoraModel.FK_Cotacao_Segurado" FromRole="Cotacao" ToRole="Segurado" />
+          <Property Name="Marca" Type="Int32" />
+          <Property Name="Modelo" Type="Int32" />
+          <Property Name="Veiculo" Type="Int32" />
+          <NavigationProperty Name="Marca1" Relationship="seguradoraModel.FK_Cotacao_Marca" FromRole="Cotacao" ToRole="Marca" />
+          <NavigationProperty Name="Modelo1" Relationship="seguradoraModel.FK_Cotacao_Modelo" FromRole="Cotacao" ToRole="Modelo" />
+          <NavigationProperty Name="Veiculo1" Relationship="seguradoraModel.FK_Cotacao_Veiculo" FromRole="Cotacao" ToRole="Veiculo" />
         </EntityType>
         <Association Name="FK_Apolice_Cotacao">
-          <End Type="seguradoraModel.Cotacao" Role="Cotacao" Multiplicity="1" />
-          <End Type="seguradoraModel.Apolice" Role="Apolice" Multiplicity="*" />
+          <End Type="seguradoraModel.Cotacao" Multiplicity="1" Role="Cotacao" />
+          <End Type="seguradoraModel.Apolice" Multiplicity="*" Role="Apolice" />
           <ReferentialConstraint>
             <Principal Role="Cotacao">
               <PropertyRef Name="Codigo" />
@@ -894,6 +988,54 @@
             </Principal>
             <Dependent Role="Sinistro">
               <PropertyRef Name="NroContrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cotacao_Segurado">
+          <End Type="seguradoraModel.Segurado" Role="Segurado" Multiplicity="0..1" />
+          <End Type="seguradoraModel.Cotacao" Role="Cotacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Segurado">
+              <PropertyRef Name="Codigo" />
+            </Principal>
+            <Dependent Role="Cotacao">
+              <PropertyRef Name="Segurado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cotacao_Marca">
+          <End Type="seguradoraModel.Marca" Role="Marca" Multiplicity="0..1" />
+          <End Type="seguradoraModel.Cotacao" Role="Cotacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marca">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cotacao">
+              <PropertyRef Name="Marca" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cotacao_Modelo">
+          <End Type="seguradoraModel.Modelo" Role="Modelo" Multiplicity="0..1" />
+          <End Type="seguradoraModel.Cotacao" Role="Cotacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Modelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cotacao">
+              <PropertyRef Name="Modelo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cotacao_Veiculo">
+          <End Type="seguradoraModel.Veiculo" Role="Veiculo" Multiplicity="0..1" />
+          <End Type="seguradoraModel.Cotacao" Role="Cotacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Veiculo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cotacao">
+              <PropertyRef Name="Veiculo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1030,11 +1172,14 @@
           <EntitySetMapping Name="Cotacao">
             <EntityTypeMapping TypeName="seguradoraModel.Cotacao">
               <MappingFragment StoreEntitySet="Cotacao">
+                <ScalarProperty Name="Veiculo" ColumnName="Veiculo" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="Marca" ColumnName="Marca" />
+                <ScalarProperty Name="Segurado" ColumnName="Segurado" />
                 <ScalarProperty Name="DataFinal" ColumnName="DataFinal" />
                 <ScalarProperty Name="DataInicial" ColumnName="DataInicial" />
                 <ScalarProperty Name="Modalidade" ColumnName="Modalidade" />
                 <ScalarProperty Name="NumeroAditivo" ColumnName="NumeroAditivo" />
-                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
                 <ScalarProperty Name="Codigo" ColumnName="Codigo" />
               </MappingFragment>
             </EntityTypeMapping>
