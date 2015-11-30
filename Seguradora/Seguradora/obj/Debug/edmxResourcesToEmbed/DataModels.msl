@@ -128,6 +128,7 @@
     <EntitySetMapping Name="Cotacao">
       <EntityTypeMapping TypeName="seguradoraModel.Cotacao">
         <MappingFragment StoreEntitySet="Cotacao">
+          <ScalarProperty Name="AnoModelo" ColumnName="AnoModelo" />
           <ScalarProperty Name="Veiculo" ColumnName="Veiculo" />
           <ScalarProperty Name="Modelo" ColumnName="Modelo" />
           <ScalarProperty Name="Marca" ColumnName="Marca" />

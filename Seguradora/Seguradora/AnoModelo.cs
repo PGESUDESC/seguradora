@@ -17,6 +17,7 @@ namespace Seguradora
         public AnoModelo()
         {
             this.Veiculo = new HashSet<Veiculo>();
+            this.Cotacao = new HashSet<Cotacao>();
         }
     
         public int ID { get; set; }
@@ -29,5 +30,6 @@ namespace Seguradora
         public virtual Marca Marca1 { get; set; }
         public virtual Modelo Modelo1 { get; set; }
         public virtual ICollection<Veiculo> Veiculo { get; set; }
+        public virtual ICollection<Cotacao> Cotacao { get; set; }
     }
 }

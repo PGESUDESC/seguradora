@@ -28,11 +28,13 @@ namespace Seguradora
         public Nullable<int> Marca { get; set; }
         public Nullable<int> Modelo { get; set; }
         public Nullable<int> Veiculo { get; set; }
+        public Nullable<int> AnoModelo { get; set; }
     
         public virtual ICollection<Apolice> Apolice { get; set; }
         public virtual Segurado Segurado1 { get; set; }
         public virtual Marca Marca1 { get; set; }
         public virtual Modelo Modelo1 { get; set; }
         public virtual Veiculo Veiculo1 { get; set; }
+        public virtual AnoModelo AnoModelo1 { get; set; }
     }
 }

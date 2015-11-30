@@ -44,7 +44,7 @@
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NumeroAditivo" Type="int" />
           <Property Name="Modalidade" Type="int" />
           <Property Name="DataInicial" Type="datetime" />
@@ -53,6 +53,7 @@
           <Property Name="Marca" Type="int" />
           <Property Name="Modelo" Type="int" />
           <Property Name="Veiculo" Type="int" />
+          <Property Name="AnoModelo" Type="int" />
         </EntityType>
         <EntityType Name="Marca">
           <Key>
@@ -226,6 +227,18 @@
             </Principal>
             <Dependent Role="Apolice">
               <PropertyRef Name="Segurado" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cotacao_AnoModelo">
+          <End Role="AnoModelo" Type="Self.AnoModelo" Multiplicity="0..1" />
+          <End Role="Cotacao" Type="Self.Cotacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnoModelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cotacao">
+              <PropertyRef Name="AnoModelo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -424,6 +437,10 @@
             <End Role="Segurado" EntitySet="Segurado" />
             <End Role="Apolice" EntitySet="Apolice" />
           </AssociationSet>
+          <AssociationSet Name="FK_Cotacao_AnoModelo" Association="Self.FK_Cotacao_AnoModelo">
+            <End Role="AnoModelo" EntitySet="AnoModelo" />
+            <End Role="Cotacao" EntitySet="Cotacao" />
+          </AssociationSet>
           <AssociationSet Name="FK_Cotacao_Marca" Association="Self.FK_Cotacao_Marca">
             <End Role="Marca" EntitySet="Marca" />
             <End Role="Cotacao" EntitySet="Cotacao" />
@@ -494,6 +511,7 @@
           <NavigationProperty Name="Marca1" Relationship="Self.FK_AnoModelo_Marca" FromRole="AnoModelo" ToRole="Marca" />
           <NavigationProperty Name="Modelo1" Relationship="Self.FK_AnoModelo_Modelo" FromRole="AnoModelo" ToRole="Modelo" />
           <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_AnoModelo" FromRole="AnoModelo" ToRole="Veiculo" />
+          <NavigationProperty Name="Cotacao" Relationship="seguradoraModel.FK_Cotacao_AnoModelo" FromRole="AnoModelo" ToRole="Cotacao" />
         </EntityType>
         <EntityType Name="Marca">
           <Key>
@@ -835,6 +853,10 @@
             <End Role="Veiculo" EntitySet="Veiculo" />
             <End Role="Cotacao" EntitySet="Cotacao" />
           </AssociationSet>
+          <AssociationSet Name="FK_Cotacao_AnoModelo" Association="seguradoraModel.FK_Cotacao_AnoModelo">
+            <End Role="AnoModelo" EntitySet="AnoModelo" />
+            <End Role="Cotacao" EntitySet="Cotacao" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Aditamento">
           <Key>
@@ -908,6 +930,8 @@
           <NavigationProperty Name="Marca1" Relationship="seguradoraModel.FK_Cotacao_Marca" FromRole="Cotacao" ToRole="Marca" />
           <NavigationProperty Name="Modelo1" Relationship="seguradoraModel.FK_Cotacao_Modelo" FromRole="Cotacao" ToRole="Modelo" />
           <NavigationProperty Name="Veiculo1" Relationship="seguradoraModel.FK_Cotacao_Veiculo" FromRole="Cotacao" ToRole="Veiculo" />
+          <Property Name="AnoModelo" Type="Int32" />
+          <NavigationProperty Name="AnoModelo1" Relationship="seguradoraModel.FK_Cotacao_AnoModelo" FromRole="Cotacao" ToRole="AnoModelo" />
         </EntityType>
         <Association Name="FK_Apolice_Cotacao">
           <End Type="seguradoraModel.Cotacao" Multiplicity="1" Role="Cotacao" />
@@ -1036,6 +1060,18 @@
             </Principal>
             <Dependent Role="Cotacao">
               <PropertyRef Name="Veiculo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cotacao_AnoModelo">
+          <End Type="seguradoraModel.AnoModelo" Role="AnoModelo" Multiplicity="0..1" />
+          <End Type="seguradoraModel.Cotacao" Role="Cotacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="AnoModelo">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Cotacao">
+              <PropertyRef Name="AnoModelo" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1172,6 +1208,7 @@
           <EntitySetMapping Name="Cotacao">
             <EntityTypeMapping TypeName="seguradoraModel.Cotacao">
               <MappingFragment StoreEntitySet="Cotacao">
+                <ScalarProperty Name="AnoModelo" ColumnName="AnoModelo" />
                 <ScalarProperty Name="Veiculo" ColumnName="Veiculo" />
                 <ScalarProperty Name="Modelo" ColumnName="Modelo" />
                 <ScalarProperty Name="Marca" ColumnName="Marca" />

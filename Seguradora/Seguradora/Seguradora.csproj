@@ -173,6 +173,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AditamentosController.cs" />
     <Compile Include="Controllers\AnoModeloController.cs" />
+    <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\ApoliceController.cs" />
     <Compile Include="Controllers\CotacaoController.cs" />
     <Compile Include="Controllers\FIPEController.cs" />
@@ -454,6 +455,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Api\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -13,6 +13,7 @@
     <NavigationProperty Name="Marca1" Relationship="Self.FK_AnoModelo_Marca" FromRole="AnoModelo" ToRole="Marca" />
     <NavigationProperty Name="Modelo1" Relationship="Self.FK_AnoModelo_Modelo" FromRole="AnoModelo" ToRole="Modelo" />
     <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_AnoModelo" FromRole="AnoModelo" ToRole="Veiculo" />
+    <NavigationProperty Name="Cotacao" Relationship="seguradoraModel.FK_Cotacao_AnoModelo" FromRole="AnoModelo" ToRole="Cotacao" />
   </EntityType>
   <EntityType Name="Marca">
     <Key>
@@ -354,6 +355,10 @@
       <End Role="Veiculo" EntitySet="Veiculo" />
       <End Role="Cotacao" EntitySet="Cotacao" />
     </AssociationSet>
+    <AssociationSet Name="FK_Cotacao_AnoModelo" Association="seguradoraModel.FK_Cotacao_AnoModelo">
+      <End Role="AnoModelo" EntitySet="AnoModelo" />
+      <End Role="Cotacao" EntitySet="Cotacao" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Aditamento">
     <Key>
@@ -427,6 +432,8 @@
     <NavigationProperty Name="Marca1" Relationship="seguradoraModel.FK_Cotacao_Marca" FromRole="Cotacao" ToRole="Marca" />
     <NavigationProperty Name="Modelo1" Relationship="seguradoraModel.FK_Cotacao_Modelo" FromRole="Cotacao" ToRole="Modelo" />
     <NavigationProperty Name="Veiculo1" Relationship="seguradoraModel.FK_Cotacao_Veiculo" FromRole="Cotacao" ToRole="Veiculo" />
+    <Property Name="AnoModelo" Type="Int32" />
+    <NavigationProperty Name="AnoModelo1" Relationship="seguradoraModel.FK_Cotacao_AnoModelo" FromRole="Cotacao" ToRole="AnoModelo" />
   </EntityType>
   <Association Name="FK_Apolice_Cotacao">
     <End Type="seguradoraModel.Cotacao" Multiplicity="1" Role="Cotacao" />
@@ -555,6 +562,18 @@
       </Principal>
       <Dependent Role="Cotacao">
         <PropertyRef Name="Veiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cotacao_AnoModelo">
+    <End Type="seguradoraModel.AnoModelo" Role="AnoModelo" Multiplicity="0..1" />
+    <End Type="seguradoraModel.Cotacao" Role="Cotacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnoModelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Cotacao">
+        <PropertyRef Name="AnoModelo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

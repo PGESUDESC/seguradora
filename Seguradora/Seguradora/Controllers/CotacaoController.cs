@@ -39,6 +39,10 @@ namespace Seguradora.Controllers
         public ActionResult Create()
         {
             PopulaSeguradosDropDownList();
+            PopulaMarcasDropDownList();
+            PopulaModelosDropDownList();
+            PopulaAnoModelosDropDownList();
+            PopulaVeiculosDropDownList();
             return View();
         }
 
@@ -47,7 +51,7 @@ namespace Seguradora.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Codigo,Tipo,NumeroAditivo,Modalidade,DataInicial,DataFinal")] Cotacao cotacao)
+        public ActionResult Create([Bind(Include = "Codigo,Tipo,NumeroAditivo,Modalidade,DataInicial,DataFinal,Segurado,Marca,Modelo,Veiculo,AnoModelo")] Cotacao cotacao)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +75,11 @@ namespace Seguradora.Controllers
             {
                 return HttpNotFound();
             }
-            PopulaSeguradosDropDownList();
+            PopulaSeguradosDropDownList(cotacao.Segurado);
+            PopulaMarcasDropDownList(cotacao.Marca);
+            PopulaModelosDropDownList(cotacao.Modelo);
+            PopulaAnoModelosDropDownList(cotacao.AnoModelo);
+            PopulaVeiculosDropDownList(cotacao.Veiculo);
             return View(cotacao);
         }
 
@@ -128,9 +136,56 @@ namespace Seguradora.Controllers
 
         private void PopulaSeguradosDropDownList(object selectedItem = null)
         {
-            
             var query = db.Segurado.ToList().Select(c => new { c.Codigo, c.Nome });
             ViewBag.Segurados = new SelectList(query.AsEnumerable(), "Codigo", "Nome", selectedItem);
+        }
+
+        private void PopulaMarcasDropDownList(object selectedItem = null)
+        {
+            var query = db.Marca.ToList().Select(c => new { c.ID, c.Descricao });
+            ViewBag.Marcas = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
+        }
+
+        private void PopulaModelosDropDownList(object selectedItem = null)
+        {
+            if (selectedItem != null)
+            {
+                var query = db.Modelo.ToList().Select(c => new { c.ID, c.Descricao });
+                ViewBag.Modelos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
+            }
+            else
+            {
+                var query = db.Modelo.ToList().Where(p => p.ID == 1).Select(c => new { c.ID, c.Descricao });
+                ViewBag.Modelos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
+            }
+        }
+
+
+        private void PopulaAnoModelosDropDownList(object selectedItem = null)
+        {
+            if (selectedItem != null)
+            {
+                var query = db.AnoModelo.ToList().Select(c => new { c.ID, c.Descricao });
+                ViewBag.Veiculos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
+            }
+            else
+            {
+                var query = db.AnoModelo.ToList().Where(p => p.ID == 1).Select(c => new { c.ID, c.Descricao });
+                ViewBag.AnoModelos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
+            }
+        }
+        private void PopulaVeiculosDropDownList(object selectedItem = null)
+        {
+            if (selectedItem != null)
+            {
+                var query = db.Veiculo.ToList().Select(c => new { c.ID, c.Combustivel });
+                ViewBag.Veiculos = new SelectList(query.AsEnumerable(), "ID", "Combustivel", selectedItem);
+            }
+            else
+            {
+                var query = db.Veiculo.ToList().Where(p => p.ID == 1).Select(c => new { c.ID, c.Combustivel });
+                ViewBag.Veiculos = new SelectList(query.AsEnumerable(), "ID", "Combustivel", selectedItem);
+            }
         }
 
 

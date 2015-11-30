@@ -35,6 +35,7 @@
         <AssociationConnector Association="seguradoraModel.FK_Cotacao_Marca" />
         <AssociationConnector Association="seguradoraModel.FK_Cotacao_Modelo" />
         <AssociationConnector Association="seguradoraModel.FK_Cotacao_Veiculo" />
+        <AssociationConnector Association="seguradoraModel.FK_Cotacao_AnoModelo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

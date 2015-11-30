@@ -16,6 +16,9 @@
             @Html.DisplayName("Número")
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Segurado)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Modalidade)
         </th>
         <th>
@@ -23,6 +26,12 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.DataFinal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Modelo)
         </th>
         <th></th>
     </tr>
@@ -34,6 +43,9 @@
             @Html.DisplayFor(modelItem => item.NumeroAditivo)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.Segurado1.Nome)
+        </td>
+        <td>
             @((Seguradora.Comum.ModalidadeEnum)item.Modalidade)
         </td>
         <td>
@@ -43,6 +55,12 @@
         <td>
             @{var dataFinal = item.DataFinal.HasValue ? item.DataFinal.Value.ToString("dd/MM/yyyy") : "";}
             @dataFinal
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Marca1.Descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Modelo1.Descricao)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.Codigo }) |
