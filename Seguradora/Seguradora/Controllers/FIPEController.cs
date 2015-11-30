@@ -9,7 +9,7 @@ using Seguradora.Models;
 
 namespace Seguradora.Controllers
 {
-    public class FipeController : Controller
+    public class FIPEController : Controller
     {
         //
         // GET: /Fipe/
@@ -40,6 +40,7 @@ namespace Seguradora.Controllers
             if (!String.IsNullOrWhiteSpace(json))
             {
                 List<Seguradora.JSONFIpe.Marca> marcas = JsonConvert.DeserializeObject<List<Seguradora.JSONFIpe.Marca>>(json);
+                marcas = marcas.Where(p => p.codigo >= 25).ToList();
                 foreach (var marcaFipe in marcas)
                 {
                     Marca marca = new Marca();
