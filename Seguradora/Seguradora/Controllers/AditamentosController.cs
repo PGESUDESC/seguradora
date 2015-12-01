@@ -39,9 +39,28 @@ namespace Seguradora.Controllers
         // GET: Aditamentos/Create
         public ActionResult Create()
         {
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo");
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo");
+            PopulaMarcasDropDownList();
+            PopulaModelosDropDownList();
             return View();
+        }
+
+        private void PopulaModelosDropDownList(object selectedItem = null)
+        {
+            if (selectedItem != null)
+            {
+                var query = db.Modelo.ToList().Select(c => new { c.ID, c.Descricao });
+                ViewBag.Modelos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
+            }
+            else
+            {
+                var query = db.Modelo.ToList().Where(p => p.ID == 1).Select(c => new { c.ID, c.Descricao });
+                ViewBag.Modelos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
+            }
+        }
+        private void PopulaMarcasDropDownList(object selectedItem = null)
+        {
+            var query = db.Marca.ToList().Select(c => new { c.ID, c.Descricao });
+            ViewBag.Marcas = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
         }
 
         // POST: Aditamentos/Create

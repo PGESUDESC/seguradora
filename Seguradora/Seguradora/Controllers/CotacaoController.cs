@@ -13,6 +13,7 @@ namespace Seguradora.Controllers
     public class CotacaoController : Controller
     {
         private seguradoraEntities db = new seguradoraEntities();
+        private PopulateController pc = new PopulateController();
 
         // GET: Cotacao
         public ActionResult Index()
@@ -38,11 +39,11 @@ namespace Seguradora.Controllers
         // GET: Cotacao/Create
         public ActionResult Create()
         {
-            PopulaSeguradosDropDownList();
-            PopulaMarcasDropDownList();
-            PopulaModelosDropDownList();
-            PopulaAnoModelosDropDownList();
-            PopulaVeiculosDropDownList();
+            ViewBag.Segurados = pc.PopulaSeguradosDropDownList();
+            ViewBag.Marcas = pc.PopulaMarcasDropDownList();
+            ViewBag.Modelos = pc.PopulaModelosDropDownList();
+            ViewBag.AnoModelos = pc.PopulaAnoModelosDropDownList();
+            ViewBag.Veiculos = pc.PopulaVeiculosDropDownList();
             return View();
         }
 
@@ -75,11 +76,12 @@ namespace Seguradora.Controllers
             {
                 return HttpNotFound();
             }
-            PopulaSeguradosDropDownList(cotacao.Segurado);
-            PopulaMarcasDropDownList(cotacao.Marca);
-            PopulaModelosDropDownList(cotacao.Modelo);
-            PopulaAnoModelosDropDownList(cotacao.AnoModelo);
-            PopulaVeiculosDropDownList(cotacao.Veiculo);
+            ViewBag.Segurados = pc.PopulaSeguradosDropDownList(cotacao.Segurado);
+            ViewBag.Marcas = pc.PopulaMarcasDropDownList(cotacao.Marca);
+            ViewBag.Modelos = pc.PopulaModelosDropDownList(cotacao.Modelo);
+            ViewBag.AnoModelos = pc.PopulaAnoModelosDropDownList(cotacao.AnoModelo);
+            ViewBag.Veiculos = pc.PopulaVeiculosDropDownList(cotacao.Veiculo);
+
             return View(cotacao);
         }
 
@@ -203,59 +205,7 @@ namespace Seguradora.Controllers
             base.Dispose(disposing);
         }
 
-        private void PopulaSeguradosDropDownList(object selectedItem = null)
-        {
-            var query = db.Segurado.ToList().Select(c => new { c.Codigo, c.Nome });
-            ViewBag.Segurados = new SelectList(query.AsEnumerable(), "Codigo", "Nome", selectedItem);
-        }
-
-        private void PopulaMarcasDropDownList(object selectedItem = null)
-        {
-            var query = db.Marca.ToList().Select(c => new { c.ID, c.Descricao });
-            ViewBag.Marcas = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
-        }
-
-        private void PopulaModelosDropDownList(object selectedItem = null)
-        {
-            if (selectedItem != null)
-            {
-                var query = db.Modelo.ToList().Select(c => new { c.ID, c.Descricao });
-                ViewBag.Modelos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
-            }
-            else
-            {
-                var query = db.Modelo.ToList().Where(p => p.ID == 1).Select(c => new { c.ID, c.Descricao });
-                ViewBag.Modelos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
-            }
-        }
-
-
-        private void PopulaAnoModelosDropDownList(object selectedItem = null)
-        {
-            if (selectedItem != null)
-            {
-                var query = db.AnoModelo.ToList().Select(c => new { c.ID, c.Descricao });
-                ViewBag.Veiculos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
-            }
-            else
-            {
-                var query = db.AnoModelo.ToList().Where(p => p.ID == 1).Select(c => new { c.ID, c.Descricao });
-                ViewBag.AnoModelos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
-            }
-        }
-        private void PopulaVeiculosDropDownList(object selectedItem = null)
-        {
-            if (selectedItem != null)
-            {
-                var query = db.Veiculo.ToList().Select(c => new { c.ID, c.Combustivel });
-                ViewBag.Veiculos = new SelectList(query.AsEnumerable(), "ID", "Combustivel", selectedItem);
-            }
-            else
-            {
-                var query = db.Veiculo.ToList().Where(p => p.ID == 1).Select(c => new { c.ID, c.Combustivel });
-                ViewBag.Veiculos = new SelectList(query.AsEnumerable(), "ID", "Combustivel", selectedItem);
-            }
-        }
+        
 
 
     }
