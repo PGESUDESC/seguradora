@@ -434,6 +434,14 @@
     <NavigationProperty Name="Veiculo1" Relationship="seguradoraModel.FK_Cotacao_Veiculo" FromRole="Cotacao" ToRole="Veiculo" />
     <Property Name="AnoModelo" Type="Int32" />
     <NavigationProperty Name="AnoModelo1" Relationship="seguradoraModel.FK_Cotacao_AnoModelo" FromRole="Cotacao" ToRole="AnoModelo" />
+    <Property Name="SeguradoCondutor" Type="Boolean" Nullable="false" />
+    <Property Name="PercentualCoeficiente" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="PercentualDesconto" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="TipoUso" Type="Int32" />
+    <Property Name="PernoiteDoVeiculo" Type="Int32" />
+    <Property Name="Observacoes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="InformacoesGerais" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ValorTotal" Type="Decimal" Precision="10" Scale="2" />
   </EntityType>
   <Association Name="FK_Apolice_Cotacao">
     <End Type="seguradoraModel.Cotacao" Multiplicity="1" Role="Cotacao" />

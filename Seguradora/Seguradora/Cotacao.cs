@@ -29,6 +29,14 @@ namespace Seguradora
         public Nullable<int> Modelo { get; set; }
         public Nullable<int> Veiculo { get; set; }
         public Nullable<int> AnoModelo { get; set; }
+        public bool SeguradoCondutor { get; set; }
+        public Nullable<decimal> PercentualCoeficiente { get; set; }
+        public Nullable<decimal> PercentualDesconto { get; set; }
+        public Nullable<int> TipoUso { get; set; }
+        public Nullable<int> PernoiteDoVeiculo { get; set; }
+        public string Observacoes { get; set; }
+        public string InformacoesGerais { get; set; }
+        public Nullable<decimal> ValorTotal { get; set; }
     
         public virtual ICollection<Apolice> Apolice { get; set; }
         public virtual Segurado Segurado1 { get; set; }
