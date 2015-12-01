@@ -184,6 +184,7 @@
     <Compile Include="Controllers\MarcasController.cs" />
     <Compile Include="Controllers\ModeloController.cs" />
     <Compile Include="Controllers\ObjetoSeguradoController.cs" />
+    <Compile Include="Controllers\PopulateController.cs" />
     <Compile Include="Controllers\SeguradoController.cs" />
     <Compile Include="Controllers\SinistroController.cs" />
     <Compile Include="Controllers\VeiculoController.cs" />
