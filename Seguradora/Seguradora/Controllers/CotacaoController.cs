@@ -58,7 +58,7 @@ namespace Seguradora.Controllers
             {
                 db.Cotacao.Add(cotacao);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Aditamento", new { @id = cotacao.Codigo });
             }
 
             return View(cotacao);
@@ -90,13 +90,82 @@ namespace Seguradora.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Codigo,Tipo,NumeroAditivo,Modalidade,DataInicial,DataFinal")] Cotacao cotacao)
+        public ActionResult Edit([Bind(Include = "Codigo,Tipo,NumeroAditivo,Modalidade,DataInicial,DataFinal,Segurado,Marca,Modelo,Veiculo,AnoModelo")] Cotacao cotacao)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(cotacao).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Aditamento", new { @id = cotacao.Codigo });
+            }
+            return View(cotacao);
+        }
+
+        public ActionResult Aditamento(int id)
+        {
+            Cotacao cotacao = db.Cotacao.Find(id);
+            if (cotacao == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cotacao);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Aditamento([Bind(Include = "Codigo")] Cotacao cotacao)
+        {
+            //So passa adiante ate ter os aditamentos
+            if (ModelState.IsValid)
+            {
+                Cotacao cotacaoAtual = db.Cotacao.Find(cotacao.Codigo);
+                db.Entry(cotacaoAtual).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("InformacoesAdicionais", new { @id = cotacao.Codigo });
+            }
+            return View(cotacao);
+        }
+
+        public ActionResult InformacoesAdicionais(int id)
+        {
+            Cotacao cotacao = db.Cotacao.Find(id);
+            if (cotacao == null)
+            {
+                return HttpNotFound();
+            }
+            return View(cotacao);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult InformacoesAdicionais([Bind(Include = "Codigo,SeguradoCondutor,PercentualCoeficiente,PercentualDesconto,TipoUso,PernoiteDoVeiculo,Observacoes,InformacoesGerais")] Cotacao cotacao)
+        {
+            //So passa adiante ate ter os aditamentos
+            if (ModelState.IsValid)
+            {
+                Cotacao cotacaoAtual = db.Cotacao.Find(cotacao.Codigo);
+                cotacaoAtual.SeguradoCondutor = cotacao.SeguradoCondutor;
+                cotacaoAtual.PercentualCoeficiente = cotacao.PercentualCoeficiente;
+                cotacaoAtual.PercentualDesconto = cotacao.PercentualDesconto;
+                cotacaoAtual.TipoUso = cotacao.TipoUso;
+                cotacaoAtual.PernoiteDoVeiculo = cotacao.PernoiteDoVeiculo;
+                cotacaoAtual.Observacoes = cotacao.Observacoes;
+                cotacaoAtual.InformacoesGerais = cotacao.InformacoesGerais;
+                db.Entry(cotacaoAtual).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Resumo", new { @id = cotacao.Codigo });
+            }
+            return View(cotacao);
+        }
+
+        public ActionResult Resumo(int id)
+        {
+            //Aqui deve calcular o valor da cotacao e mostrar na tela do resumo
+            
+            Cotacao cotacao = db.Cotacao.Find(id);
+            if (cotacao == null)
+            {
+                return HttpNotFound();
             }
             return View(cotacao);
         }
