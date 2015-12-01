@@ -1,0 +1,85 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="742" measuredH="579" mockupW="711" mockupH="568">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="31" y="11" w="711" h="568" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::Label" x="37" y="98" w="134" h="-1" measuredW="125" measuredH="21" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <bold>true</bold>
+        <text>Sistema%20Seguradora</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="567" y="98" w="-1" h="-1" measuredW="127" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Usu%E1rio%3A%20Nilson%20Modro</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::MenuBar" x="31" y="74" w="669" h="24" measuredW="303" measuredH="29" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <hrefs/>
+        <selectedIndex>0</selectedIndex>
+        <text>Cadastro%2C%20Consulta%2C%20Configura%E7%E3o%2C%20Sair</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::VerticalTabBar" x="37" y="157" w="696" h="349" measuredW="200" measuredH="302" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>4</selectedIndex>
+        <text>Pessoa%0AObjeto%0AAditamento%0ASinistro%0ACota%E7%E3o%0ARenova%E7%E3o%0AOcorr%EAncia%0AAp%F3lice</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::TabBar" x="111" y="128" w="622" h="378" measuredW="549" measuredH="100" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <selectedIndex>3</selectedIndex>
+        <text>Cadastro%2C%20Segurado%2C%20Objeto%20de%20Seguro%2C%20Aditamento%2C%20Informa%E7%F5es%20Adicionais%2C%20Valor</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Button" x="328" y="514" w="80" h="27" measuredW="70" measuredH="27" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Anterior</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Button" x="431" y="514" w="79" h="27" measuredW="71" measuredH="27" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pr%F3ximo</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::FieldSet" x="118" y="157" w="609" h="340" measuredW="200" measuredH="170" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Aditamentos/cl%E1usulas</text>
+      </controlProperties>
+    </control>
+    <control controlID="9" controlTypeID="com.balsamiq.mockups::List" x="132" y="202" w="243" h="283" measuredW="100" measuredH="174" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Lista%20os%20aditamentos%20dispon%EDveis%20para%20%0Aa%20configura%E7%E3o%20de%20segurado%20e%20%0Aobjeto%20de%20segurado%20cadastrados%0A%20%0ADeve%20aparecer%20o%20valor%20percentual%0Ae%20o%20valor%20em%20R%24.%20Este%20valor%20vai%0Aser%20calculado%20a%20partir%20do%20valor%0Ada%20franquia</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::List" x="468" y="202" w="247" h="274" measuredW="100" measuredH="174" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Aditamentos%20adicionados%20que%20far%E3o%20parte%20da%20%0Acota%E7%E3o%20e%20do%20premio%20basea%20anual%0ADeve%20aparecer%20o%20valor%20percentual%20e%20o%20valor%0A%20em%20R%24.%20Este%20valor%20vai%20ser%20calculado%20a%20%0Apartir%20do%20valor%20da%20franquia%0A%20Fazer%20um%20totalizador%20no%20fim%20deste%20quadro%0Ademonstrando%20quando%20vai%20%20ficar%20os%20%0Aaditamentos%20selecionados</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::Button" x="382" y="266" w="81" h="35" measuredW="77" measuredH="27" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Adicionar</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Button" x="382" y="323" w="81" h="35" measuredW="75" measuredH="27" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Remover</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::Label" x="166" y="175" w="168" h="-1" measuredW="143" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Aditamentos%20dispon%EDveis</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="509" y="175" w="168" h="-1" measuredW="156" measuredH="21" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Aditamentos%20selecionados</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
