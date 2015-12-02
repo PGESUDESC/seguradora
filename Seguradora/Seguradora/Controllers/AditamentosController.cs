@@ -13,6 +13,7 @@ namespace Seguradora.Controllers
     public class AditamentosController : Controller
     {
         private seguradoraEntities db = new seguradoraEntities();
+        private PopulateController pc = new PopulateController();
 
         // GET: Aditamentos
         public ActionResult Index()
@@ -39,29 +40,11 @@ namespace Seguradora.Controllers
         // GET: Aditamentos/Create
         public ActionResult Create()
         {
-            PopulaMarcasDropDownList();
-            PopulaModelosDropDownList();
+            ViewBag.Marcas = pc.PopulaMarcasDropDownList();
+            ViewBag.Modelos = pc.PopulaModelosDropDownList();
             return View();
         }
 
-        private void PopulaModelosDropDownList(object selectedItem = null)
-        {
-            if (selectedItem != null)
-            {
-                var query = db.Modelo.ToList().Select(c => new { c.ID, c.Descricao });
-                ViewBag.Modelos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
-            }
-            else
-            {
-                var query = db.Modelo.ToList().Where(p => p.ID == 1).Select(c => new { c.ID, c.Descricao });
-                ViewBag.Modelos = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
-            }
-        }
-        private void PopulaMarcasDropDownList(object selectedItem = null)
-        {
-            var query = db.Marca.ToList().Select(c => new { c.ID, c.Descricao });
-            ViewBag.Marcas = new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
-        }
 
         // POST: Aditamentos/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
@@ -94,8 +77,8 @@ namespace Seguradora.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo", aditamento.Marca);
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo", aditamento.Modelo);
+            ViewBag.Marcas = pc.PopulaMarcasDropDownList(aditamento.Marca);
+            ViewBag.Modelos = pc.PopulaModelosDropDownList(aditamento.Modelo);
             return View(aditamento);
         }
 
@@ -112,8 +95,8 @@ namespace Seguradora.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo", aditamento.Marca);
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo", aditamento.Modelo);
+            ViewBag.Marcas = pc.PopulaMarcasDropDownList(aditamento.Marca);
+            ViewBag.Modelos = pc.PopulaModelosDropDownList(aditamento.Modelo);
             return View(aditamento);
         }
 
