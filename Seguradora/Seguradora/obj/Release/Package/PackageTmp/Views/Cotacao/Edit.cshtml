@@ -1,11 +1,11 @@
 ﻿@model Seguradora.Cotacao
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Cotação";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h2>Cotação</h2>
 
 
 @using (Html.BeginForm())
@@ -13,7 +13,7 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Cotacao</h4>
+        <h4>Cotação</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.Codigo)
@@ -86,7 +86,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Salvar" class="btn btn-default" />
+                <input type="submit" value="Salvar e continuar" class="btn btn-default" />
             </div>
         </div>
     </div>

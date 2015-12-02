@@ -64,7 +64,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2015 22:06:01</publishTime>
     </File>
     <File Include="bin/Seguradora.dll">
-      <publishTime>11/30/2015 21:46:06</publishTime>
+      <publishTime>12/01/2015 21:39:03</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>11/28/2015 22:06:12</publishTime>
@@ -445,7 +445,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2015 22:02:54</publishTime>
     </File>
     <File Include="Views/Aditamentos/Create.cshtml">
-      <publishTime>11/30/2015 20:42:14</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/Aditamentos/Delete.cshtml">
       <publishTime>11/30/2015 20:41:13</publishTime>
@@ -454,10 +454,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:42:40</publishTime>
     </File>
     <File Include="Views/Aditamentos/Edit.cshtml">
-      <publishTime>11/30/2015 20:41:47</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/Aditamentos/Index.cshtml">
-      <publishTime>11/30/2015 20:42:44</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/AnoModelo/Create.cshtml">
       <publishTime>11/30/2015 20:42:14</publishTime>
@@ -472,7 +472,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:41:48</publishTime>
     </File>
     <File Include="Views/AnoModelo/Index.cshtml">
-      <publishTime>11/30/2015 20:42:44</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/Apolice/Create.cshtml">
       <publishTime>11/30/2015 20:42:14</publishTime>
@@ -487,7 +487,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:41:48</publishTime>
     </File>
     <File Include="Views/Apolice/Index.cshtml">
-      <publishTime>11/30/2015 20:42:44</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
+    </File>
+    <File Include="Views/Cotacao/Aditamento.cshtml">
+      <publishTime>12/01/2015 20:58:23</publishTime>
     </File>
     <File Include="Views/Cotacao/Create.cshtml">
       <publishTime>11/30/2015 21:21:55</publishTime>
@@ -499,10 +502,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:42:40</publishTime>
     </File>
     <File Include="Views/Cotacao/Edit.cshtml">
-      <publishTime>11/30/2015 21:40:32</publishTime>
+      <publishTime>12/01/2015 21:05:40</publishTime>
     </File>
     <File Include="Views/Cotacao/Index.cshtml">
-      <publishTime>11/30/2015 21:39:29</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
+    </File>
+    <File Include="Views/Cotacao/InformacoesAdicionais.cshtml">
+      <publishTime>12/01/2015 21:15:58</publishTime>
+    </File>
+    <File Include="Views/Cotacao/Resumo.cshtml">
+      <publishTime>12/01/2015 20:48:21</publishTime>
     </File>
     <File Include="Views/FIPE/Importacao.cshtml">
       <publishTime>11/28/2015 22:50:24</publishTime>
@@ -547,7 +556,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:41:48</publishTime>
     </File>
     <File Include="Views/Marcas/Index.cshtml">
-      <publishTime>11/30/2015 20:42:40</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/Modelo/Create.cshtml">
       <publishTime>11/30/2015 20:42:14</publishTime>
@@ -562,7 +571,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:41:48</publishTime>
     </File>
     <File Include="Views/Modelo/Index.cshtml">
-      <publishTime>11/30/2015 20:42:40</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/ObjetoSegurado/Create.cshtml">
       <publishTime>11/30/2015 20:42:14</publishTime>
@@ -577,7 +586,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:41:48</publishTime>
     </File>
     <File Include="Views/ObjetoSegurado/Index.cshtml">
-      <publishTime>11/30/2015 20:42:40</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/Segurado/Create.cshtml">
       <publishTime>11/30/2015 20:42:14</publishTime>
@@ -592,7 +601,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:41:48</publishTime>
     </File>
     <File Include="Views/Segurado/Index.cshtml">
-      <publishTime>11/30/2015 20:42:40</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>11/28/2015 22:02:20</publishTime>
@@ -619,7 +628,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:41:48</publishTime>
     </File>
     <File Include="Views/Sinistro/Index.cshtml">
-      <publishTime>11/30/2015 20:42:44</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/Veiculo/Create.cshtml">
       <publishTime>11/30/2015 20:42:14</publishTime>
@@ -634,7 +643,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:41:48</publishTime>
     </File>
     <File Include="Views/Veiculo/Index.cshtml">
-      <publishTime>11/30/2015 20:42:40</publishTime>
+      <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>11/28/2015 22:02:19</publishTime>

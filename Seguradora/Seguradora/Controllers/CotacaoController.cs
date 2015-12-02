@@ -90,11 +90,21 @@ namespace Seguradora.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Codigo,Tipo,NumeroAditivo,Modalidade,DataInicial,DataFinal,Segurado,Marca,Modelo,Veiculo,AnoModelo")] Cotacao cotacao)
+        public ActionResult Edit([Bind(Include = "Codigo,NumeroAditivo,Modalidade,DataInicial,DataFinal,Segurado,Marca,Modelo,Veiculo,AnoModelo")] Cotacao cotacao)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(cotacao).State = EntityState.Modified;
+                Cotacao cotacaoAtual = db.Cotacao.Find(cotacao.Codigo);
+                cotacaoAtual.NumeroAditivo = cotacao.NumeroAditivo;
+                cotacaoAtual.Modalidade = cotacao.Modalidade;
+                cotacaoAtual.DataInicial = cotacao.DataInicial;
+                cotacaoAtual.DataFinal = cotacao.DataFinal;
+                cotacaoAtual.Segurado = cotacao.Segurado;
+                cotacaoAtual.Marca = cotacao.Marca;
+                cotacaoAtual.Modelo = cotacao.Modelo;
+                cotacaoAtual.Veiculo = cotacao.Veiculo;
+                cotacaoAtual.AnoModelo = cotacao.AnoModelo;
+                db.Entry(cotacaoAtual).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Aditamento", new { @id = cotacao.Codigo });
             }

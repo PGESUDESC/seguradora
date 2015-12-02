@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Seguradora.Cotacao>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cotações";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -63,9 +63,7 @@
             @Html.DisplayFor(modelItem => item.Modelo1.Descricao)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Codigo }) |
-            @Html.ActionLink("Detalhar", "Details", new { id = item.Codigo }) |
-            @Html.ActionLink("Excluir", "Delete", new { id=item.Codigo })
+            @Html.ActionLink("Editar", "Edit", new { id=item.Codigo })
         </td>
     </tr>
 }
