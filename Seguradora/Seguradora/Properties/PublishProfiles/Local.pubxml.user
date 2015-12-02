@@ -589,7 +589,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>12/01/2015 21:37:22</publishTime>
     </File>
     <File Include="Views/Segurado/Create.cshtml">
-      <publishTime>12/01/2015 22:53:36</publishTime>
+      <publishTime>12/01/2015 22:56:38</publishTime>
     </File>
     <File Include="Views/Segurado/Delete.cshtml">
       <publishTime>11/30/2015 20:41:14</publishTime>
@@ -598,10 +598,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/30/2015 20:42:40</publishTime>
     </File>
     <File Include="Views/Segurado/Edit.cshtml">
-      <publishTime>12/01/2015 22:53:23</publishTime>
+      <publishTime>12/01/2015 22:55:17</publishTime>
     </File>
     <File Include="Views/Segurado/Index.cshtml">
-      <publishTime>12/01/2015 22:50:11</publishTime>
+      <publishTime>12/01/2015 23:00:23</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>11/28/2015 22:02:20</publishTime>
