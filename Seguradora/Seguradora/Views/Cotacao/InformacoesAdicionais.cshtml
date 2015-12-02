@@ -57,14 +57,14 @@
         <div class="form-group">
             @Html.Label("Observações", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.Observacoes, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.Observacoes, new { cols=100, rows=5, @class = "form-control" })
             </div>
         </div>
 
         <div class="form-group">
             @Html.Label("Informações Gerais", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.TextAreaFor(model => model.InformacoesGerais, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextAreaFor(model => model.InformacoesGerais, new { cols=100, rows=5, @class = "form-control" } )
             </div>
         </div>
 

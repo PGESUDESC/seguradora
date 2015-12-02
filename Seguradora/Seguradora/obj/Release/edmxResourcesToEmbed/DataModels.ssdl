@@ -49,6 +49,14 @@
     <Property Name="Modelo" Type="int" />
     <Property Name="Veiculo" Type="int" />
     <Property Name="AnoModelo" Type="int" />
+    <Property Name="SeguradoCondutor" Type="bit" Nullable="false" />
+    <Property Name="PercentualCoeficiente" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="PercentualDesconto" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="TipoUso" Type="int" />
+    <Property Name="PernoiteDoVeiculo" Type="int" />
+    <Property Name="Observacoes" Type="text" />
+    <Property Name="InformacoesGerais" Type="text" />
+    <Property Name="ValorTotal" Type="decimal" Precision="10" Scale="2" />
   </EntityType>
   <EntityType Name="Marca">
     <Key>
