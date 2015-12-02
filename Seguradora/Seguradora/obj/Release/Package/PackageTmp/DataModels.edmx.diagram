@@ -25,17 +25,19 @@
         <AssociationConnector Association="seguradoraModel.FK_Aditamento_Marca" />
         <AssociationConnector Association="seguradoraModel.FK_Aditamento_Modelo" />
         <EntityTypeShape EntityType="seguradoraModel.Apolice" Width="1.5" PointX="10.875" PointY="2.375" />
-        <EntityTypeShape EntityType="seguradoraModel.Cotacao" PointX="9.875" PointY="12" Width="1.5" />
-        <AssociationConnector Association="seguradoraModel.FK_Apolice_Cotacao" />
         <AssociationConnector Association="seguradoraModel.FK_Apolice_ObjetoSegurado" />
         <AssociationConnector Association="seguradoraModel.FK_Apolice_Segurado" />
         <EntityTypeShape EntityType="seguradoraModel.Sinistro" Width="1.5" PointX="3" PointY="1.75" />
         <AssociationConnector Association="seguradoraModel.FK_Sinistro_Apolice" />
-        <AssociationConnector Association="seguradoraModel.FK_Cotacao_Segurado" />
+        <EntityTypeShape EntityType="seguradoraModel.CotacaoAditamento" Width="1.5" PointX="12.125" PointY="13.375" />
+        <AssociationConnector Association="seguradoraModel.FK_CotacaoAditamento_CotacaoAditamento" />
+        <EntityTypeShape EntityType="seguradoraModel.Cotacao" Width="1.5" PointX="13.75" PointY="3.5" />
+        <AssociationConnector Association="seguradoraModel.FK_Cotacao_AnoModelo" />
+        <AssociationConnector Association="seguradoraModel.FK_Apolice_Cotacao" />
         <AssociationConnector Association="seguradoraModel.FK_Cotacao_Marca" />
         <AssociationConnector Association="seguradoraModel.FK_Cotacao_Modelo" />
+        <AssociationConnector Association="seguradoraModel.FK_Cotacao_Segurado" />
         <AssociationConnector Association="seguradoraModel.FK_Cotacao_Veiculo" />
-        <AssociationConnector Association="seguradoraModel.FK_Cotacao_AnoModelo" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

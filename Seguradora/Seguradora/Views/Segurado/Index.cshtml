@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Seguradora.Segurado>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Segurados";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Segurados</h2>
 
 <p>
     @Html.ActionLink("Adicionar", "Create")
@@ -22,12 +22,6 @@
             @Html.DisplayNameFor(model => model.DataNascimento)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Sexo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.EstadoCivil)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.FoneResidencial)
         </th>
         <th>
@@ -37,38 +31,9 @@
             @Html.DisplayNameFor(model => model.Email)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Rua)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Numero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CEP)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Estado)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.BonusAtual)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SeguradoraAnterior)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumeroCNH)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PrimeiraHabilitacao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ObjetoSegurado1.TipoAutomovel)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -84,12 +49,6 @@
             @Html.DisplayFor(modelItem => item.DataNascimento)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Sexo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.EstadoCivil)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.FoneResidencial)
         </td>
         <td>
@@ -99,41 +58,10 @@
             @Html.DisplayFor(modelItem => item.Email)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Rua)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Numero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Bairro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CEP)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Estado)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.BonusAtual)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SeguradoraAnterior)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumeroCNH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PrimeiraHabilitacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ObjetoSegurado1.TipoAutomovel)
-        </td>
-        <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.Codigo }) |
-            @Html.ActionLink("Detalhar", "Details", new { id=item.Codigo }) |
             @Html.ActionLink("Excluir", "Delete", new { id=item.Codigo })
         </td>
     </tr>

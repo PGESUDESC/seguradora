@@ -27,9 +27,9 @@ namespace Seguradora
         public Nullable<System.DateTime> DataVigencia { get; set; }
         public Nullable<System.DateTime> DataPrimeiraParcela { get; set; }
     
-        public virtual Cotacao Cotacao1 { get; set; }
         public virtual ObjetoSegurado ObjetoSegurado1 { get; set; }
         public virtual Segurado Segurado1 { get; set; }
         public virtual ICollection<Sinistro> Sinistro { get; set; }
+        public virtual Cotacao Cotacao1 { get; set; }
     }
 }

@@ -125,6 +125,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Sinistro">
+      <EntityTypeMapping TypeName="seguradoraModel.Sinistro">
+        <MappingFragment StoreEntitySet="Sinistro">
+          <ScalarProperty Name="DescricaoOcorrido" ColumnName="DescricaoOcorrido" />
+          <ScalarProperty Name="Avarias" ColumnName="Avarias" />
+          <ScalarProperty Name="NroBO" ColumnName="NroBO" />
+          <ScalarProperty Name="NroContrato" ColumnName="NroContrato" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CotacaoAditamento">
+      <EntityTypeMapping TypeName="seguradoraModel.CotacaoAditamento">
+        <MappingFragment StoreEntitySet="CotacaoAditamento">
+          <ScalarProperty Name="Aditamento" ColumnName="Aditamento" />
+          <ScalarProperty Name="Cotacao" ColumnName="Cotacao" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Cotacao">
       <EntityTypeMapping TypeName="seguradoraModel.Cotacao">
         <MappingFragment StoreEntitySet="Cotacao">
@@ -145,17 +165,6 @@
           <ScalarProperty Name="DataInicial" ColumnName="DataInicial" />
           <ScalarProperty Name="Modalidade" ColumnName="Modalidade" />
           <ScalarProperty Name="NumeroAditivo" ColumnName="NumeroAditivo" />
-          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Sinistro">
-      <EntityTypeMapping TypeName="seguradoraModel.Sinistro">
-        <MappingFragment StoreEntitySet="Sinistro">
-          <ScalarProperty Name="DescricaoOcorrido" ColumnName="DescricaoOcorrido" />
-          <ScalarProperty Name="Avarias" ColumnName="Avarias" />
-          <ScalarProperty Name="NroBO" ColumnName="NroBO" />
-          <ScalarProperty Name="NroContrato" ColumnName="NroContrato" />
           <ScalarProperty Name="Codigo" ColumnName="Codigo" />
         </MappingFragment>
       </EntityTypeMapping>

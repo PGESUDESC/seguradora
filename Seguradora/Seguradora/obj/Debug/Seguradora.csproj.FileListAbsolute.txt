@@ -163,3 +163,4 @@ C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Segurado
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\obj\Debug\Seguradora.dll
 C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\obj\Debug\Seguradora.pdb
+C:\Users\Ricardo\Documents\POS UDESC\Trabalho Final Modulo II\segurador\Seguradora\Seguradora\obj\Debug\Seguradora.csprojResolveAssemblyReference.cache
