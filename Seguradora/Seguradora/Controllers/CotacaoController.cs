@@ -122,7 +122,10 @@ namespace Seguradora.Controllers
             {
                 return HttpNotFound();
             }
-            return View(cotacao);
+
+            List<Aditamento> aditamentos = db.Aditamento.ToList().Where(p => p.Marca == cotacao.Marca && p.Modelo == cotacao.Modelo).ToList();
+
+            return View(aditamentos);
         }
 
         [HttpPost]

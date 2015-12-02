@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Seguradora.Aditamento>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Aditamentos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Aditamentos</h2>
 
 <p>
     @Html.ActionLink("Adicionar", "Create")
@@ -19,16 +19,16 @@
             @Html.DisplayNameFor(model => model.Descriao)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Categoria)
+            @Html.DisplayName("Categoria")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.AnoFabricacao)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Marca1.Codigo)
+            @Html.DisplayName("Marca")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Modelo1.Codigo)
+            @Html.DisplayName("Modelo")
         </th>
         <th></th>
     </tr>
@@ -42,20 +42,19 @@
             @Html.DisplayFor(modelItem => item.Descriao)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Categoria)
+            @((Seguradora.Comum.Categoria) item.Categoria.Value)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.AnoFabricacao)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Marca1.Codigo)
+            @Html.DisplayFor(modelItem => item.Marca1.Descricao)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Modelo1.Codigo)
+            @Html.DisplayFor(modelItem => item.Modelo1.Descricao)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.Codigo }) |
-            @Html.ActionLink("Detalhar", "Details", new { id=item.Codigo }) |
             @Html.ActionLink("Excluir", "Delete", new { id=item.Codigo })
         </td>
     </tr>

@@ -1,4 +1,4 @@
-﻿@model Seguradora.Cotacao
+﻿@model List<Seguradora.Aditamento>
 
 @{
     ViewBag.Title = "Aditamento";
@@ -16,9 +16,16 @@
         <h4>Detalhes</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Codigo)
 
-        
+        @foreach (var item in Model)
+        {
+            <div class="form-group">
+                @Html.Label(item.Descriao, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type='checkbox' onclick='handleClick(this);' class="form-control">
+                </div>
+            </div>
+        }
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -29,7 +36,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "Index")
 </div>
 
 @section Scripts {
