@@ -20,7 +20,7 @@ namespace Seguradora
         }
     
         public int Codigo { get; set; }
-        public Nullable<int> NumeroAditivo { get; set; }
+        public string NumeroAditivo { get; set; }
         public Nullable<int> Modalidade { get; set; }
         public Nullable<System.DateTime> DataInicial { get; set; }
         public Nullable<System.DateTime> DataFinal { get; set; }
@@ -38,11 +38,11 @@ namespace Seguradora
         public string InformacoesGerais { get; set; }
         public Nullable<decimal> ValorTotal { get; set; }
     
+        public virtual AnoModelo AnoModelo1 { get; set; }
         public virtual ICollection<Apolice> Apolice { get; set; }
-        public virtual Segurado Segurado1 { get; set; }
         public virtual Marca Marca1 { get; set; }
         public virtual Modelo Modelo1 { get; set; }
+        public virtual Segurado Segurado1 { get; set; }
         public virtual Veiculo Veiculo1 { get; set; }
-        public virtual AnoModelo AnoModelo1 { get; set; }
     }
 }

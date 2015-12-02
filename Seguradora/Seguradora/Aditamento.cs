@@ -14,6 +14,11 @@ namespace Seguradora
     
     public partial class Aditamento
     {
+        public Aditamento()
+        {
+            this.CotacaoAditamento = new HashSet<CotacaoAditamento>();
+        }
+    
         public int Codigo { get; set; }
         public string Nome { get; set; }
         public string Descriao { get; set; }
@@ -24,5 +29,6 @@ namespace Seguradora
     
         public virtual Marca Marca1 { get; set; }
         public virtual Modelo Modelo1 { get; set; }
+        public virtual ICollection<CotacaoAditamento> CotacaoAditamento { get; set; }
     }
 }

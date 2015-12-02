@@ -52,10 +52,14 @@ namespace Seguradora.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Codigo,Tipo,NumeroAditivo,Modalidade,DataInicial,DataFinal,Segurado,Marca,Modelo,Veiculo,AnoModelo")] Cotacao cotacao)
+        public ActionResult Create([Bind(Include = "Codigo,Tipo,Modalidade,DataInicial,DataFinal,Segurado,Marca,Modelo,Veiculo,AnoModelo")] Cotacao cotacao)
         {
             if (ModelState.IsValid)
             {
+                cotacao.NumeroAditivo = (string.Format("{0}{1}{2}{3}{4}{5}", DateTime.Now.Year,
+                                                                  DateTime.Now.Month < 10 ? DateTime.Now.Month.ToString().PadLeft(2, '0') : DateTime.Now.Month.ToString(),
+                                                                  DateTime.Now.Day < 10 ? DateTime.Now.Day.ToString().PadLeft(2, '0') : DateTime.Now.Day.ToString(),
+                                                                  DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second));
                 db.Cotacao.Add(cotacao);
                 db.SaveChanges();
                 return RedirectToAction("Aditamento", new { @id = cotacao.Codigo });
