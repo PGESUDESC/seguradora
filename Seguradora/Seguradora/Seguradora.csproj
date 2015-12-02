@@ -169,8 +169,10 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Comum\EstadoCilvilEnum.cs" />
     <Compile Include="Comum\ModalidadeEnum.cs" />
     <Compile Include="Comum\PernoiteVeiculoEnum.cs" />
+    <Compile Include="Comum\SexoEnum.cs" />
     <Compile Include="Comum\TipoUsoEnum.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AditamentosController.cs" />
