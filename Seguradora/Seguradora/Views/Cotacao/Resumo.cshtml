@@ -41,9 +41,25 @@
         
         <dt>Valor Seguro</dt>
         <dd>
-            R$ @(Model.ValorTotal.Value.ToString("N2"))
+            R$ @(Model.ValorTotal.HasValue ? Model.ValorTotal.Value.ToString("N2") : "0,00")
+        </dd>
+
+        <dt>Status</dt>
+        <dd>
+            R$ @((Seguradora.Comum.StatusCotacaoEnum)Model.status)
         </dd>
     </dl>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a href="@Url.Action("Aprovar", new { id = Model.Codigo })" class="btn btn-default">Aprovar Cotação</a>
+
+            <a href="@Url.Action("Reprovar", new { id = Model.Codigo })" class="btn btn-default">Reprovar Cotação</a>
+
+            <a href="@Url.Action("CotacaoCompleta", new { id = Model.Codigo })" class="btn btn-default">Versão completa (impressão)</a>
+
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Voltar", "Index")

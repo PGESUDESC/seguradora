@@ -58,6 +58,7 @@
     <Property Name="Observacoes" Type="text" />
     <Property Name="InformacoesGerais" Type="text" />
     <Property Name="ValorTotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="status" Type="int" />
   </EntityType>
   <EntityType Name="CotacaoAditamento">
     <Key>
