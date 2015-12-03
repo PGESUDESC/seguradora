@@ -37,6 +37,7 @@ namespace Seguradora
         public string Observacoes { get; set; }
         public string InformacoesGerais { get; set; }
         public Nullable<decimal> ValorTotal { get; set; }
+        public Nullable<int> status { get; set; }
     
         public virtual AnoModelo AnoModelo1 { get; set; }
         public virtual ICollection<Apolice> Apolice { get; set; }

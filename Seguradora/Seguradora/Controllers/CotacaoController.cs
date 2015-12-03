@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Seguradora;
+using Seguradora.Comum;
 
 namespace Seguradora.Controllers
 {
@@ -218,6 +219,8 @@ namespace Seguradora.Controllers
             decimal franquia = (cotacao.Veiculo1.Valor * 3 / 100);
             valorTotal = franquia * percentualTotal / 100;
             cotacao.ValorTotal = valorTotal;
+            if (cotacao.status != (int)StatusCotacaoEnum.Aguardando || cotacao.status != (int)StatusCotacaoEnum.Cadastrada)
+                cotacao.status = (int)StatusCotacaoEnum.Aguardando;
             db.Entry(cotacao).State = EntityState.Modified;
             db.SaveChanges();
             return View(cotacao);
@@ -258,7 +261,31 @@ namespace Seguradora.Controllers
             base.Dispose(disposing);
         }
 
-        
+        public ActionResult Aprovar(int id)
+        {
+            Cotacao cotacaoAtual = db.Cotacao.Find(id);
+            cotacaoAtual.status = (int)StatusCotacaoEnum.Aprovada;
+            db.Entry(cotacaoAtual).State = EntityState.Modified;
+            db.SaveChanges();
+            return View(cotacaoAtual);
+            //return RedirectToAction("Resumo", new { @id = id });
+        }
+
+        public ActionResult Reprovar(int id)
+        {
+            Cotacao cotacaoAtual = db.Cotacao.Find(id);
+            cotacaoAtual.status = (int)StatusCotacaoEnum.Reprovada;
+            db.Entry(cotacaoAtual).State = EntityState.Modified;
+            db.SaveChanges();
+            return View(cotacaoAtual);
+            //return RedirectToAction("Resumo", new { @id = id });
+        }
+
+        public ActionResult CotacaoCompleta(int id)
+        {
+            Cotacao cotacao = db.Cotacao.Find(id);
+            return View(cotacao);
+        }
 
 
     }

@@ -174,6 +174,7 @@
     <Compile Include="Comum\ModalidadeEnum.cs" />
     <Compile Include="Comum\PernoiteVeiculoEnum.cs" />
     <Compile Include="Comum\SexoEnum.cs" />
+    <Compile Include="Comum\StatusCotacaoEnum.cs" />
     <Compile Include="Comum\TipoUsoEnum.cs" />
     <Compile Include="Comum\TipoVeiculoEnum.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -465,6 +466,9 @@
     <Content Include="Views\Cotacao\Aditamento.cshtml" />
     <Content Include="Views\Cotacao\InformacoesAdicionais.cshtml" />
     <Content Include="Views\Cotacao\Resumo.cshtml" />
+    <Content Include="Views\Cotacao\CotacaoCompleta.cshtml" />
+    <Content Include="Views\Cotacao\Aprovar.cshtml" />
+    <Content Include="Views\Cotacao\Reprovar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
