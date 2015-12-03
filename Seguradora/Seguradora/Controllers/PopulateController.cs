@@ -47,7 +47,7 @@ namespace Seguradora.Controllers
             else
             { 
 
-                var query = db.AnoModelo.ToList().Where(p => p.ID == ((AnoModelo)selectedItem).ID).Select(c => new { c.ID, c.Descricao });
+                var query = db.AnoModelo.ToList().Where(p => p.ID == 1).Select(c => new { c.ID, c.Descricao });
                 return new SelectList(query.AsEnumerable(), "ID", "Descricao", selectedItem);
             }
         }
