@@ -29,7 +29,7 @@
         <div class="form-group">
             @Html.Label("Tipo do Veiculo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Tipo do Veiculo", EnumHelper.GetSelectList(typeof(Seguradora.Comum.ModalidadeEnum)), new { @class = "form-control" })
+                @Html.DropDownList("TipodoVeiculo", EnumHelper.GetSelectList(typeof(Seguradora.Comum.ModalidadeEnum)), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TipoAutomovel, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -238,4 +238,5 @@
         });
     });
 </script>
+
 }
