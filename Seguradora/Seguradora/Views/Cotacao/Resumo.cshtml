@@ -1,8 +1,50 @@
-﻿
+﻿@model Seguradora.Cotacao
+
 @{
     ViewBag.Title = "Resumo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Resumo</h2>
+<h2>Cotação</h2>
 
+<div>
+    <h4>Resumo da Cotação</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Segurado
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Segurado1.Nome)
+        </dd>
+
+        <dt>
+            Veículo
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Marca1.Descricao) - @Html.DisplayFor(model => model.Modelo1.Descricao)
+        </dd>
+
+        <dt>
+            Valor da Fipe
+        </dt>
+        <dd>
+            R$ @(Model.Veiculo1.Valor.ToString("N2"))
+        </dd>
+        
+        <dt>
+            Franquia
+        </dt>
+        <dd>
+            R$ @(Convert.ToDecimal(Model.Veiculo1.Valor * 3 / 100).ToString("N2"))
+        </dd>
+        
+        <dt>Valor Seguro</dt>
+        <dd>
+            R$ @(Model.ValorTotal.Value.ToString("N2"))
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Voltar", "Index")
+</p>

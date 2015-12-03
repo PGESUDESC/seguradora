@@ -16,6 +16,7 @@
           <Property Name="Marca" Type="int" />
           <Property Name="Modelo" Type="int" />
           <Property Name="AnoFabricacao" Type="datetime" />
+          <Property Name="Percentual" Type="decimal" Precision="10" Scale="2" Nullable="false" />
         </EntityType>
         <EntityType Name="AnoModelo">
           <Key>
@@ -67,7 +68,7 @@
           <Key>
             <PropertyRef Name="Codigo" />
           </Key>
-          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Cotacao" Type="int" Nullable="false" />
           <Property Name="Aditamento" Type="int" Nullable="false" />
         </EntityType>
@@ -910,6 +911,7 @@
           <NavigationProperty Name="Marca1" Relationship="seguradoraModel.FK_Aditamento_Marca" FromRole="Aditamento" ToRole="Marca" />
           <NavigationProperty Name="Modelo1" Relationship="seguradoraModel.FK_Aditamento_Modelo" FromRole="Aditamento" ToRole="Modelo" />
           <NavigationProperty Name="CotacaoAditamento" Relationship="seguradoraModel.FK_CotacaoAditamento_CotacaoAditamento" FromRole="Aditamento" ToRole="CotacaoAditamento" />
+          <Property Name="Percentual" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
         </EntityType>
         <Association Name="FK_Aditamento_Marca">
           <End Type="seguradoraModel.Marca" Role="Marca" Multiplicity="0..1" />
@@ -1250,6 +1252,7 @@
           <EntitySetMapping Name="Aditamento">
             <EntityTypeMapping TypeName="seguradoraModel.Aditamento">
               <MappingFragment StoreEntitySet="Aditamento">
+                <ScalarProperty Name="Percentual" ColumnName="Percentual" />
                 <ScalarProperty Name="AnoFabricacao" ColumnName="AnoFabricacao" />
                 <ScalarProperty Name="Modelo" ColumnName="Modelo" />
                 <ScalarProperty Name="Marca" ColumnName="Marca" />

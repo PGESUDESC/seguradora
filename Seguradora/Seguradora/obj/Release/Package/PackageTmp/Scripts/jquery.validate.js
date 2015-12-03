@@ -1115,9 +1115,13 @@ $.extend($.validator, {
 		},
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/range
-		range: function( value, element, param ) {
-			return this.optional(element) || ( value >= param[0] && value <= param[1] );
-		},
+		//range: function( value, element, param ) {
+		//	return this.optional(element) || ( value >= param[0] && value <= param[1] );
+	    //},
+		range: function (value, element, param) {
+		    var globalizedValue = value.replace(".", "").replace(",", ".");
+		    return this.optional(element) || (globalizedValue >= param[0] && globalizedValue <= param[1]);
+		}
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/equalTo
 		equalTo: function( value, element, param ) {

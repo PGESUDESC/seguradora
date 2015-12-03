@@ -51,7 +51,7 @@ namespace Seguradora.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Codigo,Nome,Descriao,Categoria,Marca,Modelo,AnoFabricacao")] Aditamento aditamento)
+        public ActionResult Create([Bind(Include = "Codigo,Nome,Descriao,Categoria,Marca,Modelo,AnoFabricacao,Percentual")] Aditamento aditamento)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace Seguradora.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Codigo,Nome,Descriao,Categoria,Marca,Modelo,AnoFabricacao")] Aditamento aditamento)
+        public ActionResult Edit([Bind(Include = "Codigo,Nome,Descriao,Categoria,Marca,Modelo,AnoFabricacao,Percentual")] Aditamento aditamento)
         {
             if (ModelState.IsValid)
             {

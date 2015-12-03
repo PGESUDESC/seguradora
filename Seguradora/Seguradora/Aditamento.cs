@@ -26,6 +26,7 @@ namespace Seguradora
         public Nullable<int> Marca { get; set; }
         public Nullable<int> Modelo { get; set; }
         public Nullable<System.DateTime> AnoFabricacao { get; set; }
+        public decimal Percentual { get; set; }
     
         public virtual Marca Marca1 { get; set; }
         public virtual Modelo Modelo1 { get; set; }

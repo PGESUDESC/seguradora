@@ -379,6 +379,7 @@
     <NavigationProperty Name="Marca1" Relationship="seguradoraModel.FK_Aditamento_Marca" FromRole="Aditamento" ToRole="Marca" />
     <NavigationProperty Name="Modelo1" Relationship="seguradoraModel.FK_Aditamento_Modelo" FromRole="Aditamento" ToRole="Modelo" />
     <NavigationProperty Name="CotacaoAditamento" Relationship="seguradoraModel.FK_CotacaoAditamento_CotacaoAditamento" FromRole="Aditamento" ToRole="CotacaoAditamento" />
+    <Property Name="Percentual" Type="Decimal" Nullable="false" Precision="10" Scale="2" />
   </EntityType>
   <Association Name="FK_Aditamento_Marca">
     <End Type="seguradoraModel.Marca" Role="Marca" Multiplicity="0..1" />

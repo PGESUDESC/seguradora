@@ -99,7 +99,7 @@ namespace Seguradora.Controllers
             if (ModelState.IsValid)
             {
                 Cotacao cotacaoAtual = db.Cotacao.Find(cotacao.Codigo);
-                cotacaoAtual.NumeroAditivo = cotacao.NumeroAditivo;
+                cotacaoAtual.NumeroAditivo = cotacaoAtual.NumeroAditivo;
                 cotacaoAtual.Modalidade = cotacao.Modalidade;
                 cotacaoAtual.DataInicial = cotacao.DataInicial;
                 cotacaoAtual.DataFinal = cotacao.DataFinal;
@@ -122,7 +122,7 @@ namespace Seguradora.Controllers
             {
                 return HttpNotFound();
             }
-
+            ViewBag.CodigoCotacao = cotacao.Codigo;
             List<Aditamento> aditamentos = db.Aditamento.ToList().Where(p => p.Marca == cotacao.Marca && p.Modelo == cotacao.Modelo).ToList();
 
             return View(aditamentos);
@@ -130,17 +130,47 @@ namespace Seguradora.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Aditamento([Bind(Include = "Codigo")] Cotacao cotacao)
+        public ActionResult Aditamento(FormCollection collection)
         {
-            //So passa adiante ate ter os aditamentos
-            if (ModelState.IsValid)
+            Cotacao cotacao = db.Cotacao.Find(Convert.ToInt32(collection["CodigoCotacao"]));
+            try
             {
-                Cotacao cotacaoAtual = db.Cotacao.Find(cotacao.Codigo);
-                db.Entry(cotacaoAtual).State = EntityState.Modified;
-                db.SaveChanges();
+                if (!String.IsNullOrEmpty(collection["checksDisp"]) && !String.IsNullOrEmpty(collection["idsDisp"]))
+                {
+                    string[] ids = collection["idsDisp"].ToString().Split(',');
+                    string[] checks = collection["checksDisp"].ToString().Split(',');
+                    int idIterator = 0;
+                    int checkIterator = 0;
+                    foreach (var idItem in ids)
+                    {
+                        int idInt = Convert.ToInt32(ids[idIterator]);
+                        string marcado = checks[checkIterator].ToString();
+                        idIterator++;
+                        checkIterator++;
+                        if (marcado == "true")
+                        {
+                            checkIterator++;
+                            try
+                            {
+                                CotacaoAditamento itemCotacao = new CotacaoAditamento();
+                                itemCotacao.Cotacao = cotacao.Codigo;
+                                itemCotacao.Aditamento = idInt;
+
+                                db.CotacaoAditamento.Add(itemCotacao);
+                                db.SaveChanges();
+                            }
+                            catch (Exception error)
+                            {
+                            } 
+                        }
+                    }
+                }
                 return RedirectToAction("InformacoesAdicionais", new { @id = cotacao.Codigo });
             }
-            return View(cotacao);
+            catch
+            {
+                return RedirectToAction("InformacoesAdicionais", new { @id = cotacao.Codigo });
+            }
         }
 
         public ActionResult InformacoesAdicionais(int id)
@@ -177,13 +207,19 @@ namespace Seguradora.Controllers
 
         public ActionResult Resumo(int id)
         {
-            //Aqui deve calcular o valor da cotacao e mostrar na tela do resumo
-            
             Cotacao cotacao = db.Cotacao.Find(id);
             if (cotacao == null)
             {
                 return HttpNotFound();
             }
+            decimal valorTotal = 0;
+            List<CotacaoAditamento> aditamentos = db.CotacaoAditamento.ToList().Where(p => p.Cotacao == cotacao.Codigo).ToList();
+            decimal percentualTotal = aditamentos.Sum(p => p.Aditamento1.Percentual);
+            decimal franquia = (cotacao.Veiculo1.Valor * 3 / 100);
+            valorTotal = franquia * percentualTotal / 100;
+            cotacao.ValorTotal = valorTotal;
+            db.Entry(cotacao).State = EntityState.Modified;
+            db.SaveChanges();
             return View(cotacao);
         }
 

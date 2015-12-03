@@ -11,6 +11,7 @@
     <Property Name="Marca" Type="int" />
     <Property Name="Modelo" Type="int" />
     <Property Name="AnoFabricacao" Type="datetime" />
+    <Property Name="Percentual" Type="decimal" Precision="10" Scale="2" Nullable="false" />
   </EntityType>
   <EntityType Name="AnoModelo">
     <Key>
@@ -62,7 +63,7 @@
     <Key>
       <PropertyRef Name="Codigo" />
     </Key>
-    <Property Name="Codigo" Type="int" Nullable="false" />
+    <Property Name="Codigo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Cotacao" Type="int" Nullable="false" />
     <Property Name="Aditamento" Type="int" Nullable="false" />
   </EntityType>

@@ -102,6 +102,7 @@
     <EntitySetMapping Name="Aditamento">
       <EntityTypeMapping TypeName="seguradoraModel.Aditamento">
         <MappingFragment StoreEntitySet="Aditamento">
+          <ScalarProperty Name="Percentual" ColumnName="Percentual" />
           <ScalarProperty Name="AnoFabricacao" ColumnName="AnoFabricacao" />
           <ScalarProperty Name="Modelo" ColumnName="Modelo" />
           <ScalarProperty Name="Marca" ColumnName="Marca" />

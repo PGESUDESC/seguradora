@@ -65,6 +65,14 @@
         </div>
 
         <div class="form-group">
+            @Html.Label("Percentual", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Percentual, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Percentual, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Adicionar" class="btn btn-default" />
             </div>
@@ -77,7 +85,6 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
 
     <script type="text/javascript">
     function getModelos(marca) {
