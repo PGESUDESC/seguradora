@@ -87,6 +87,7 @@ namespace Seguradora.Controllers
             ViewBag.Segurados = pc.PopulaSeguradosDropDownList();
             ViewBag.Marcas = pc.PopulaMarcasDropDownList();
             ViewBag.Modelos = pc.PopulaModelosDropDownList();
+            ViewBag.AnoModelos = pc.PopulaAnoModelosDropDownList();
             ViewBag.Codigo = new SelectList(db.Segurado, "Codigo", "Nome", objetoSegurado.Codigo);
             return View(objetoSegurado);
         }
@@ -108,6 +109,7 @@ namespace Seguradora.Controllers
             ViewBag.Segurados = pc.PopulaSeguradosDropDownList(objetoSegurado.Segurado);
             ViewBag.Marcas = pc.PopulaMarcasDropDownList(objetoSegurado.Marca);
             ViewBag.Modelos = pc.PopulaModelosDropDownList(objetoSegurado.Modelo);
+            ViewBag.AnoModelos = pc.PopulaAnoModelosDropDownList(objetoSegurado.AnoModelo);
             ViewBag.Codigo = new SelectList(db.Segurado, "Codigo", "Nome", objetoSegurado.Codigo);
             return View(objetoSegurado);
         }

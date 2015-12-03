@@ -99,7 +99,6 @@
     <Property Name="Modelo" Type="int" />
     <Property Name="Potencia" Type="int" />
     <Property Name="AnoDeFabricacao" Type="datetime" />
-    <Property Name="AnoModelo" Type="datetime" />
     <Property Name="Chassi" Type="varchar" MaxLength="30" />
     <Property Name="Placa" Type="varchar" MaxLength="10" />
     <Property Name="QtdPortas" Type="int" />
@@ -108,6 +107,7 @@
     <Property Name="Renavam" Type="varchar" MaxLength="30" />
     <Property Name="ValorFipe" Type="decimal" Precision="18" Scale="0" />
     <Property Name="ValorCotado" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="AnoModelo" Type="int" />
   </EntityType>
   <EntityType Name="Segurado">
     <Key>
@@ -326,6 +326,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ObjetoSegurado_AnoModelo">
+    <End Role="AnoModelo" Type="Self.AnoModelo" Multiplicity="0..1" />
+    <End Role="ObjetoSegurado" Type="Self.ObjetoSegurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnoModelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ObjetoSegurado">
+        <PropertyRef Name="AnoModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ObjetoSegurado1_Marca">
     <End Role="Marca" Type="Self.Marca" Multiplicity="0..1" />
     <End Role="ObjetoSegurado" Type="Self.ObjetoSegurado" Multiplicity="*" />
@@ -489,6 +501,10 @@
     <AssociationSet Name="FK_Modelo_Marca" Association="Self.FK_Modelo_Marca">
       <End Role="Marca" EntitySet="Marca" />
       <End Role="Modelo" EntitySet="Modelo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ObjetoSegurado_AnoModelo" Association="Self.FK_ObjetoSegurado_AnoModelo">
+      <End Role="AnoModelo" EntitySet="AnoModelo" />
+      <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
     </AssociationSet>
     <AssociationSet Name="FK_ObjetoSegurado1_Marca" Association="Self.FK_ObjetoSegurado1_Marca">
       <End Role="Marca" EntitySet="Marca" />

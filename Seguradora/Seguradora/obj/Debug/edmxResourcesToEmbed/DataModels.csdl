@@ -14,6 +14,7 @@
     <NavigationProperty Name="Modelo1" Relationship="Self.FK_AnoModelo_Modelo" FromRole="AnoModelo" ToRole="Modelo" />
     <NavigationProperty Name="Veiculo" Relationship="Self.FK_Veiculo_AnoModelo" FromRole="AnoModelo" ToRole="Veiculo" />
     <NavigationProperty Name="Cotacao" Relationship="seguradoraModel.FK_Cotacao_AnoModelo" FromRole="AnoModelo" ToRole="Cotacao" />
+    <NavigationProperty Name="ObjetoSegurado" Relationship="seguradoraModel.FK_ObjetoSegurado_AnoModelo" FromRole="AnoModelo" ToRole="ObjetoSegurado" />
   </EntityType>
   <EntityType Name="Marca">
     <Key>
@@ -82,7 +83,7 @@
         <LongDescription>Ano de fabricação</LongDescription>
       </Documentation>
     </Property>
-    <Property Name="AnoModelo" Type="DateTime" Precision="3" />
+    <Property Name="AnoModelo" Type="Int32" />
     <Property Name="Chassi" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
     <Property Name="Placa" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="QtdPortas" Type="Int32" />
@@ -96,6 +97,7 @@
     <NavigationProperty Name="Segurado1" Relationship="Self.FK_ObjetoSegurado1_Segurado" FromRole="ObjetoSegurado" ToRole="Segurado" />
     <NavigationProperty Name="Segurado2" Relationship="Self.FK_ObjetoSegurado1_Segurado1" FromRole="ObjetoSegurado" ToRole="Segurado" />
     <NavigationProperty Name="Apolice" Relationship="seguradoraModel.FK_Apolice_ObjetoSegurado" FromRole="ObjetoSegurado" ToRole="Apolice" />
+    <NavigationProperty Name="AnoModelo1" Relationship="seguradoraModel.FK_ObjetoSegurado_AnoModelo" FromRole="ObjetoSegurado" ToRole="AnoModelo" />
   </EntityType>
   <EntityType Name="Segurado">
     <Key>
@@ -364,6 +366,10 @@
       <End Role="Veiculo" EntitySet="Veiculo" />
       <End Role="Cotacao" EntitySet="Cotacao" />
     </AssociationSet>
+    <AssociationSet Name="FK_ObjetoSegurado_AnoModelo" Association="seguradoraModel.FK_ObjetoSegurado_AnoModelo">
+      <End Role="AnoModelo" EntitySet="AnoModelo" />
+      <End Role="ObjetoSegurado" EntitySet="ObjetoSegurado" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Aditamento">
     <Key>
@@ -610,6 +616,18 @@
       </Principal>
       <Dependent Role="Cotacao">
         <PropertyRef Name="Veiculo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ObjetoSegurado_AnoModelo">
+    <End Type="seguradoraModel.AnoModelo" Role="AnoModelo" Multiplicity="0..1" />
+    <End Type="seguradoraModel.ObjetoSegurado" Role="ObjetoSegurado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AnoModelo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ObjetoSegurado">
+        <PropertyRef Name="AnoModelo" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

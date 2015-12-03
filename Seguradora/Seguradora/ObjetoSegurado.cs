@@ -28,7 +28,7 @@ namespace Seguradora
         public Nullable<int> Modelo { get; set; }
         public Nullable<int> Potencia { get; set; }
         public Nullable<System.DateTime> AnoDeFabricacao { get; set; }
-        public Nullable<System.DateTime> AnoModelo { get; set; }
+        public Nullable<int> AnoModelo { get; set; }
         public string Chassi { get; set; }
         public string Placa { get; set; }
         public Nullable<int> QtdPortas { get; set; }
@@ -43,5 +43,6 @@ namespace Seguradora
         public virtual Segurado Segurado1 { get; set; }
         public virtual Segurado Segurado2 { get; set; }
         public virtual ICollection<Apolice> Apolice { get; set; }
+        public virtual AnoModelo AnoModelo1 { get; set; }
     }
 }
