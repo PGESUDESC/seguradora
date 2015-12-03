@@ -18,6 +18,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Segurado)
         </th>
+        <th>Status</th>
         <th>
             @Html.DisplayNameFor(model => model.Modalidade)
         </th>
@@ -46,6 +47,9 @@
             @Html.DisplayFor(modelItem => item.Segurado1.Nome)
         </td>
         <td>
+            @((Seguradora.Comum.StatusCotacaoEnum)item.status)
+        </td>
+        <td>
             @((Seguradora.Comum.ModalidadeEnum)item.Modalidade)
         </td>
         <td>
@@ -64,6 +68,9 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.Codigo })
+            @if(item.status != (int)Seguradora.Comum.StatusCotacaoEnum.Cadastrada){
+                @Html.ActionLink("Visualizar Cotacao", "CotacaoCompleta", new { id = item.Codigo });
+            }
         </td>
     </tr>
 }

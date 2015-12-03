@@ -63,6 +63,7 @@
           <Property Name="Observacoes" Type="text" />
           <Property Name="InformacoesGerais" Type="text" />
           <Property Name="ValorTotal" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="status" Type="int" />
         </EntityType>
         <EntityType Name="CotacaoAditamento">
           <Key>
@@ -1094,6 +1095,7 @@
           <NavigationProperty Name="Modelo1" Relationship="seguradoraModel.FK_Cotacao_Modelo" FromRole="Cotacao" ToRole="Modelo" />
           <NavigationProperty Name="Segurado1" Relationship="seguradoraModel.FK_Cotacao_Segurado" FromRole="Cotacao" ToRole="Segurado" />
           <NavigationProperty Name="Veiculo1" Relationship="seguradoraModel.FK_Cotacao_Veiculo" FromRole="Cotacao" ToRole="Veiculo" />
+          <Property Name="status" Type="Int32" />
         </EntityType>
         <Association Name="FK_Cotacao_AnoModelo">
           <End Type="seguradoraModel.AnoModelo" Role="AnoModelo" Multiplicity="0..1" />
@@ -1333,6 +1335,7 @@
           <EntitySetMapping Name="Cotacao">
             <EntityTypeMapping TypeName="seguradoraModel.Cotacao">
               <MappingFragment StoreEntitySet="Cotacao">
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="ValorTotal" ColumnName="ValorTotal" />
                 <ScalarProperty Name="InformacoesGerais" ColumnName="InformacoesGerais" />
                 <ScalarProperty Name="Observacoes" ColumnName="Observacoes" />
