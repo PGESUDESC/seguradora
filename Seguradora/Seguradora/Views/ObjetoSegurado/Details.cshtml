@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Objeto de Seguro</h2>
 
 <div>
-    <h4>ObjetoSegurado</h4>
+    <h4>Cadastro</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -16,7 +16,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.TipoAutomovel)
+            @Html.Label("Automóvel", htmlAttributes: new { @class = "control-label col-md-2" })
         </dd>
 
         <dt>

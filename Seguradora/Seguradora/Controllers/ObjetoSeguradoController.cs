@@ -13,6 +13,7 @@ namespace Seguradora.Controllers
     public class ObjetoSeguradoController : Controller
     {
         private seguradoraEntities db = new seguradoraEntities();
+        private PopulateController pc = new PopulateController();
 
         // GET: ObjetoSegurado
         public ActionResult Index()
@@ -39,9 +40,11 @@ namespace Seguradora.Controllers
         // GET: ObjetoSegurado/Create
         public ActionResult Create()
         {
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo");
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo");
-            ViewBag.Segurado = new SelectList(db.Segurado, "Codigo", "Nome");
+            ViewBag.Segurados = pc.PopulaSeguradosDropDownList();
+            ViewBag.Marcas = pc.PopulaMarcasDropDownList();
+            ViewBag.Modelos = pc.PopulaModelosDropDownList();
+            ViewBag.AnoModelos = pc.PopulaAnoModelosDropDownList();
+            ViewBag.Veiculos = pc.PopulaVeiculosDropDownList();
             ViewBag.Codigo = new SelectList(db.Segurado, "Codigo", "Nome");
             return View();
         }
@@ -60,9 +63,11 @@ namespace Seguradora.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo", objetoSegurado.Marca);
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo", objetoSegurado.Modelo);
-            ViewBag.Segurado = new SelectList(db.Segurado, "Codigo", "Nome", objetoSegurado.Segurado);
+            ViewBag.Segurados = pc.PopulaSeguradosDropDownList(objetoSegurado.Segurado);
+            ViewBag.Marcas = pc.PopulaMarcasDropDownList(objetoSegurado.Marca);
+            ViewBag.Modelos = pc.PopulaModelosDropDownList(objetoSegurado.Modelo);
+            ViewBag.AnoModelos = pc.PopulaAnoModelosDropDownList();
+            ViewBag.Veiculos = pc.PopulaVeiculosDropDownList();
             ViewBag.Codigo = new SelectList(db.Segurado, "Codigo", "Nome", objetoSegurado.Codigo);
             return View(objetoSegurado);
         }
@@ -79,9 +84,9 @@ namespace Seguradora.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo", objetoSegurado.Marca);
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo", objetoSegurado.Modelo);
-            ViewBag.Segurado = new SelectList(db.Segurado, "Codigo", "Nome", objetoSegurado.Segurado);
+            ViewBag.Segurados = pc.PopulaSeguradosDropDownList();
+            ViewBag.Marcas = pc.PopulaMarcasDropDownList();
+            ViewBag.Modelos = pc.PopulaModelosDropDownList();
             ViewBag.Codigo = new SelectList(db.Segurado, "Codigo", "Nome", objetoSegurado.Codigo);
             return View(objetoSegurado);
         }
@@ -99,9 +104,10 @@ namespace Seguradora.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Marca = new SelectList(db.Marca, "ID", "Codigo", objetoSegurado.Marca);
-            ViewBag.Modelo = new SelectList(db.Modelo, "ID", "Codigo", objetoSegurado.Modelo);
-            ViewBag.Segurado = new SelectList(db.Segurado, "Codigo", "Nome", objetoSegurado.Segurado);
+
+            ViewBag.Segurados = pc.PopulaSeguradosDropDownList(objetoSegurado.Segurado);
+            ViewBag.Marcas = pc.PopulaMarcasDropDownList(objetoSegurado.Marca);
+            ViewBag.Modelos = pc.PopulaModelosDropDownList(objetoSegurado.Modelo);
             ViewBag.Codigo = new SelectList(db.Segurado, "Codigo", "Nome", objetoSegurado.Codigo);
             return View(objetoSegurado);
         }
