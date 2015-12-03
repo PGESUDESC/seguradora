@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Objeto de Seguro</h2>
 
 
 @using (Html.BeginForm()) 
@@ -13,13 +13,13 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ObjetoSegurado</h4>
+        <h4>Cadastro</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Codigo, "Codigo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Codigo", null, htmlAttributes: new { @class = "form-control" })
+                @Html.EditorFor(model => model.Codigo, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Codigo, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -27,15 +27,15 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Segurado, "Segurado", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Segurado", null, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("Segurado", (IEnumerable<SelectListItem>)ViewBag.Segurados, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Segurado, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.TipoAutomovel, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Tipo do Veiculo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.TipoAutomovel, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("TipodoVeiculo", EnumHelper.GetSelectList(typeof(Seguradora.Comum.ModalidadeEnum)), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.TipoAutomovel, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -51,24 +51,22 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Categoria, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Categoria, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("Categoria", EnumHelper.GetSelectList(typeof(Seguradora.Comum.CategoriaEnum)), new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Categoria, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Marca, "Marca", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Marca, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Marca", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Marca, "", new { @class = "text-danger" })
+                @Html.DropDownList("Marca", (IEnumerable<SelectListItem>)ViewBag.Marcas, new { @class = "form-control" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Modelo, "Modelo", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Modelo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Modelo", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Modelo, "", new { @class = "text-danger" })
+                @Html.DropDownList("Modelo", (IEnumerable<SelectListItem>)ViewBag.Modelos, new { @class = "form-control" })
             </div>
         </div>
 
@@ -173,5 +171,75 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+<script type="text/javascript">
+    function getModelos(marca) {
+        $.ajax({
+            url: "@Url.Action("Modelos", "Api")",
+            data: { codigoMarca: marca },
+            dataType: "json",
+            type: "POST",
+            error: function () {
+                alert("Ocorreu um erro.");
+            },
+            success: function (data) {
+                var items = "";
+                $.each(data, function (i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+                $("#Modelo").html(items);
+            }
+        });
+    }
+
+    function getAnoModelo(marca, modelo) {
+        $.ajax({
+            url: "@Url.Action("AnoModelos", "Api")",
+            data: { codigoMarca: marca, codigoModelo: modelo },
+            dataType: "json",
+            type: "POST",
+            error: function () {
+                alert("Ocorreu um erro.");
+            },
+            success: function (data) {
+                var items = "";
+                $.each(data, function (i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+                $("#AnoModelo").html(items);
+            }
+        });
+    }
+
+    function getVeiculos(marca, modelo) {
+        $.ajax({
+            url: "@Url.Action("Veiculos", "Api")",
+            data: { codigoMarca: marca, codigoModelo: modelo },
+            dataType: "json",
+            type: "POST",
+            error: function () {
+                alert("Ocorreu um erro.");
+            },
+            success: function (data) {
+                var items = "";
+                $.each(data, function (i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+                $("#Veiculo").html(items);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $("#Marca").change(function () {
+            var marca = $("#Marca").val();
+            getModelos(marca);
+        });
+        $("#Modelo").change(function () {
+            var marca = $("#Marca").val();
+            var modelo = $("#Modelo").val();
+            getAnoModelo(marca, modelo);
+            getVeiculos(marca, modelo);
+        });
+    });
+</script>
 }

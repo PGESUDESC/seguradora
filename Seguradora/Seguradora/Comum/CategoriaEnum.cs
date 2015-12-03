@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Seguradora.Comum
 {
-    public enum Categoria
+    public enum CategoriaEnum
     {
         Passageiros = 1,
         Publico = 2,

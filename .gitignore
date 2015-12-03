@@ -1,4 +1,6 @@
 Seguradora/Seguradora/Properties/PublishProfiles/local.pubxml
 Seguradora/Seguradora/Properties/PublishProfiles/local.pubxml.user
-/Seguradora/Seguradora.Tests/bin/Debug
-/Seguradora/Seguradora/obj
+Seguradora/Seguradora.Tests/bin/Debug
+Seguradora/Seguradora/obj/*.*
+Seguradora/Seguradora/obj/Debug/*.*
+Seguradora/Seguradora/bin/Seguradora.pdb

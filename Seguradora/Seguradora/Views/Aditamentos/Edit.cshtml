@@ -43,18 +43,16 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Marca, "Marca", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Marca, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("Marca", (IEnumerable<SelectListItem>)ViewBag.Marcas, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Marca, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Modelo, "Modelo", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Modelo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Modelo", (IEnumerable<SelectListItem>)ViewBag.Marcas, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Modelo, "", new { @class = "text-danger" })
+                @Html.DropDownList("Modelo", (IEnumerable<SelectListItem>)ViewBag.Modelos, new { @class = "form-control" })
             </div>
         </div>
 
@@ -87,5 +85,76 @@
 </div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+
+<script type="text/javascript">
+    function getModelos(marca) {
+        $.ajax({
+            url: "@Url.Action("Modelos", "Api")",
+            data: { codigoMarca: marca },
+            dataType: "json",
+            type: "POST",
+            error: function () {
+                alert("Ocorreu um erro.");
+            },
+            success: function (data) {
+                var items = "";
+                $.each(data, function (i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+                $("#Modelo").html(items);
+            }
+        });
+    }
+
+    function getAnoModelo(marca, modelo) {
+        $.ajax({
+            url: "@Url.Action("AnoModelos", "Api")",
+            data: { codigoMarca: marca, codigoModelo: modelo },
+        dataType: "json",
+        type: "POST",
+        error: function () {
+            alert("Ocorreu um erro.");
+        },
+        success: function (data) {
+            var items = "";
+            $.each(data, function (i, item) {
+                items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+            });
+            $("#AnoModelo").html(items);
+        }
+    });
+    }
+
+    function getVeiculos(marca, modelo) {
+        $.ajax({
+            url: "@Url.Action("Veiculos", "Api")",
+            data: { codigoMarca: marca, codigoModelo: modelo },
+            dataType: "json",
+            type: "POST",
+            error: function () {
+                alert("Ocorreu um erro.");
+            },
+            success: function (data) {
+                var items = "";
+                $.each(data, function (i, item) {
+                    items += "<option value=\"" + item.Value + "\">" + item.Text + "</option>";
+                });
+                $("#Veiculo").html(items);
+            }
+        });
+    }
+
+    $(document).ready(function () {
+        $("#Marca").change(function () {
+            var marca = $("#Marca").val();
+            getModelos(marca);
+        });
+        $("#Modelo").change(function () {
+            var marca = $("#Marca").val();
+            var modelo = $("#Modelo").val();
+            getAnoModelo(marca, modelo);
+            getVeiculos(marca, modelo);
+        });
+    });
+</script>
 }
