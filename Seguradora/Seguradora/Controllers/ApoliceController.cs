@@ -17,7 +17,7 @@ namespace Seguradora.Controllers
         // GET: Apolice
         public ActionResult Index()
         {
-            var apolice = db.Apolice.Include(a => a.Cotacao1).Include(a => a.ObjetoSegurado1).Include(a => a.Segurado1);
+            var apolice = db.Apolice.Include(a => a.ObjetoSegurado1).Include(a => a.Segurado1).Include(a => a.Cotacao1);
             return View(apolice.ToList());
         }
 
@@ -39,9 +39,9 @@ namespace Seguradora.Controllers
         // GET: Apolice/Create
         public ActionResult Create()
         {
-            ViewBag.Cotacao = new SelectList(db.Cotacao, "Codigo", "Codigo");
             ViewBag.ObjetoSegurado = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel");
             ViewBag.Segurado = new SelectList(db.Segurado, "Codigo", "Nome");
+            ViewBag.Cotacao = new SelectList(db.Cotacao, "Codigo", "NumeroAditivo");
             return View();
         }
 
@@ -59,9 +59,9 @@ namespace Seguradora.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Cotacao = new SelectList(db.Cotacao, "Codigo", "Codigo", apolice.Cotacao);
             ViewBag.ObjetoSegurado = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel", apolice.ObjetoSegurado);
             ViewBag.Segurado = new SelectList(db.Segurado, "Codigo", "Nome", apolice.Segurado);
+            ViewBag.Cotacao = new SelectList(db.Cotacao, "Codigo", "NumeroAditivo", apolice.Cotacao);
             return View(apolice);
         }
 
@@ -77,9 +77,9 @@ namespace Seguradora.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Cotacao = new SelectList(db.Cotacao, "Codigo", "Codigo", apolice.Cotacao);
             ViewBag.ObjetoSegurado = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel", apolice.ObjetoSegurado);
             ViewBag.Segurado = new SelectList(db.Segurado, "Codigo", "Nome", apolice.Segurado);
+            ViewBag.Cotacao = new SelectList(db.Cotacao, "Codigo", "NumeroAditivo", apolice.Cotacao);
             return View(apolice);
         }
 
@@ -96,9 +96,9 @@ namespace Seguradora.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Cotacao = new SelectList(db.Cotacao, "Codigo", "Codigo", apolice.Cotacao);
             ViewBag.ObjetoSegurado = new SelectList(db.ObjetoSegurado, "Codigo", "TipoAutomovel", apolice.ObjetoSegurado);
             ViewBag.Segurado = new SelectList(db.Segurado, "Codigo", "Nome", apolice.Segurado);
+            ViewBag.Cotacao = new SelectList(db.Cotacao, "Codigo", "NumeroAditivo", apolice.Cotacao);
             return View(apolice);
         }
 
