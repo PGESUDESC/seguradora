@@ -13,22 +13,22 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.TipoAutomovel)
+            @Html.DisplayName("Tipo do veículo")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CodigoFipe)
+            @Html.DisplayName("Código FIPE")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Categoria)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Potencia)
+            @Html.DisplayName("Potência")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AnoDeFabricacao)
+            @Html.DisplayName("Ano de fabricação")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AnoModelo)
+            @Html.DisplayName("Ano/Modelo")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Chassi)
@@ -37,34 +37,31 @@
             @Html.DisplayNameFor(model => model.Placa)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.QtdPortas)
+            @Html.DisplayName("Quantidade de portas")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NroPassageiros)
+            @Html.DisplayName("Número de passageiros")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CepPernoite)
+            @Html.DisplayName("CEP da pernoite")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Renavam)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ValorFipe)
+            @Html.DisplayName("Valor FIPE")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ValorCotado)
+            @Html.DisplayName("Valor cotado")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Marca1.Codigo)
+            @Html.DisplayName("Marca")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Modelo1.Codigo)
+            @Html.DisplayName("Modelo")
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Segurado1.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Segurado2.Nome)
+            @Html.DisplayName("Segurado")
         </th>
         <th></th>
     </tr>
@@ -121,9 +118,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Segurado1.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Segurado2.Nome)
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.Codigo }) |
