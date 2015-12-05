@@ -32,7 +32,7 @@
             @Html.DisplayName("Marca")
         </th>
         <th>
-            @Html.DisplayName('Modelo")
+            @Html.DisplayName("Modelo")
         </th>
         <th></th>
     </tr>
@@ -47,10 +47,11 @@
             @Html.DisplayFor(modelItem => item.Segurado1.Nome)
         </td>
         <td>
-            @((Seguradora.Comum.StatusCotacaoEnum)item.status)
+
+
         </td>
         <td>
-            @((Seguradora.Comum.ModalidadeEnum)item.Modalidade)
+
         </td>
         <td>
             @{var dataInicial = item.DataInicial.HasValue ? item.DataInicial.Value.ToString("dd/MM/yyyy") : "";}
